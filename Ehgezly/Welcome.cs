@@ -71,5 +71,10 @@ namespace Ehgezly
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Register R = new Register();
+            R.Show();
+        }
     }
 };

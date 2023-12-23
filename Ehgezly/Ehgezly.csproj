@@ -72,6 +72,12 @@
     <Compile Include="Provided_Functionality.Designer.cs">
       <DependentUpon>Provided_Functionality.cs</DependentUpon>
     </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trainer_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Provided_Functionality.resx">
       <DependentUpon>Provided_Functionality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trainer_Homepage.resx">
       <DependentUpon>Trainer_Homepage.cs</DependentUpon>
