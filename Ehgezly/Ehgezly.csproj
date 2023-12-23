@@ -78,6 +78,13 @@
     <Compile Include="Trainer_Homepage.Designer.cs">
       <DependentUpon>Trainer_Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trainer_MyAcc.cs" />
+    <Compile Include="Trainer_Myaccount1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trainer_Myaccount1.Designer.cs">
+      <DependentUpon>Trainer_Myaccount1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +108,9 @@
     <EmbeddedResource Include="Trainer_Homepage.resx">
       <DependentUpon>Trainer_Homepage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trainer_Myaccount1.resx">
+      <DependentUpon>Trainer_Myaccount1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +122,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -125,6 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my_account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

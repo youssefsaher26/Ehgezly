@@ -76,5 +76,14 @@ namespace Ehgezly
             Register R = new Register();
             R.Show();
         }
+
+        public string GetEmailValue()
+        {
+            return textBox1.Text;
+        }
+        public string GetPasswordValue()
+        {
+            return textBox2.Text ;
+        }
     }
 };

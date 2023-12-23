@@ -87,7 +87,11 @@ namespace DBapplication
             dbMan.ExecuteNonQuery(query2);
             return dbMan.ExecuteNonQuery(query3);
         }
+        public DataTable ViewAccountPlayer(string mail, string pass)
+        {
+            string query = "SELECT Fname FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "';";
+            return dbMan.ExecuteReader(query);
+        }
 
-        
     }
 }
