@@ -12,14 +12,22 @@ namespace Ehgezly
 {
     public partial class Admin_Homepage : Form
     {
-        public Admin_Homepage()
+        String AdminID;
+        public Admin_Homepage(String ID)
         {
             InitializeComponent();
+            AdminID = ID;
         }
 
         private void Admin_Homepage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void TrainerComplaints_Click(object sender, EventArgs e)
+        {
+            Trainer_Complaints trainerComplaints = new Trainer_Complaints(AdminID);
+            trainerComplaints.Show();
         }
     }
 }
