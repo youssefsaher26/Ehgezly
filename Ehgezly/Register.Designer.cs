@@ -50,6 +50,7 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +98,7 @@
             this.PhoneNumber.Name = "PhoneNumber";
             this.PhoneNumber.Size = new System.Drawing.Size(113, 22);
             this.PhoneNumber.TabIndex = 6;
+            this.PhoneNumber.TextChanged += new System.EventHandler(this.PhoneNumber_TextChanged);
             // 
             // Password
             // 
@@ -257,11 +259,21 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 24;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(471, 243);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(208, 16);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Phone number should be 11 digits";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 493);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.F);
             this.Controls.Add(this.M);
@@ -315,5 +327,6 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label10;
     }
 }
