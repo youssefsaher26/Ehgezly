@@ -161,6 +161,18 @@ namespace DBapplication
             string query = $"SELECT Acc_ID FROM Account WHERE Email='{Email}'";
             return Convert.ToString(dbMan.ExecuteScalar(query));
         }
+        public DataTable SelectOldPlayerCourtBookings(string ID)
+        {
+            string query = $"SELECT Booking_timing , Court_Location FROM Bookings,Courts WHERE Plyr_Id='{ID}' AND Court_ID=Crt_Id AND Booking_type='C'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectOldPlayertrainingSession(string ID)
+        {
+            string query = $"SELECT Booking_timing as Timing, Court_Location as Location , Fname TrainerFirstName,Lname as  TrainerLastName FROM Bookings as B ,Courts as C ,Trainer as T,Account as A, Training_Session as TT WHERE Plyr_Id='{ID}' AND C.Court_ID=B.Crt_Id AND B.Booking_type='T' AND TT.Trnr_ID=T.Trainer_ID AND T.Trainer_ID=A.Acc_ID";
+            return dbMan.ExecuteReader(query);
+        
+        } 
 
     }
 }

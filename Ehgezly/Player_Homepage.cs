@@ -101,5 +101,25 @@ namespace Ehgezly
         {
 
         }
+
+        private void WriteReview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void courtbookingold_Click(object sender, EventArgs e)
+        {
+            Old_Bookings old_Bookings = new Old_Bookings(controllerObj.GetID(email), "Court");
+            old_Bookings.Show();
+
+        }
+
+        private void trainingsessionold_Click(object sender, EventArgs e)
+        {
+            Old_Bookings old_Bookings = new Old_Bookings(controllerObj.GetID(email), "Training");
+            old_Bookings.Show();
+        }
     }
 }
