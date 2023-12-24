@@ -155,8 +155,6 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query2);
             string query3 = $"UPDATE Complaints SET complaint_Reviewer='{ID}' WHERE Complaint_ID='{ID}'";
             return dbMan.ExecuteNonQuery(query3);
-
-
         }
 
         public String GetID(String Email)
