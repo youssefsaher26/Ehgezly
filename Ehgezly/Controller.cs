@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Windows.Forms;
+using System.Reflection.Emit;
 using System.Data.SqlTypes;
 
 namespace DBapplication
@@ -11,9 +12,11 @@ namespace DBapplication
     public class Controller
     {
         DBManager dbMan;
+        string date;
         public Controller()
         {
             dbMan = new DBManager();
+            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         public void TerminateConnection()
@@ -21,12 +24,12 @@ namespace DBapplication
             dbMan.CloseConnection();
         }
 
-        public DataTable CheckAccountExist(string mail , string pass)
+        public DataTable CheckAccountExist(string mail, string pass)
         {
-            string query = "SELECT * FROM Account WHERE Email='"+ mail +"'and acc_password= '"+ pass +"';";
+            string query = "SELECT * FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "';";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable CheckAccountAdmin(string mail , string pass)
+        public DataTable CheckAccountAdmin(string mail, string pass)
         {
             string query = "SELECT * FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "'and Acc_ID LIKE '%A%';";
             return dbMan.ExecuteReader(query);
@@ -46,13 +49,13 @@ namespace DBapplication
             string query = "SELECT * FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "'and Acc_ID LIKE '%M%';";
             return dbMan.ExecuteReader(query);
         }
-        public int RegisterPlayer(string Fname, string lname , char Gender ,string birth_date, string email, string password,string phone_numbr)
+        public int RegisterPlayer(string Fname, string lname, char Gender, string birth_date, string email, string password, string phone_numbr)
         {
-            string query1= "SELECT COUNT(*) FROM Player";
-            int x=Convert.ToInt32( dbMan.ExecuteScalar(query1))+1;
+            string query1 = "SELECT COUNT(*) FROM Player";
+            int x = Convert.ToInt32(dbMan.ExecuteScalar(query1)) + 1;
             string y = x.ToString();
             string query2 = "INSERT INTO Account " +
-                            "Values ('P"+y+"','" + Fname + "','" + lname + "','" + Gender +"','"+birth_date+"','"+email+"', '"+password+"','"+phone_numbr+"');";
+                            "Values ('P" + y + "','" + Fname + "','" + lname + "','" + Gender + "','" + birth_date + "','" + email + "', '" + password + "','" + phone_numbr + "');";
             string query3 = "INSERT INTO Player " +
                             "Values ('P" + y + "','N');";
             dbMan.ExecuteNonQuery(query2);
@@ -76,7 +79,7 @@ namespace DBapplication
                             "Values ('A" + y + "','" + Fname + "','" + lname + "','" + Gender + "','" + birth_date + "','" + email + "', '" + password + "','" + phone_numbr + "');";
             return dbMan.ExecuteNonQuery(query2);
         }
-        public int RegisterTrainer(string Fname, string lname, char Gender, string birth_date, string email, string password, string phone_numbr,string sport_type)
+        public int RegisterTrainer(string Fname, string lname, char Gender, string birth_date, string email, string password, string phone_numbr, string sport_type)
         {
             string query1 = "SELECT COUNT(*) FROM Trainer";
             int x = Convert.ToInt32(dbMan.ExecuteScalar(query1)) + 1;
@@ -84,7 +87,7 @@ namespace DBapplication
             string query2 = "INSERT INTO Account " +
                             "Values ('TR" + y + "','" + Fname + "','" + lname + "','" + Gender + "','" + birth_date + "','" + email + "', '" + password + "','" + phone_numbr + "');";
             string query3 = "INSERT INTO Trainer " +
-                            "Values ('TR" + y + "','"+sport_type+"','N');";
+                            "Values ('TR" + y + "','" + sport_type + "','N');";
             dbMan.ExecuteNonQuery(query2);
             return dbMan.ExecuteNonQuery(query3);
         }
@@ -106,12 +109,12 @@ namespace DBapplication
 
         public DataTable SelectCourtname(string loc)
         {
-             string query = "SELECT * FROM Courts Where Court_Location = '"+loc+"';";
-             return dbMan.ExecuteReader(query);
+            string query = "SELECT * FROM Courts Where Court_Location = '" + loc + "';";
+            return dbMan.ExecuteReader(query);
         }
-        public int BookCourt(string email, string pass, string CID,string time)
+        public int BookCourt(string email, string pass, string CID, string time)
         {
-            string query1 = "SELECT Acc_ID FROM Account WHERE Email='"+email+"'and acc_password = '"+pass+"';";
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
             string m = dbMan.ExecuteScalar(query1).ToString();
 
             string query2 = "SELECT Count(*) FROM Bookings WHERE Booking_ID LIKE '%CB%' ;";
@@ -120,7 +123,7 @@ namespace DBapplication
 
             string query3 = "INSERT INTO Bookings " +
                             "Values ('CB" + y + "','" + m + "','" + CID + "','" + time + "');";
-            
+
             return dbMan.ExecuteNonQuery(query3);
         }
 
@@ -152,8 +155,6 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query2);
             string query3 = $"UPDATE Complaints SET complaint_Reviewer='{ID}' WHERE Complaint_ID='{ID}'";
             return dbMan.ExecuteNonQuery(query3);
-
-
         }
 
         public String GetID(String Email)
@@ -174,5 +175,55 @@ namespace DBapplication
         
         } 
 
+        public int BookTrainingsession(string email, string pass, string CID, string time,string TID)
+        {
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+
+            string query2 = "SELECT Count(*) FROM Bookings WHERE Booking_ID LIKE '%TSB%' ;";
+            int z = Convert.ToInt32(dbMan.ExecuteScalar(query2)) + 1;
+            string y = z.ToString();
+
+            string query3 = "INSERT INTO Bookings " +
+                            "Values ('TSB" + y + "','" + m + "','" + CID + "','" + time + "');";
+
+
+            string query4 = "SELECT Count(*) FROM Training_session ";
+            int w = Convert.ToInt32(dbMan.ExecuteScalar(query4))+1;
+
+
+            string query5 = "INSERT INTO Training_session " +
+                            "Values ('TSB" + w+"','" + TID + "');";
+
+            dbMan.ExecuteNonQuery(query3);
+            return dbMan.ExecuteNonQuery(query5);
+        }
+        public int DeleteCourtBookings(string email,string pass)
+        {
+            string query = "DELETE FROM Bookings WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email='"+email+"'and acc_password='"+pass+"') and Booking_timing >'"+date+"';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeleteTrainingsession(string email, string pass,string TID)
+        {
+            string query1 = "DELETE FROM Bookings WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email='" + email + "'and acc_password='" + pass + "') and Booking_timing >' "+date+"';";
+            string query2 = "DELETE FROM Training_session WHERE sess_ID IN(Select Booking_ID FROM Bookings " +
+                            "WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email= '" + email + "' and acc_password='"+ pass + "') and Booking_timing >' "+date+"');";
+            dbMan.ExecuteNonQuery(query2);
+            return dbMan.ExecuteNonQuery(query1);
+        }
+
+        public DataTable ViewAccountPlayer(string mail, string pass)
+        {
+            string query = "SELECT Fname,Lname,Email,Acc_Password,Phone_Number,Acc_ID FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "';";
+            return dbMan.ExecuteReader(query);
+        }
+        public int UpdateAccInfo(string Fname, string Lname,string Email,string Password,string Phone_Number,string emailcheck)
+        {
+            string query2="Update Account SET Fname='"+Fname+"',Lname='"+Lname+"', Email='"+Email+"', Acc_Password='"+Password+"', Phone_Number='"+Phone_Number+"'WHERE Email='"+emailcheck+"';";
+            
+            return Convert.ToInt32(dbMan.ExecuteNonQuery(query2));
+
+        }
     }
 }
+

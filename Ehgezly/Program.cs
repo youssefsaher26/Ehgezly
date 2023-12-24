@@ -18,5 +18,8 @@ namespace Ehgezly
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Welcome());
         }
+        
     }
+
 }
+

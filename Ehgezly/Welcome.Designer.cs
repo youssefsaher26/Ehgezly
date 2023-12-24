@@ -40,7 +40,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(204, 132);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 22);
+            this.textBox1.Size = new System.Drawing.Size(185, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -48,7 +48,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(204, 197);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 22);
+            this.textBox2.Size = new System.Drawing.Size(185, 22);
             this.textBox2.TabIndex = 1;
             // 
             // label1
@@ -71,7 +71,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(234, 257);
+            this.button1.Location = new System.Drawing.Point(244, 257);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 30);
             this.button1.TabIndex = 4;
@@ -81,7 +81,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(234, 307);
+            this.button2.Location = new System.Drawing.Point(244, 307);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 32);
             this.button2.TabIndex = 5;

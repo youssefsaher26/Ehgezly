@@ -72,6 +72,12 @@
     <Compile Include="Player_Homepage.Designer.cs">
       <DependentUpon>Player_Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Player_MyAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Player_MyAcc.Designer.cs">
+      <DependentUpon>Player_MyAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,13 @@
     <Compile Include="T_Complaint.Designer.cs">
       <DependentUpon>T_Complaint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trainer_MyAcc.cs" />
+    <Compile Include="Trainer_Myaccount1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trainer_Myaccount1.Designer.cs">
+      <DependentUpon>Trainer_Myaccount1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +135,9 @@
     <EmbeddedResource Include="Player_Homepage.resx">
       <DependentUpon>Player_Homepage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Player_MyAcc.resx">
+      <DependentUpon>Player_MyAcc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +153,9 @@
     <EmbeddedResource Include="T_Complaint.resx">
       <DependentUpon>T_Complaint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trainer_Myaccount1.resx">
+      <DependentUpon>Trainer_Myaccount1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +167,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -161,6 +181,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my_account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
