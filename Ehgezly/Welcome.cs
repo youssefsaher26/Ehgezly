@@ -46,7 +46,7 @@ namespace Ehgezly
                 Controller controllerObj3 = new Controller();
                 Controller controllerObj4 = new Controller();
 
-                MessageBox.Show("Login sucessfull");
+                MessageBox.Show("Login successfull");
                 if (controllerObj.CheckAccountAdmin(email, pass) != null)
                 {
                     Admin_Homepage a = new Admin_Homepage();
@@ -64,7 +64,7 @@ namespace Ehgezly
                 }
                 else if (controllerObj4.CheckAccountPlayer(email, pass) != null) 
                 {
-                    Player_Homepage P = new Player_Homepage();
+                    Player_Homepage P = new Player_Homepage(pass,email);
                     P.Show();
                 }
             }
@@ -75,6 +75,11 @@ namespace Ehgezly
         {
             Register R = new Register();
             R.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         public string GetEmailValue()

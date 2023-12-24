@@ -87,6 +87,48 @@ namespace DBapplication
             dbMan.ExecuteNonQuery(query2);
             return dbMan.ExecuteNonQuery(query3);
         }
+
+        //Player HomePage
+        public DataTable SelectCourt(int ind)
+        {
+            if (ind == 0)
+            {
+                string query = "SELECT Court_Location FROM Courts Where Court_ID LIKE '%F%';";
+                return dbMan.ExecuteReader(query);
+            }
+            else
+            {
+                string query = "SELECT Court_Location FROM Courts Where Court_ID LIKE '%Pd%';";
+                return dbMan.ExecuteReader(query);
+            }
+        }
+
+        public DataTable SelectCourtname(string loc)
+        {
+             string query = "SELECT * FROM Courts Where Court_Location = '"+loc+"';";
+             return dbMan.ExecuteReader(query);
+        }
+        public int BookCourt(string email, string pass, string CID,string time)
+        {
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='"+email+"'and acc_password = '"+pass+"';";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+
+            string query2 = "SELECT Count(*) FROM Bookings WHERE Booking_ID LIKE '%CB%' ;";
+            int z = Convert.ToInt32(dbMan.ExecuteScalar(query2)) + 1;
+            string y = z.ToString();
+
+            string query3 = "INSERT INTO Bookings " +
+                            "Values ('CB" + y + "','" + m + "','" + CID + "','" + time + "');";
+            
+            return dbMan.ExecuteNonQuery(query3);
+        }
+
+        public DataTable Selectavailabletrainers()
+        {
+            string query = "SELECT Fname ,Trainer_ID FROM Account,trainer where Booking_status='A'and ACC_id=Trainer_id;";
+            return dbMan.ExecuteReader(query);
+        }
+
         public DataTable ViewAccountPlayer(string mail, string pass)
         {
             string query = "SELECT Fname FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "';";
