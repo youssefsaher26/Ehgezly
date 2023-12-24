@@ -66,6 +66,12 @@
     <Compile Include="Player_Homepage.Designer.cs">
       <DependentUpon>Player_Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Player_MyAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Player_MyAcc.Designer.cs">
+      <DependentUpon>Player_MyAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Player_Homepage.resx">
       <DependentUpon>Player_Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Player_MyAcc.resx">
+      <DependentUpon>Player_MyAcc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>

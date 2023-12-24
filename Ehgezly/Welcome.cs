@@ -54,7 +54,7 @@ namespace Ehgezly
                 }
                 else if (controllerObj2.CheckAccountTrainer(email, pass) != null)
                 {
-                    Trainer_Homepage t = new Trainer_Homepage();
+                    Trainer_Homepage t = new Trainer_Homepage(pass, email);
                     t.Show();
                 }
                 else if (controllerObj3.CheckAccountManager(email, pass) != null)

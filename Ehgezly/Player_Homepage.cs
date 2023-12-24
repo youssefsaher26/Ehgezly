@@ -96,5 +96,16 @@ namespace Ehgezly
                 MessageBox.Show("failed ! Court is not Booked");
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Trainer_Myaccount1 R = new Trainer_Myaccount1(pass, email);
+            R.Show();
+        }
     }
 }

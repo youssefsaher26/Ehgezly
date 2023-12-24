@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
     public partial class Trainer_Homepage : Form
     {
-        public Trainer_Homepage()
+        string password;
+        string email;
+        public Trainer_Homepage(string p, string mail)
         {
             InitializeComponent();
+             password=p;
+             email=mail;
         }
 
         private void Trainer_Homepage_Load(object sender, EventArgs e)
@@ -24,13 +29,14 @@ namespace Ehgezly
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Trainer_Myaccount1 R = new Trainer_Myaccount1();
+            Trainer_Myaccount1 R = new Trainer_Myaccount1(password, email);
             R.Show();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Trainer_Myaccount1 R = new Trainer_Myaccount1();
+            Trainer_Myaccount1 R = new Trainer_Myaccount1(password, email);
             R.Show();
         }
     }
