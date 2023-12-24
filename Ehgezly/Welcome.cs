@@ -49,7 +49,7 @@ namespace Ehgezly
                 MessageBox.Show("Login successfull");
                 if (controllerObj.CheckAccountAdmin(email, pass) != null)
                 {
-                    Admin_Homepage a = new Admin_Homepage();
+                    Admin_Homepage a = new Admin_Homepage(controllerObj.GetID(email));
                     a.Show();
                 }
                 else if (controllerObj2.CheckAccountTrainer(email, pass) != null)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Windows.Forms;
 using System.Reflection.Emit;
+using System.Data.SqlTypes;
 
 namespace DBapplication
 {
@@ -130,6 +131,38 @@ namespace DBapplication
         {
             string query = "SELECT Fname ,Trainer_ID FROM Account,trainer where Booking_status='A'and ACC_id=Trainer_id;";
             return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectTrainerComplaints()
+        {
+            string query = "SELECT Cmplnt_Id as ID,Complaint_Date as Date FROM Trainer_Complaints, Complaints WHERE Cmplnt_Id=Complaint_ID AND Review_status='N';";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectSpecTrainerComplaints(string ID)
+        {
+            string query = $"SELECT Complaint_Date as ComplaintDate ,Book_ID as BookingID , Complaint_Details AS Details FROM Complaints WHERE Complaint_ID='{ID}';";
+            return dbMan.ExecuteReader(query);
+        }
+        public int MarkTrainerComplaintReviewed(string ID)
+        {
+            string query = $"UPDATE Complaints SET Review_Status='A' WHERE Complaint_ID='{ID}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AddAdminDetailsToComplaint(string comment, string ID)
+        {
+            string query1 = $"UPDATE Complaints SET Admin_Comment='{comment}' WHERE Complaint_ID='{ID}'";
+            return dbMan.ExecuteNonQuery(query1);
+            string query2 = $"UPDATE Complaints SET ReviewDate='{DateTime.Now}' WHERE Complaint_ID='{ID}'";
+            return dbMan.ExecuteNonQuery(query2);
+            string query3 = $"UPDATE Complaints SET complaint_Reviewer='{ID}' WHERE Complaint_ID='{ID}'";
+            return dbMan.ExecuteNonQuery(query3);
+
+
+        }
+
+        public String GetID(String Email)
+        {
+            string query = $"SELECT Acc_ID FROM Account WHERE Email='{Email}'";
+            return Convert.ToString(dbMan.ExecuteScalar(query));
         }
 
         public int BookTrainingsession(string email, string pass, string CID, string time,string TID)
