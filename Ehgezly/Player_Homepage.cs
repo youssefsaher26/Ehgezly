@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Security.Cryptography;
 
 namespace Ehgezly
 {
@@ -94,6 +96,50 @@ namespace Ehgezly
             else if (r != 1)
             {
                 MessageBox.Show("failed ! Court is not Booked");
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int r = controllerObj.BookTrainingsession(email,pass,comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), comboBox4.SelectedValue.ToString());
+            if (r == 1)
+            {
+                MessageBox.Show("Training session is Booked Successfully");
+            }
+            else if (r != 1)
+            {
+                MessageBox.Show("failed ! Training session is not Booked");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int r = controllerObj.DeleteCourtBookings(email,pass);
+            if (r == 1)
+            {
+                MessageBox.Show("Court booking is deleted Successfully");
+            }
+            else if (r != 1)
+            {
+                MessageBox.Show("failed ! Booking is not deleted ");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int r = controllerObj.DeleteTrainingsession(email, pass,comboBox4.SelectedValue.ToString());
+            if (r == 1)
+            {
+                MessageBox.Show("Session booking is deleted Successfully");
+            }
+            else if (r != 1)
+            {
+                MessageBox.Show("failed ! Booking is not deleted ");
             }
         }
 

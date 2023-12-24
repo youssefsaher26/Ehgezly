@@ -4,15 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Windows.Forms;
+using System.Reflection.Emit;
+using System.Data.SqlTypes;
 
 namespace DBapplication
 {
     public class Controller
     {
         DBManager dbMan;
+        string date;
         public Controller()
         {
             dbMan = new DBManager();
+            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         public void TerminateConnection()
@@ -127,6 +131,75 @@ namespace DBapplication
         {
             string query = "SELECT Fname ,Trainer_ID FROM Account,trainer where Booking_status='A'and ACC_id=Trainer_id;";
             return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectTrainerComplaints()
+        {
+            string query = "SELECT Cmplnt_Id as ID,Complaint_Date as Date FROM Trainer_Complaints, Complaints WHERE Cmplnt_Id=Complaint_ID AND Review_status='N';";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectSpecTrainerComplaints(string ID)
+        {
+            string query = $"SELECT Complaint_Date as ComplaintDate ,Book_ID as BookingID , Complaint_Details AS Details FROM Complaints WHERE Complaint_ID='{ID}';";
+            return dbMan.ExecuteReader(query);
+        }
+        public int MarkTrainerComplaintReviewed(string ID)
+        {
+            string query = $"UPDATE Complaints SET Review_Status='A' WHERE Complaint_ID='{ID}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AddAdminDetailsToComplaint(string comment, string ID)
+        {
+            string query1 = $"UPDATE Complaints SET Admin_Comment='{comment}' WHERE Complaint_ID='{ID}'";
+            return dbMan.ExecuteNonQuery(query1);
+            string query2 = $"UPDATE Complaints SET ReviewDate='{DateTime.Now}' WHERE Complaint_ID='{ID}'";
+            return dbMan.ExecuteNonQuery(query2);
+            string query3 = $"UPDATE Complaints SET complaint_Reviewer='{ID}' WHERE Complaint_ID='{ID}'";
+            return dbMan.ExecuteNonQuery(query3);
+
+
+        }
+
+        public String GetID(String Email)
+        {
+            string query = $"SELECT Acc_ID FROM Account WHERE Email='{Email}'";
+            return Convert.ToString(dbMan.ExecuteScalar(query));
+        }
+
+        public int BookTrainingsession(string email, string pass, string CID, string time,string TID)
+        {
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+
+            string query2 = "SELECT Count(*) FROM Bookings WHERE Booking_ID LIKE '%TSB%' ;";
+            int z = Convert.ToInt32(dbMan.ExecuteScalar(query2)) + 1;
+            string y = z.ToString();
+
+            string query3 = "INSERT INTO Bookings " +
+                            "Values ('TSB" + y + "','" + m + "','" + CID + "','" + time + "');";
+
+
+            string query4 = "SELECT Count(*) FROM Training_session ";
+            int w = Convert.ToInt32(dbMan.ExecuteScalar(query4))+1;
+
+
+            string query5 = "INSERT INTO Training_session " +
+                            "Values ('TSB" + w+"','" + TID + "');";
+
+            dbMan.ExecuteNonQuery(query3);
+            return dbMan.ExecuteNonQuery(query5);
+        }
+        public int DeleteCourtBookings(string email,string pass)
+        {
+            string query = "DELETE FROM Bookings WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email='"+email+"'and acc_password='"+pass+"') and Booking_timing >'"+date+"';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeleteTrainingsession(string email, string pass,string TID)
+        {
+            string query1 = "DELETE FROM Bookings WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email='" + email + "'and acc_password='" + pass + "') and Booking_timing >' "+date+"';";
+            string query2 = "DELETE FROM Training_session WHERE sess_ID IN(Select Booking_ID FROM Bookings " +
+                            "WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email= '" + email + "' and acc_password='"+ pass + "') and Booking_timing >' "+date+"');";
+            dbMan.ExecuteNonQuery(query2);
+            return dbMan.ExecuteNonQuery(query1);
         }
 
         public DataTable ViewAccountPlayer(string mail, string pass)
