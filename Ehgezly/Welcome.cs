@@ -54,7 +54,7 @@ namespace Ehgezly
                 }
                 else if (controllerObj2.CheckAccountTrainer(email, pass) != null)
                 {
-                    Trainer_Homepage t = new Trainer_Homepage();
+                    Trainer_Homepage t = new Trainer_Homepage(pass, email);
                     t.Show();
                 }
                 else if (controllerObj3.CheckAccountManager(email, pass) != null)
@@ -80,6 +80,15 @@ namespace Ehgezly
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public string GetEmailValue()
+        {
+            return textBox1.Text;
+        }
+        public string GetPasswordValue()
+        {
+            return textBox2.Text ;
         }
     }
 };
