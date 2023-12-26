@@ -31,6 +31,7 @@ namespace Ehgezly
 
             DataTable dt = controllerObj.SelectSpecTrainerComplaints(ComplaintID);
             TrainerComplaintgridView.DataSource = dt;
+            TrainerComplaintgridView.ReadOnly = true;
             TrainerComplaintgridView.Refresh();
             
 

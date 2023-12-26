@@ -15,10 +15,12 @@ namespace Ehgezly
     {
         Controller controllerObj;
         String BookingID;
-        public review(string ID)
+        String ReviewerID;
+        public review(string ID, string RID)
         {
             InitializeComponent();
             BookingID = ID;
+            ReviewerID = RID;
             controllerObj = new Controller();
         }
 
@@ -36,6 +38,7 @@ namespace Ehgezly
         {
 
             int rating = 0;
+          
             if (radioButton1.Checked) { rating = 1; }
             else if (radioButton2.Checked) { rating = 2; }
             else if (radioButton2.Checked) { rating = 2; }
@@ -45,10 +48,34 @@ namespace Ehgezly
             else
             {
                 MessageBox.Show("Please select a rating!");
+
                 return;
             }
 
+            string revID =controllerObj.AddRating( rating, BookingID,ReviewerID);
 
+            if (BookingID.Contains("TR"))
+            {
+                controllerObj.AddCourtReview(revID, controllerObj.GetCourtIDfromBooking(BookingID));
+            }
+            else if (BookingID.Contains("C"))
+            {
+                controllerObj.AddTrainerReview(revID, controllerObj.GetTrainerIDfromTrainingSession(BookingID));
+            }
+            else if (BookingID.Contains("M"))
+            {
+                controllerObj.AddTrainerReview(revID, controllerObj.GetTrainerIDfromTrainingSession(BookingID));
+            }
+
+            if (richTextBox1.Text.Length!=0)
+            {
+                controllerObj.AddCommentToReview(revID, richTextBox1.Text);
+            }
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -20,6 +20,7 @@ namespace Ehgezly
         {
             InitializeComponent();
             controllerObj=new Controller();
+
             DataTable dt=null;
             PlayerID = ID;
             BookingType=Type;
@@ -36,6 +37,7 @@ namespace Ehgezly
             bookingsgridview.DataSource = dt;
             bookingsgridview.MultiSelect = false;
             bookingsgridview.ReadOnly = true;
+            bookingsgridview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             bookingsgridview.Refresh();
 
         }
@@ -54,6 +56,9 @@ namespace Ehgezly
             }
 
             DataGridViewRow SelectedRow = bookingsgridview.SelectedRows[0];
+
+            review Review = new review(SelectedRow.Cells[0].Value.ToString(), PlayerID);
+            Review.Show();
 
 
           

@@ -6,6 +6,10 @@ using System.Data;
 using System.Windows.Forms;
 using System.Reflection.Emit;
 using System.Data.SqlTypes;
+using System.Collections;
+using Ehgezly;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DBapplication
 {
@@ -164,13 +168,13 @@ namespace DBapplication
         }
         public DataTable SelectOldPlayerCourtBookings(string ID)
         {
-            string query = $"SELECT Booking_timing , Court_Location FROM Bookings,Courts WHERE Plyr_Id='{ID}' AND Court_ID=Crt_Id AND Booking_type='C'";
+            string query = $"SELECT  Booking_ID as Booking_ID ,Booking_timing , Court_Location FROM Bookings,Courts WHERE Plyr_Id='{ID}' AND Court_ID=Crt_Id AND Booking_type='C'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable SelectOldPlayertrainingSession(string ID)
         {
-            string query = $"SELECT Booking_timing as Timing, Court_Location as Location , Fname TrainerFirstName,Lname as  TrainerLastName FROM Bookings as B ,Courts as C ,Trainer as T,Account as A, Training_Session as TT WHERE Plyr_Id='{ID}' AND C.Court_ID=B.Crt_Id AND B.Booking_type='T' AND TT.Trnr_ID=T.Trainer_ID AND T.Trainer_ID=A.Acc_ID";
+            string query = $"SELECT  Booking_ID as Booking_ID, Booking_timing as Timing, Court_Location as Location , Fname TrainerFirstName,Lname as  TrainerLastName FROM Bookings as B ,Courts as C ,Trainer as T,Account as A, Training_Session as TT WHERE Plyr_Id='{ID}' AND C.Court_ID=B.Crt_Id AND B.Booking_type='T' AND TT.Trnr_ID=T.Trainer_ID AND T.Trainer_ID=A.Acc_ID";
             return dbMan.ExecuteReader(query);
         
         } 
@@ -224,6 +228,89 @@ namespace DBapplication
             return Convert.ToInt32(dbMan.ExecuteNonQuery(query2));
 
         }
+        public string AddRating(int rate, string BookID,string ReviewerID)
+        {
+            string Q = "SELECT MAX(Review_ID) from Reviews";
+            string maxIDexists=Convert.ToString(dbMan.ExecuteScalar(Q));
+                string maxno = null;
+            string ID=null;
+
+
+            if (maxIDexists.Contains('T') || maxIDexists.Contains('C')) { maxno = Convert.ToString(maxIDexists.Substring(1)); }
+            else if (maxIDexists.Contains('M')) { maxno = Convert.ToString(maxIDexists.Substring(2)); }
+            if (BookID.Contains('T'))
+            {
+
+                ID = "T" + Convert.ToString(Convert.ToInt16(maxno) + 1);
+
+
+            }
+            else if (BookID.Contains('C'))
+            {
+
+                ID = "C" + Convert.ToString(Convert.ToInt16(maxno) + 1);
+            }
+            else if (BookID.Contains('M'))
+            {
+
+                ID = "MN" + Convert.ToString(Convert.ToInt16(maxno) + 1);
+            }
+            string query = $"INSERT INTO Reviews VALUES('{ID}','{date}','{ReviewerID}',{rate},null)  ";
+          int  test = dbMan.ExecuteNonQuery(query);
+            if (test == 0)
+            {
+                MessageBox.Show("falied to add the review");
+            }
+            else
+            {
+                MessageBox.Show("Review Added");
+            }
+            return ID;
+
+
+        }
+        public int AddCourtReview(string RevID, string Crt_ID)
+        {
+
+             String  query = $"INSERT INTO Court_Reviews VALUES Rev_ID={RevID},Crt_ID='{Crt_ID}'";
+             return dbMan.ExecuteNonQuery(query);
+
+        }
+        public int AddTrainerReview(string RevID, string trainer_id)
+        {
+
+            String query = $"INSERT INTO Trainer_Reviews VALUES Rev_ID={RevID},Trnr_ID='{trainer_id}'";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
+        public int AddCommentToReview(string RevID,string comment)
+
+        {
+          
+            String query = $"Update  Reviews SET Comment='{comment}' WHERE Review_ID='{RevID}'"; 
+                
+                
+              return  dbMan.ExecuteNonQuery(query);
+         
+           
+
+        }
+        public string GetCourtIDfromBooking(string Bookid) {
+
+            string query = $"SELECT Crt_Id FROM Bookings WHERE Booking_ID='{Bookid}' ";
+            return Convert.ToString(dbMan.ExecuteScalar(query));
+
+        }
+        public string GetTrainerIDfromTrainingSession(string Bookid)
+        {
+
+            string query = $"SELECT Trnr_ID FROM Training_session WHERE Sess_ID='{Bookid}' ";
+            return Convert.ToString(dbMan.ExecuteScalar(query));
+
+        }
+
+
+
     }
-}
+    }
 
