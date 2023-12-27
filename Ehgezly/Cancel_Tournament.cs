@@ -8,34 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
-    public partial class Show_Tournament : Form
+    public partial class Cancel_Tournament : Form
     {
         Controller controllerObj;
         string email;
         string password;
-        public Show_Tournament(string mail,string pass)
+        public Cancel_Tournament(string mail, string pass)
         {
-            email = mail;
-            password = pass;
             InitializeComponent();
             controllerObj = new Controller();
-        }
-
-        private void Show_Tournament_Load(object sender, EventArgs e)
-        {
-            DataTable dt = controllerObj.ViewUpcomingTournaments();
+            DataTable dt = controllerObj.ViewUpcomingTournaments(mail,pass);
             dataGridView1.DataSource = dt;
             dataGridView1.ReadOnly = true;
             dataGridView1.Refresh();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            email = mail;
+            password = pass;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,14 +40,18 @@ namespace Ehgezly
                 {
                     string stringValue = selectedValue.ToString();
 
-                    if (controllerObj.AddPlayertoTournmaent(stringValue,email,password) == 1)
+                    if (controllerObj.Cancel_Tournament_Particpation(stringValue, email, password) == 1)
                     {
-                    
-                        MessageBox.Show("Tournament Joined");
+
+                        MessageBox.Show("Tournament Particpation Cancelled");
+                        DataTable dt = controllerObj.ViewUpcomingTournaments(email, password);
+                        dataGridView1.DataSource = dt;
+                        dataGridView1.ReadOnly = true;
+                        dataGridView1.Refresh();
                     }
                     else
                     {
-                        MessageBox.Show("Tournament already joined");
+                        MessageBox.Show("Tournament not withdrawn");
                     }
                 }
             }
@@ -66,6 +60,10 @@ namespace Ehgezly
                 MessageBox.Show("please select a row");
             }
         }
+
+        private void Cancel_Tournament_Load(object sender, EventArgs e)
+        {
+
+        } 
     }
 }
-

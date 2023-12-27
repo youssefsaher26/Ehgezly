@@ -222,12 +222,17 @@ namespace DBapplication
         }
         public int DeleteBookings(string booking_id)
         {
+            string query3 = "DELETE FROM Complaints WHERE Book_ID='" + booking_id + "' ;";
+            dbMan.ExecuteNonQuery(query3);
+
             if (booking_id.Contains("TS"))
             {
                 string query1 = "DELETE FROM Training_Session WHERE Sess_ID='" + booking_id + "' ;";
                 dbMan.ExecuteNonQuery(query1);
             }
-                string query2 = "DELETE FROM Bookings WHERE Booking_ID='"+booking_id+"' ;";
+           
+
+            string query2 = "DELETE FROM Bookings WHERE Booking_ID='"+booking_id+"' ;";
             
             return dbMan.ExecuteNonQuery(query2);
         }
@@ -349,22 +354,57 @@ namespace DBapplication
 
         public DataTable ViewUpcomingTournaments()
         {
-            string query = "SELECT Tournamnet_name,Court_Location,Timing FROM Tournament,Courts where Timing >'"+date+"' and Crt_ID= Court_ID;";
+            string query = "SELECT Tournamnet_ID,Tournamnet_name,Court_Location,Timing FROM Tournament,Courts where Timing >'" + date+"' and Crt_ID= Court_ID;";
             return dbMan.ExecuteReader(query);
         }
 
-        public int AddPlayertoTournmaent(string name, string C,  string date )
+        public int AddPlayertoTournmaent(string tournament_id,string email,string pass )
         {
-            string query1 = "SELECT Court_ID FROM Courts WHERE ;";
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
             string m = dbMan.ExecuteScalar(query1).ToString();
 
-            string query2 = "SELECT Count(*) FROM Tournament;";
-            int z = Convert.ToInt32(dbMan.ExecuteScalar(query2)) + 1;
-            string y = z.ToString();
+            string query2 = "INSERT Players_Joined Values ('" + tournament_id + "','" + m + "');";
 
-            string query = "INSERT INTO Tournament " +
-                            "Values ('TOUR" + y + "','" + name  + "','" + m + "','" + date + "');";
-            return dbMan.ExecuteNonQuery(query);
+            return dbMan.ExecuteNonQuery(query2);
+
+        }
+        public DataTable ViewUpcomingTournaments(string email,string pass)
+        {
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+            if (m.Contains("P"))
+            {
+                string query = "SELECT DISTINCT Trnmnt_ID, Tournamnet_name,Timing,Court_Name FROM Tournament, Players_Joined as p,Courts where p.Plyr_ID = '" + m + "' and Trnmnt_ID = Tournamnet_ID and Crt_ID = Court_ID and Timing >'" + date + "';";
+                return dbMan.ExecuteReader(query);
+            }
+            else
+            {
+                string query = "SELECT DISTINCT Trnmnt_ID, Tournamnet_name,Timing,Court_Name FROM Tournament, Trainers_Joined as t,Courts where t.Trnr_ID = '" + m + "' and Trnmnt_ID = Tournamnet_ID and Crt_ID = Court_ID and Timing >'" + date + "';";
+                return dbMan.ExecuteReader(query);
+            }
+                
+        }
+        public int Cancel_Tournament_Particpation(string Tour_Id,string email,string pass)
+        {
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+            if (m.Contains("P"))
+            {
+                string query = "DELETE FROM Players_Joined WHERE Trnmnt_ID='" + Tour_Id + "'and Plyr_ID='" + m + "';";
+                return dbMan.ExecuteNonQuery(query);
+            }
+            else
+            {
+                string query = "DELETE FROM Trainers_Joined WHERE Trnmnt_ID='" + Tour_Id + "'and Trnr_ID='" + m + "';";
+                return dbMan.ExecuteNonQuery(query);
+            }
+        }
+        public DataTable View_sessions_for_trainer (string email,string pass)
+        {
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+            string query2= "Select Sess_ID,Fname,Lname,Booking_timing,Court_Name FROM Training_Session,Account,Bookings,Courts WHERE Booking_ID=Sess_ID and Plyr_Id=Acc_ID and Court_ID=Crt_Id and Trnr_ID='" + m+ "Timing >'" + date + "'';";
+            return dbMan.ExecuteReader(query2);
 
         }
 

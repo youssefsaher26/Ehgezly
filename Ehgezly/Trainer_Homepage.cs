@@ -50,5 +50,23 @@ namespace Ehgezly
                 old_Bookings.Show();
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cancel_Sessions R = new Cancel_Sessions(password, email);
+            R.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tournaments_Trainer R = new Tournaments_Trainer(password, email);
+            R.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Tournaments_Trainer_Upcoming R = new Tournaments_Trainer_Upcoming(password, email);
+            R.Show();
+        }
     }
 }
