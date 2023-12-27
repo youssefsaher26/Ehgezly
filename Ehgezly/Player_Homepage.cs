@@ -28,25 +28,25 @@ namespace Ehgezly
         {
             InitializeComponent();
             controllerObj = new Controller();
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.SelectedIndex = 0;
+            Sport_Type_Combobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            Sport_Type_Combobox.SelectedIndex = 0;
 
-            DataTable dt = controllerObj.SelectCourt(comboBox2.SelectedIndex);
-            comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "Court_Location";
-            comboBox1.ValueMember = "Court_Location";
+            DataTable dt = controllerObj.SelectCourt(Sport_Type_Combobox.SelectedIndex);
+            Court_Loc_comboBox1.DataSource = dt;
+            Court_Loc_comboBox1.DisplayMember = "Court_Location";
+            Court_Loc_comboBox1.ValueMember = "Court_Location";
 
             controllerObj2 = new Controller();
-            DataTable dt1 = controllerObj2.SelectCourtname(comboBox1.SelectedValue.ToString());
-            comboBox3.DataSource = dt1;
-            comboBox3.DisplayMember = "Court_Name";
-            comboBox3.ValueMember = "Court_ID";
+            DataTable dt1 = controllerObj2.SelectCourtname(Court_Loc_comboBox1.SelectedValue.ToString());
+            Court_Name_comboBox3.DataSource = dt1;
+            Court_Name_comboBox3.DisplayMember = "Court_Name";
+            Court_Name_comboBox3.ValueMember = "Court_ID";
 
             controllerObj3 = new Controller();
             DataTable dt2 = controllerObj3.Selectavailabletrainers();
-            comboBox4.DataSource = dt2;
-            comboBox4.DisplayMember = "Fname";
-            comboBox4.ValueMember = "Trainer_ID";
+            Available_comboBox4.DataSource = dt2;
+            Available_comboBox4.DisplayMember = "Fname";
+            Available_comboBox4.ValueMember = "Trainer_ID";
 
             email = mail;
             pass = p;
@@ -64,13 +64,13 @@ namespace Ehgezly
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox2.SelectedIndex == 0)
+            if(Sport_Type_Combobox.SelectedIndex == 0)
             {
-                comboBox1.DataSource=controllerObj.SelectCourt(0);
+                Court_Loc_comboBox1.DataSource=controllerObj.SelectCourt(0);
             }
-            if (comboBox2.SelectedIndex == 1)
+            if (Sport_Type_Combobox.SelectedIndex == 1)
             {
-                comboBox1.DataSource = controllerObj.SelectCourt(1);
+                Court_Loc_comboBox1.DataSource = controllerObj.SelectCourt(1);
             }
 
         }
@@ -83,12 +83,12 @@ namespace Ehgezly
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(controllerObj2!=null)
-            comboBox3.DataSource = controllerObj2.SelectCourtname(comboBox1.SelectedValue.ToString());
+            Court_Name_comboBox3.DataSource = controllerObj2.SelectCourtname(Court_Loc_comboBox1.SelectedValue.ToString());
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            int r = controllerObj.BookCourt(email, pass , comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"));
+            int r = controllerObj.BookCourt(email, pass , Court_Name_comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"));
             if (r == 1)
             {
                 MessageBox.Show("Court is Booked Successfully");
@@ -106,7 +106,7 @@ namespace Ehgezly
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.BookTrainingsession(email,pass,comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), comboBox4.SelectedValue.ToString());
+            int r = controllerObj.BookTrainingsession(email,pass,Court_Name_comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Available_comboBox4.SelectedValue.ToString());
             if (r == 1)
             {
                 MessageBox.Show("Training session is Booked Successfully");

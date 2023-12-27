@@ -27,9 +27,9 @@ namespace Ehgezly
             managerId = controllerObj.GetID(email);
 
             DataTable dt = controllerObj.SelectCourts();
-            comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "Court_Name";
-            comboBox1.ValueMember = "Court_ID";
+            Court_name_comboBox1.DataSource = dt;
+            Court_name_comboBox1.DisplayMember = "Court_Name";
+            Court_name_comboBox1.ValueMember = "Court_ID";
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
@@ -63,7 +63,7 @@ namespace Ehgezly
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.AddAvailableCourtTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"), dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), comboBox1.SelectedValue.ToString());
+            int r = controllerObj.AddAvailableCourtTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"), dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), Court_name_comboBox1.SelectedValue.ToString());
 
             if (r == 1)
             {
