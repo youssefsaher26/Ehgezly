@@ -14,7 +14,7 @@ namespace Ehgezly
     public partial class Old_Bookings : Form
     {
         Controller controllerObj;
-        String PlayerID;
+        String ReviewerID;
         String BookingType;
         public Old_Bookings(string ID,string Type)
         {
@@ -22,17 +22,27 @@ namespace Ehgezly
             controllerObj=new Controller();
 
             DataTable dt=null;
-            PlayerID = ID;
+            ReviewerID = ID;
             BookingType=Type;
             if (BookingType=="Court")
             {
-                 dt = controllerObj.SelectOldPlayerCourtBookings(PlayerID);
+                 dt = controllerObj.SelectOldPlayerCourtBookings(ReviewerID);
               
             }
             else if(BookingType == "Training")
             {
-                 dt = controllerObj.SelectOldPlayertrainingSession(PlayerID);
+                 dt = controllerObj.SelectOldPlayertrainingSession(ReviewerID);
                
+            }
+            else if (BookingType == "maintenance")
+            {
+                dt = controllerObj.SelectOldmaintenanceBookings(ReviewerID);
+
+            }
+            else if (BookingType == "Trainer")
+            {
+                dt = controllerObj.SelectOldTrainertrainingSession(ReviewerID);
+
             }
             bookingsgridview.DataSource = dt;
             bookingsgridview.MultiSelect = false;
@@ -57,7 +67,7 @@ namespace Ehgezly
 
             DataGridViewRow SelectedRow = bookingsgridview.SelectedRows[0];
 
-            review Review = new review(SelectedRow.Cells[0].Value.ToString(), PlayerID);
+            review Review = new review(SelectedRow.Cells[0].Value.ToString(), ReviewerID);
             Review.Show();
 
 

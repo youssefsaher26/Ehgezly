@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Ehgezly
 {
     public partial class Trainer_Homepage : Form
     {
+        Controller controllerObj;
         string password;
         string email;
         public Trainer_Homepage(string p, string mail)
@@ -20,6 +22,7 @@ namespace Ehgezly
             InitializeComponent();
              password=p;
              email=mail;
+            controllerObj = new Controller();
         }
 
         private void Trainer_Homepage_Load(object sender, EventArgs e)
@@ -38,6 +41,14 @@ namespace Ehgezly
         {
             Trainer_Myaccount1 R = new Trainer_Myaccount1(password, email);
             R.Show();
+        }
+
+        private void oldtrainingsessions_Click(object sender, EventArgs e)
+        {
+            
+                Old_Bookings old_Bookings = new Old_Bookings(controllerObj.GetID(email), "Trainer");
+                old_Bookings.Show();
+            
         }
     }
 }

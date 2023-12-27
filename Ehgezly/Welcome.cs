@@ -59,7 +59,7 @@ namespace Ehgezly
                 }
                 else if (controllerObj3.CheckAccountManager(email, pass) != null)
                 {
-                    Manager_Homepage M = new Manager_Homepage();
+                    Manager_Homepage M = new Manager_Homepage(email);
                     M.Show();
                 }
                 else if (controllerObj4.CheckAccountPlayer(email, pass) != null) 

@@ -54,18 +54,30 @@ namespace Ehgezly
 
             string revID =controllerObj.AddRating( rating, BookingID,ReviewerID);
 
-            if (BookingID.Contains("TR"))
+            if (BookingID.Contains("C"))
             {
                 controllerObj.AddCourtReview(revID, controllerObj.GetCourtIDfromBooking(BookingID));
             }
-            else if (BookingID.Contains("C"))
+            else if (BookingID.Contains("T"))
             {
-                controllerObj.AddTrainerReview(revID, controllerObj.GetTrainerIDfromTrainingSession(BookingID));
+
+                if (ReviewerID.Contains("P"))
+                {
+                    controllerObj.AddTrainerReview(revID, controllerObj.GetTrainerIDfromTrainingSession(BookingID));
+                }
+                else
+                {
+                    controllerObj.AddCourtReview(revID, controllerObj.GetCourtIDfromBooking(BookingID));
+
+                }
+
+
             }
             else if (BookingID.Contains("M"))
             {
-                controllerObj.AddTrainerReview(revID, controllerObj.GetTrainerIDfromTrainingSession(BookingID));
+                controllerObj.AddMaintenanceReview(revID, controllerObj.GetTrainerIDfromTrainingSession(BookingID));
             }
+
 
             if (richTextBox1.Text.Length!=0)
             {
