@@ -167,3 +167,13 @@ namespace Ehgezly
       
     }
 }
+
+        }
+
+        private void Cancelling_tournament_Participation_Click(object sender, EventArgs e)
+        {
+            Cancel_Tournament R = new Cancel_Tournament(email, pass);
+            R.Show();
+        }
+    }
+}
