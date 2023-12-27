@@ -144,17 +144,27 @@ namespace DBapplication
             string query = "SELECT Cmplnt_Id as ID,Complaint_Date as Date FROM Trainer_Complaints, Complaints WHERE Cmplnt_Id=Complaint_ID AND Review_status='N';";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable SelectCourtComplaints()
+        {
+            string query = "SELECT Cmplnt_Id as ID,Complaint_Date as Date FROM Court_Complaints , Complaints WHERE Cmplnt_Id=Complaint_ID AND Review_status='N';";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectSpecTrainerComplaints(string ID)
         {
             string query = $"SELECT Complaint_Date as ComplaintDate ,Book_ID as BookingID , Complaint_Details AS Details FROM Complaints WHERE Complaint_ID='{ID}';";
             return dbMan.ExecuteReader(query);
         }
-        public int MarkTrainerComplaintReviewed(string ID)
+        public DataTable SelectSpecCourtComplaints(string ID)
         {
-            string query = $"UPDATE Complaints SET Review_Status='A' WHERE Complaint_ID='{ID}'";
+            string query = $"SELECT Complaint_Date as ComplaintDate ,Book_ID as BookingID , Complaint_Details AS Details FROM Complaints WHERE Complaint_ID='{ID}';";
+            return dbMan.ExecuteReader(query);
+        }
+        public int MarkComplaintReviewed(string ID)
+        {
+            string query = $"UPDATE Complaints SET Review_Status='R' WHERE Complaint_ID='{ID}'";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int AddAdminDetailsToComplaint(string comment, string ID)
+        public int AddReviewerDetailsToComplaint(string comment, string ID)
         {
             string query1 = $"UPDATE Complaints SET Admin_Comment='{comment}' WHERE Complaint_ID='{ID}'";
             return dbMan.ExecuteNonQuery(query1);
