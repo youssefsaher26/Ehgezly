@@ -79,5 +79,34 @@ namespace Ehgezly
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Show_Complaints trainerComplaints = new Show_Complaints(managerId);
+            trainerComplaints.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Request_Maintenance request_Maintenance= new Request_Maintenance(managerId);
+            request_Maintenance.Show();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length==0)
+            {
+                MessageBox.Show("Please Add tournament Name");
+                return;
+            }
+            controllerObj.AddNewTournament(managerId, textBox1.Text, dateTimePicker1.Value);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            View_Tournaments_Manager view_Tournaments_Manager = new View_Tournaments_Manager(managerId);
+            view_Tournaments_Manager.Show();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Ehgezly
 {
-    partial class Trainer_Complaints
+    partial class Show_Complaints
     {
         /// <summary>
         /// Required designer variable.

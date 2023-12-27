@@ -95,5 +95,11 @@ namespace Ehgezly
             Tournaments_Trainer_Upcoming R = new Tournaments_Trainer_Upcoming(password, email);
             R.Show();
         }
+
+        private void Ccomplaint_Click(object sender, EventArgs e)
+        {
+            Complaints complaint = new Complaints(controllerObj.GetID(email), "FromTrainer");
+            complaint.Show();
+        }
     }
 }

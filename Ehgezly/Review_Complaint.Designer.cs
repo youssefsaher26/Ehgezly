@@ -1,6 +1,6 @@
 ﻿namespace Ehgezly
 {
-    partial class T_Complaint
+    partial class Review_Complaint
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TrainerComplaintgridView = new System.Windows.Forms.DataGridView();
             this.MarkRev = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -38,8 +38,8 @@
             // 
             // TrainerComplaintgridView
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.TrainerComplaintgridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.TrainerComplaintgridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.TrainerComplaintgridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TrainerComplaintgridView.Location = new System.Drawing.Point(1, 0);
             this.TrainerComplaintgridView.Name = "TrainerComplaintgridView";

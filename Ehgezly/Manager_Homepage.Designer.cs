@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
+            this.oldmnrequests = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.oldmnrequests = new System.Windows.Forms.Button();
             this.CourtName = new System.Windows.Forms.Label();
@@ -52,6 +62,98 @@
             this.label6.Text = "My Account";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // oldmnrequests
+            // 
+            this.oldmnrequests.Location = new System.Drawing.Point(31, 34);
+            this.oldmnrequests.Name = "oldmnrequests";
+            this.oldmnrequests.Size = new System.Drawing.Size(233, 29);
+            this.oldmnrequests.TabIndex = 0;
+            this.oldmnrequests.Text = "Your maintenance requests";
+            this.oldmnrequests.UseVisualStyleBackColor = true;
+            this.oldmnrequests.Click += new System.EventHandler(this.oldmnrequests_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(31, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(233, 29);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Court Complaints";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(31, 160);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(233, 29);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Request Maintenance";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(467, 211);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(289, 22);
+            this.textBox1.TabIndex = 23;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(467, 164);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(289, 22);
+            this.dateTimePicker1.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(331, 169);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 16);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Tournament Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(331, 217);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 16);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Tournament name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(329, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(223, 25);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Create new Tournament";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(432, 270);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(196, 31);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Create new Tournament";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(31, 231);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(233, 29);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "View Tournaments";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Ehgezly.Properties.Resources.my_account;
@@ -73,70 +175,6 @@
             this.oldmnrequests.Text = "Old maintenance requests";
             this.oldmnrequests.UseVisualStyleBackColor = true;
             this.oldmnrequests.Click += new System.EventHandler(this.oldmnrequests_Click);
-            // 
-            // CourtName
-            // 
-            this.CourtName.AutoSize = true;
-            this.CourtName.Location = new System.Drawing.Point(38, 223);
-            this.CourtName.Name = "CourtName";
-            this.CourtName.Size = new System.Drawing.Size(78, 16);
-            this.CourtName.TabIndex = 22;
-            this.CourtName.Text = "Court Name";
-            // 
-            // Courtname_comboBox1
-            // 
-            this.Courtname_comboBox1.FormattingEnabled = true;
-            this.Courtname_comboBox1.Location = new System.Drawing.Point(169, 215);
-            this.Courtname_comboBox1.Name = "Courtname_comboBox1";
-            this.Courtname_comboBox1.Size = new System.Drawing.Size(274, 24);
-            this.Courtname_comboBox1.TabIndex = 21;
-            this.Courtname_comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // Start_Date_Time
-            // 
-            this.Start_Date_Time.AutoSize = true;
-            this.Start_Date_Time.Location = new System.Drawing.Point(33, 273);
-            this.Start_Date_Time.Name = "Start_Date_Time";
-            this.Start_Date_Time.Size = new System.Drawing.Size(126, 16);
-            this.Start_Date_Time.TabIndex = 20;
-            this.Start_Date_Time.Text = "Start Date and Time";
-            // 
-            // End_Date_Time
-            // 
-            this.End_Date_Time.AutoSize = true;
-            this.End_Date_Time.Location = new System.Drawing.Point(35, 317);
-            this.End_Date_Time.Name = "End_Date_Time";
-            this.End_Date_Time.Size = new System.Drawing.Size(123, 16);
-            this.End_Date_Time.TabIndex = 19;
-            this.End_Date_Time.Text = "End Date and Time";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(169, 315);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(274, 22);
-            this.dateTimePicker2.TabIndex = 18;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dateTimePicker1.Location = new System.Drawing.Point(169, 273);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(274, 22);
-            this.dateTimePicker1.TabIndex = 17;
-            // 
-            // Add_Avilable_Timeslots
-            // 
-            this.Add_Avilable_Timeslots.Location = new System.Drawing.Point(170, 354);
-            this.Add_Avilable_Timeslots.Name = "Add_Avilable_Timeslots";
-            this.Add_Avilable_Timeslots.Size = new System.Drawing.Size(273, 31);
-            this.Add_Avilable_Timeslots.TabIndex = 16;
-            this.Add_Avilable_Timeslots.Text = "Add Avilable Timeslots";
-            this.Add_Avilable_Timeslots.UseVisualStyleBackColor = true;
-            this.Add_Avilable_Timeslots.Click += new System.EventHandler(this.AddCourt_Click);
             // 
             // Manager_Homepage
             // 
