@@ -12,18 +12,18 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Ehgezly
 {
-    public partial class Trainer_Complaints : Form
+    public partial class Show_Complaints : Form
     {
         Controller controllerObj;
-        String AdminID;
-        public Trainer_Complaints(String ID)
+        String ReviewerID;
+        public Show_Complaints(String ID)
         {
             InitializeComponent();
             controllerObj = new Controller();
             TrainerComplaintgridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             TrainerComplaintgridView.MultiSelect = false;
             TrainerComplaintgridView.ReadOnly = true;
-            AdminID= ID;
+            ReviewerID = ID;
             
         }
 
@@ -34,7 +34,13 @@ namespace Ehgezly
 
         private void Trainer_Complaints_Load(object sender, EventArgs e)
         {
-            DataTable dt = controllerObj.SelectTrainerComplaints();
+            DataTable dt = null;
+            if (ReviewerID.StartsWith("M"))
+            {
+                dt = controllerObj.SelectCourtComplaints();
+            }
+            else if (ReviewerID.StartsWith("A"))
+            { dt = controllerObj.SelectTrainerComplaints(); }
             TrainerComplaintgridView.DataSource = dt;
             TrainerComplaintgridView.Refresh();
         }
@@ -51,7 +57,7 @@ namespace Ehgezly
             DataGridViewRow SelectedRow = TrainerComplaintgridView.SelectedRows[0];
 
 
-            T_Complaint complaint = new T_Complaint(SelectedRow.Cells[0].Value.ToString(),AdminID);
+            Review_Complaint complaint = new Review_Complaint(SelectedRow.Cells[0].Value.ToString(),ReviewerID);
             complaint.Show();
 
 

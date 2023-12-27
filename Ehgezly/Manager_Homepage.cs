@@ -48,5 +48,11 @@ namespace Ehgezly
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Show_Complaints trainerComplaints = new Show_Complaints(managerId);
+            trainerComplaints.Show();
+        }
     }
 }
