@@ -52,6 +52,12 @@
     <Compile Include="Admin_Homepage.Designer.cs">
       <DependentUpon>Admin_Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_MyAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_MyAcc.Designer.cs">
+      <DependentUpon>Admin_MyAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBmanagercs.cs" />
     <Compile Include="Manager_Homepage.cs">
@@ -59,6 +65,12 @@
     </Compile>
     <Compile Include="Manager_Homepage.Designer.cs">
       <DependentUpon>Manager_Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_MyAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_MyAcc.Designer.cs">
+      <DependentUpon>Manager_MyAcc.cs</DependentUpon>
     </Compile>
     <Compile Include="Old_Bookings.cs">
       <SubType>Form</SubType>
@@ -90,6 +102,12 @@
     <Compile Include="review.Designer.cs">
       <DependentUpon>review.cs</DependentUpon>
     </Compile>
+    <Compile Include="Show_Tournament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_Tournament.Designer.cs">
+      <DependentUpon>Show_Tournament.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trainer_Complaints.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,7 +126,6 @@
     <Compile Include="T_Complaint.Designer.cs">
       <DependentUpon>T_Complaint.cs</DependentUpon>
     </Compile>
-    <Compile Include="Trainer_MyAcc.cs" />
     <Compile Include="Trainer_Myaccount1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,8 +143,14 @@
     <EmbeddedResource Include="Admin_Homepage.resx">
       <DependentUpon>Admin_Homepage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin_MyAcc.resx">
+      <DependentUpon>Admin_MyAcc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager_Homepage.resx">
       <DependentUpon>Manager_Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_MyAcc.resx">
+      <DependentUpon>Manager_MyAcc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Old_Bookings.resx">
       <DependentUpon>Old_Bookings.cs</DependentUpon>
@@ -143,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="review.resx">
       <DependentUpon>review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Show_Tournament.resx">
+      <DependentUpon>Show_Tournament.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trainer_Complaints.resx">
       <DependentUpon>Trainer_Complaints.cs</DependentUpon>

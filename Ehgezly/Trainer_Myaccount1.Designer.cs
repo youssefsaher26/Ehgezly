@@ -47,9 +47,10 @@
             // 
             this.Fname.AutoSize = true;
             this.Fname.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fname.Location = new System.Drawing.Point(2, 32);
+            this.Fname.Location = new System.Drawing.Point(3, 39);
+            this.Fname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Fname.Name = "Fname";
-            this.Fname.Size = new System.Drawing.Size(147, 31);
+            this.Fname.Size = new System.Drawing.Size(183, 39);
             this.Fname.TabIndex = 0;
             this.Fname.Text = "First Name";
             this.Fname.Click += new System.EventHandler(this.label1_Click);
@@ -58,58 +59,69 @@
             // 
             this.Phone_num.AutoSize = true;
             this.Phone_num.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phone_num.Location = new System.Drawing.Point(-2, 194);
+            this.Phone_num.Location = new System.Drawing.Point(-3, 239);
+            this.Phone_num.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Phone_num.Name = "Phone_num";
-            this.Phone_num.Size = new System.Drawing.Size(259, 31);
+            this.Phone_num.Size = new System.Drawing.Size(326, 39);
             this.Phone_num.TabIndex = 1;
             this.Phone_num.Text = "Your Phone Number";
+            this.Phone_num.Click += new System.EventHandler(this.Phone_num_Click);
             // 
             // Email
             // 
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(1, 141);
+            this.Email.Location = new System.Drawing.Point(1, 174);
+            this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(145, 31);
+            this.Email.Size = new System.Drawing.Size(183, 39);
             this.Email.TabIndex = 2;
             this.Email.Text = "Your Email";
+            this.Email.Click += new System.EventHandler(this.Email_Click);
             // 
             // Password
             // 
             this.Password.AutoSize = true;
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password.Location = new System.Drawing.Point(3, 250);
+            this.Password.Location = new System.Drawing.Point(4, 308);
+            this.Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(198, 31);
+            this.Password.Size = new System.Drawing.Size(247, 39);
             this.Password.TabIndex = 3;
             this.Password.Text = "Your Password";
+            this.Password.Click += new System.EventHandler(this.Password_Click);
             // 
             // Lname
             // 
             this.Lname.AutoSize = true;
             this.Lname.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lname.Location = new System.Drawing.Point(1, 86);
+            this.Lname.Location = new System.Drawing.Point(1, 106);
+            this.Lname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lname.Name = "Lname";
-            this.Lname.Size = new System.Drawing.Size(145, 31);
+            this.Lname.Size = new System.Drawing.Size(181, 39);
             this.Lname.TabIndex = 4;
             this.Lname.Text = "Last Name";
+            this.Lname.Click += new System.EventHandler(this.Lname_Click);
             // 
             // Phonenum
             // 
             this.Phonenum.AutoSize = true;
             this.Phonenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phonenum.Location = new System.Drawing.Point(290, 259);
+            this.Phonenum.Location = new System.Drawing.Point(387, 319);
+            this.Phonenum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Phonenum.Name = "Phonenum";
-            this.Phonenum.Size = new System.Drawing.Size(0, 31);
+            this.Phonenum.Size = new System.Drawing.Size(0, 39);
             this.Phonenum.TabIndex = 9;
+            this.Phonenum.Click += new System.EventHandler(this.Phonenum_Click);
             // 
             // Fnamebox
             // 
             this.Fnamebox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Fnamebox.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fnamebox.Location = new System.Drawing.Point(155, 35);
+            this.Fnamebox.Location = new System.Drawing.Point(207, 43);
+            this.Fnamebox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Fnamebox.Name = "Fnamebox";
-            this.Fnamebox.Size = new System.Drawing.Size(157, 34);
+            this.Fnamebox.Size = new System.Drawing.Size(208, 41);
             this.Fnamebox.TabIndex = 12;
             this.Fnamebox.TextChanged += new System.EventHandler(this.Fnamebox_TextChanged);
             // 
@@ -117,9 +129,10 @@
             // 
             this.Lnamebox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Lnamebox.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lnamebox.Location = new System.Drawing.Point(156, 97);
+            this.Lnamebox.Location = new System.Drawing.Point(208, 119);
+            this.Lnamebox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Lnamebox.Name = "Lnamebox";
-            this.Lnamebox.Size = new System.Drawing.Size(157, 34);
+            this.Lnamebox.Size = new System.Drawing.Size(208, 41);
             this.Lnamebox.TabIndex = 13;
             this.Lnamebox.TextChanged += new System.EventHandler(this.Lnamebox_TextChanged);
             // 
@@ -127,34 +140,41 @@
             // 
             this.Emailbox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Emailbox.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Emailbox.Location = new System.Drawing.Point(156, 149);
+            this.Emailbox.Location = new System.Drawing.Point(208, 183);
+            this.Emailbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Emailbox.Name = "Emailbox";
-            this.Emailbox.Size = new System.Drawing.Size(157, 34);
+            this.Emailbox.Size = new System.Drawing.Size(208, 41);
             this.Emailbox.TabIndex = 14;
+            this.Emailbox.TextChanged += new System.EventHandler(this.Emailbox_TextChanged);
             // 
             // Phonenumbbox
             // 
             this.Phonenumbbox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Phonenumbbox.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phonenumbbox.Location = new System.Drawing.Point(263, 202);
+            this.Phonenumbbox.Location = new System.Drawing.Point(351, 249);
+            this.Phonenumbbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Phonenumbbox.Name = "Phonenumbbox";
-            this.Phonenumbbox.Size = new System.Drawing.Size(153, 34);
+            this.Phonenumbbox.Size = new System.Drawing.Size(203, 41);
             this.Phonenumbbox.TabIndex = 15;
+            this.Phonenumbbox.TextChanged += new System.EventHandler(this.Phonenumbbox_TextChanged);
             // 
             // Passwordbox
             // 
             this.Passwordbox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Passwordbox.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Passwordbox.Location = new System.Drawing.Point(261, 259);
+            this.Passwordbox.Location = new System.Drawing.Point(348, 319);
+            this.Passwordbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Passwordbox.Name = "Passwordbox";
-            this.Passwordbox.Size = new System.Drawing.Size(153, 34);
+            this.Passwordbox.Size = new System.Drawing.Size(203, 41);
             this.Passwordbox.TabIndex = 16;
+            this.Passwordbox.TextChanged += new System.EventHandler(this.Passwordbox_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(604, 330);
+            this.button1.Location = new System.Drawing.Point(805, 406);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 40);
+            this.button1.Size = new System.Drawing.Size(245, 49);
             this.button1.TabIndex = 17;
             this.button1.Text = "Edit Your Account info";
             this.button1.UseVisualStyleBackColor = true;
@@ -162,9 +182,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(11, 321);
+            this.button2.Location = new System.Drawing.Point(15, 395);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 50);
+            this.button2.Size = new System.Drawing.Size(211, 62);
             this.button2.TabIndex = 18;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
@@ -172,9 +193,9 @@
             // 
             // Trainer_Myaccount1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Passwordbox);
@@ -188,6 +209,7 @@
             this.Controls.Add(this.Email);
             this.Controls.Add(this.Phone_num);
             this.Controls.Add(this.Fname);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Trainer_Myaccount1";
             this.Text = "Trainer_Myaccount1";
             this.Load += new System.EventHandler(this.Trainer_Myaccount1_Load);

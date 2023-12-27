@@ -93,6 +93,45 @@ namespace Ehgezly
            
 
         }
-        
+
+        private void Passwordbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Phonenumbbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Emailbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Phonenum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Password_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Email_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Phone_num_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

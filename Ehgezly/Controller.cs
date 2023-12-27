@@ -10,6 +10,9 @@ using System.Collections;
 using Ehgezly;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DBapplication
 {
@@ -272,14 +275,14 @@ namespace DBapplication
         public int AddCourtReview(string RevID, string Crt_ID)
         {
 
-             String  query = $"INSERT INTO Court_Reviews VALUES Rev_ID={RevID},Crt_ID='{Crt_ID}'";
+             string  query = $"INSERT INTO Court_Reviews VALUES Rev_ID={RevID},Crt_ID='{Crt_ID}'";
              return dbMan.ExecuteNonQuery(query);
 
         }
         public int AddTrainerReview(string RevID, string trainer_id)
         {
 
-            String query = $"INSERT INTO Trainer_Reviews VALUES Rev_ID={RevID},Trnr_ID='{trainer_id}'";
+            string query = $"INSERT INTO Trainer_Reviews VALUES Rev_ID={RevID},Trnr_ID='{trainer_id}'";
             return dbMan.ExecuteNonQuery(query);
 
         }
@@ -287,7 +290,7 @@ namespace DBapplication
 
         {
           
-            String query = $"Update  Reviews SET Comment='{comment}' WHERE Review_ID='{RevID}'"; 
+           string query = $"Update  Reviews SET Comment='{comment}' WHERE Review_ID='{RevID}'"; 
                 
                 
               return  dbMan.ExecuteNonQuery(query);
@@ -309,7 +312,26 @@ namespace DBapplication
 
         }
 
+        public DataTable ViewUpcomingTournaments()
+        {
+            string query = "SELECT Tournamnet_name,Court_Location,Timing FROM Tournament,Courts where Timing >'"+date+"' and Crt_ID= Court_ID;";
+            return dbMan.ExecuteReader(query);
+        }
 
+        public int AddPlayertoTournmaent(string name, string C,  string date )
+        {
+            string query1 = "SELECT Court_ID FROM Courts WHERE ;";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+
+            string query2 = "SELECT Count(*) FROM Tournament;";
+            int z = Convert.ToInt32(dbMan.ExecuteScalar(query2)) + 1;
+            string y = z.ToString();
+
+            string query = "INSERT INTO Tournament " +
+                            "Values ('TOUR" + y + "','" + name  + "','" + m + "','" + date + "');";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
 
     }
     }

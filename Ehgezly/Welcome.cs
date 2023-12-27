@@ -49,7 +49,7 @@ namespace Ehgezly
                 MessageBox.Show("Login successfull");
                 if (controllerObj.CheckAccountAdmin(email, pass) != null)
                 {
-                    Admin_Homepage a = new Admin_Homepage(controllerObj.GetID(email));
+                    Admin_Homepage a = new Admin_Homepage(pass, email,controllerObj.GetID(email));
                     a.Show();
                 }
                 else if (controllerObj2.CheckAccountTrainer(email, pass) != null)
@@ -59,7 +59,7 @@ namespace Ehgezly
                 }
                 else if (controllerObj3.CheckAccountManager(email, pass) != null)
                 {
-                    Manager_Homepage M = new Manager_Homepage();
+                    Manager_Homepage M = new Manager_Homepage(pass, email);
                     M.Show();
                 }
                 else if (controllerObj4.CheckAccountPlayer(email, pass) != null) 
