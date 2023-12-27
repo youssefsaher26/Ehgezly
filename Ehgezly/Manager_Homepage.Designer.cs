@@ -66,7 +66,7 @@
             // 
             // oldmnrequests
             // 
-            this.oldmnrequests.Location = new System.Drawing.Point(517, 356);
+            this.oldmnrequests.Location = new System.Drawing.Point(523, 356);
             this.oldmnrequests.Name = "oldmnrequests";
             this.oldmnrequests.Size = new System.Drawing.Size(233, 29);
             this.oldmnrequests.TabIndex = 0;
