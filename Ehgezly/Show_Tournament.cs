@@ -27,7 +27,7 @@ namespace Ehgezly
 
         private void Show_Tournament_Load(object sender, EventArgs e)
         {
-            DataTable dt = controllerObj.ViewUpcomingTournaments();
+            DataTable dt = controllerObj.ViewUpcomingTournaments2();
             dataGridView1.DataSource = dt;
             dataGridView1.ReadOnly = true;
             dataGridView1.Refresh();

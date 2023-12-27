@@ -100,7 +100,20 @@ namespace Ehgezly
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Tournaments_Trainer R = new Tournaments_Trainer(password, email);
+            R.Show();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Tournaments_Trainer_Upcoming r = new Tournaments_Trainer_Upcoming(password,email);
+            r.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Cancel_Sessions R= new Cancel_Sessions(password,email);
+            R.Show();
         }
     }
 }

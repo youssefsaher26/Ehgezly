@@ -347,7 +347,7 @@ namespace DBapplication
 
         //}
 
-        public DataTable ViewUpcomingTournaments()
+        public DataTable ViewUpcomingTournaments2()
         {
             string query = "SELECT Tournamnet_name,Court_Location,Timing FROM Tournament,Courts where Timing >'" + date + "' and Crt_ID= Court_ID;";
             return dbMan.ExecuteReader(query);
@@ -356,7 +356,6 @@ namespace DBapplication
         public DataTable SelectManagers()
         {
             string query = "SELECT * FROM Account where Acc_ID LIKE '%M%';";
-            string query = "SELECT Tournamnet_ID,Tournamnet_name,Court_Location,Timing FROM Tournament,Courts where Timing >'" + date+"' and Crt_ID= Court_ID;";
             return dbMan.ExecuteReader(query);
         }
 
