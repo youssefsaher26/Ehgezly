@@ -51,6 +51,12 @@ namespace Ehgezly
             
         }
 
+        private void Ccomplaint_Click(object sender, EventArgs e)
+        {
+            Complaints complaint = new Complaints(controllerObj.GetID(email), "FromTrainer");
+            complaint.Show();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Cancel_Sessions R = new Cancel_Sessions(password, email);

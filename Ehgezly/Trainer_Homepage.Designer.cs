@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.oldtrainingsessions = new System.Windows.Forms.Button();
+            this.Ccomplaint = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,6 +58,17 @@
             this.oldtrainingsessions.Text = "Old Training Sessions";
             this.oldtrainingsessions.UseVisualStyleBackColor = true;
             this.oldtrainingsessions.Click += new System.EventHandler(this.oldtrainingsessions_Click);
+            // 
+            // Ccomplaint
+            // 
+            this.Ccomplaint.Location = new System.Drawing.Point(547, 393);
+            this.Ccomplaint.Margin = new System.Windows.Forms.Padding(4);
+            this.Ccomplaint.Name = "Ccomplaint";
+            this.Ccomplaint.Size = new System.Drawing.Size(216, 30);
+            this.Ccomplaint.TabIndex = 17;
+            this.Ccomplaint.Text = "Complaint about a court";
+            this.Ccomplaint.UseVisualStyleBackColor = true;
+            this.Ccomplaint.Click += new System.EventHandler(this.Ccomplaint_Click);
             // 
             // button1
             // 
@@ -103,6 +115,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Ccomplaint);
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -125,6 +139,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button oldtrainingsessions;
+        private System.Windows.Forms.Button Ccomplaint;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

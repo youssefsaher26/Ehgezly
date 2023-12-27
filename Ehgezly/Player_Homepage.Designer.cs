@@ -47,6 +47,8 @@
             this.courtbookingold = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Ccomplaint = new System.Windows.Forms.Button();
+            this.Tcomplaint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,10 +251,35 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // Ccomplaint
+            // 
+            this.Ccomplaint.Location = new System.Drawing.Point(484, 457);
+            this.Ccomplaint.Margin = new System.Windows.Forms.Padding(4);
+            this.Ccomplaint.Name = "Ccomplaint";
+            this.Ccomplaint.Size = new System.Drawing.Size(340, 34);
+            this.Ccomplaint.TabIndex = 16;
+            this.Ccomplaint.Text = "Complaint about a court";
+            this.Ccomplaint.UseVisualStyleBackColor = true;
+            this.Ccomplaint.Click += new System.EventHandler(this.Ccomplaint_Click);
+            // 
+            // Tcomplaint
+            // 
+            this.Tcomplaint.Location = new System.Drawing.Point(484, 515);
+            this.Tcomplaint.Margin = new System.Windows.Forms.Padding(4);
+            this.Tcomplaint.Name = "Tcomplaint";
+            this.Tcomplaint.Size = new System.Drawing.Size(340, 34);
+            this.Tcomplaint.TabIndex = 17;
+            this.Tcomplaint.Text = "Complain about a Trainer";
+            this.Tcomplaint.UseVisualStyleBackColor = true;
+            this.Tcomplaint.Click += new System.EventHandler(this.Tcomplaint_Click);
+            // 
             // Player_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1067, 574);
+            this.Controls.Add(this.Tcomplaint);
+            this.Controls.Add(this.Ccomplaint);
             this.ClientSize = new System.Drawing.Size(800, 466);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -304,5 +331,7 @@
         private System.Windows.Forms.Button trainingsessionold;
         private System.Windows.Forms.Button courtbookingold;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Ccomplaint;
+        private System.Windows.Forms.Button Tcomplaint;
     }
 }
