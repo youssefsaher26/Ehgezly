@@ -50,13 +50,13 @@ namespace Ehgezly
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Create_Manager_Click(object sender, EventArgs e)
         {
             Create_Manager R = new Create_Manager();
             R.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Show_Managers_Click(object sender, EventArgs e)
         {
             Show_Managers R = new Show_Managers();
             R.Show();
@@ -67,13 +67,13 @@ namespace Ehgezly
 
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
+        private void Show_Trainer_Click_1(object sender, EventArgs e)
         {
             Show_Trainer R = new Show_Trainer();
             R.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Create_Trainer_Click(object sender, EventArgs e)
         {
             Create_Trainer R = new Create_Trainer();
             R.Show();
