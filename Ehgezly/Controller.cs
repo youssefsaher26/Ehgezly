@@ -58,9 +58,11 @@ namespace DBapplication
         }
         public int RegisterPlayer(string Fname, string lname, char Gender, string birth_date, string email, string password, string phone_numbr)
         {
-            string query1 = "SELECT COUNT(*) FROM Player";
-            int x = Convert.ToInt32(dbMan.ExecuteScalar(query1)) + 1;
-            string y = x.ToString();
+            string query1 = "SELECT MAX(Player_ID) FROM Player";
+            string maxIDexists = Convert.ToString(dbMan.ExecuteScalar(query1));
+            string y = Convert.ToString(
+                Convert.ToInt16(Convert.ToString(maxIDexists.Substring(1)))
+                + 1);
             string query2 = "INSERT INTO Account " +
                             "Values ('P" + y + "','" + Fname + "','" + lname + "','" + Gender + "','" + birth_date + "','" + email + "', '" + password + "','" + phone_numbr + "');";
             string query3 = "INSERT INTO Player " +
@@ -70,27 +72,33 @@ namespace DBapplication
         }
         public int RegisterManager(string Fname, string lname, char Gender, string birth_date, string email, string password, string phone_numbr)
         {
-            string query1 = "SELECT COUNT(*) FROM Account WHERE Acc_ID LIKE '%M%'";
-            int x = Convert.ToInt32(dbMan.ExecuteScalar(query1)) + 1;
-            string y = x.ToString();
+            string query1 = "SELECT MAX(Acc_ID) FROM Account WHERE Acc_ID LIKE '%M%'";
+            string maxIDexists = Convert.ToString(dbMan.ExecuteScalar(query1));
+            string y = Convert.ToString(
+                Convert.ToInt16(Convert.ToString(maxIDexists.Substring(1)))
+                + 1);
             string query2 = "INSERT INTO Account " +
                             "Values ('M" + y + "','" + Fname + "','" + lname + "','" + Gender + "','" + birth_date + "','" + email + "', '" + password + "','" + phone_numbr + "');";
             return dbMan.ExecuteNonQuery(query2);
         }
         public int RegisterAdmin(string Fname, string lname, char Gender, string birth_date, string email, string password, string phone_numbr)
         {
-            string query1 = "SELECT COUNT(*) FROM Account WHERE Acc_ID LIKE '%A%'";
-            int x = Convert.ToInt32(dbMan.ExecuteScalar(query1)) + 1;
-            string y = x.ToString();
+            string query1 = "SELECT MAX(Acc_ID) FROM Account WHERE Acc_ID LIKE '%A%'";
+            string maxIDexists = Convert.ToString(dbMan.ExecuteScalar(query1));
+            string y = Convert.ToString(
+                Convert.ToInt16(Convert.ToString(maxIDexists.Substring(1)))
+                + 1);
             string query2 = "INSERT INTO Account " +
                             "Values ('A" + y + "','" + Fname + "','" + lname + "','" + Gender + "','" + birth_date + "','" + email + "', '" + password + "','" + phone_numbr + "');";
             return dbMan.ExecuteNonQuery(query2);
         }
         public int RegisterTrainer(string Fname, string lname, char Gender, string birth_date, string email, string password, string phone_numbr, string sport_type)
         {
-            string query1 = "SELECT COUNT(*) FROM Trainer";
-            int x = Convert.ToInt32(dbMan.ExecuteScalar(query1)) + 1;
-            string y = x.ToString();
+            string query1 = "SELECT Max(Trainer_ID) FROM Trainer";
+            string maxIDexists = Convert.ToString(dbMan.ExecuteScalar(query1));
+            string y = Convert.ToString(
+                Convert.ToInt16(Convert.ToString(maxIDexists.Substring(2)))
+                + 1);
             string query2 = "INSERT INTO Account " +
                             "Values ('TR" + y + "','" + Fname + "','" + lname + "','" + Gender + "','" + birth_date + "','" + email + "', '" + password + "','" + phone_numbr + "');";
             string query3 = "INSERT INTO Trainer " +
@@ -210,16 +218,22 @@ namespace DBapplication
             string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
             string m = dbMan.ExecuteScalar(query1).ToString();
 
-            string query2 = "SELECT Count(*) FROM Bookings WHERE Booking_ID LIKE '%TSB%' ;";
-            int z = Convert.ToInt32(dbMan.ExecuteScalar(query2)) + 1;
-            string y = z.ToString();
+            string query2 = "SELECT Max(Booking_ID) FROM Bookings WHERE Booking_ID LIKE '%TSB%' ;";
+            string maxIDexists = Convert.ToString(dbMan.ExecuteScalar(query2));
+            string y = Convert.ToString(
+                Convert.ToInt16(Convert.ToString(maxIDexists.Substring(1)))
+                + 1);
 
             string query3 = "INSERT INTO Bookings " +
                             "Values ('TSB" + y + "','" + m + "','" + CID + "','" + time + "');";
 
 
-            string query4 = "SELECT Count(*) FROM Training_session ";
-            int w = Convert.ToInt32(dbMan.ExecuteScalar(query4))+1;
+            string query4 = "SELECT Max(Sess_ID) FROM Training_session ";
+            string maxIDexists2 = Convert.ToString(dbMan.ExecuteScalar(query4));
+            string w = Convert.ToString(
+                Convert.ToInt16(Convert.ToString(maxIDexists2.Substring(3)))
+                + 1);
+         
 
 
             string query5 = "INSERT INTO Training_session " +
@@ -362,7 +376,7 @@ namespace DBapplication
 
         public DataTable ViewUpcomingTournaments()
         {
-            string query = "SELECT Tournamnet_name,Court_Location,Timing FROM Tournament,Courts where Timing >'"+date+"' and Crt_ID= Court_ID;";
+            string query = "SELECT Tournament_name,Court_Location,Timing FROM Tournament,Courts where Timing >'" + date+"' and Crt_ID= Court_ID;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -427,15 +441,6 @@ namespace DBapplication
             string query = $"INSERT INTO Complaints VALUES('{ID}',null,'{date}','{BookID}','N',null,'{ComplaintMsg}',null)  ";
             int test = dbMan.ExecuteNonQuery(query);
 
-      //      SELECT TOP(1000) [Complaint_ID]aa
-      //,[complaint_Reviewer] aa
-      //,[Complaint_Date]aa
-      //,[Book_ID]aa
-      //,[Review_status] aa
-      //,[Review_Date]  aaa
-      //,[Complaint_Details] 
-      //,[Admin_Comment]
-      //      FROM[Ehgezly].[dbo].[Complaints]
 
 
             if (test == 0)
@@ -452,6 +457,155 @@ namespace DBapplication
         }
 
 
+        public DataTable SelectMaintenanceWorkers(string Spec)
+        {
+
+            string query = $"SELECT  Maintenance_Worker_ID as ID, FName as  FirstName ,Lname as LastName , AVG(Reviewer_grade) as Rating FROM Maintenance as MN , Reviews as R , Maintenance_Reviews as MR WHERE MR.MW_Id=MN.Maintenance_Worker_ID AND R.Review_ID=MR.Rev_ID AND MN.Specialty='{Spec}' GROUP BY Maintenance_Worker_ID ,Lname,FName ";
+            return dbMan.ExecuteReader(query);
+        
+        }
+
+        public DataTable SelectSpecialty()
+        {
+            
+            string query = "SELECT DISTINCT Specialty FROM Maintenance";
+        return dbMan.ExecuteReader(query);
+
+
+        }
+
+
+        public int AddMaintenanceRequest (string managerID, string workerID,DateTime maintenanceDate)
+        {
+            string query1 = $"SELECT COUNT() FROM Maintenance_Requests WHERE MW_ID='{workerID}', Maintenance_Date='{maintenanceDate.ToString("yyyy-MM-dd HH:mm:ss")}' ";
+            if (Convert.ToInt16(dbMan.ExecuteScalar(query1))!=0) {
+                MessageBox.Show("Sorry this worker is booked, Please choose another date or another worker");
+                return 0;
+            }
+            else if (maintenanceDate<DateTime.Now)
+            {
+                MessageBox.Show("this Date has passed,Plaese choose another date");
+                return 0;
+
+            }
+            string query2 = "SELECT MAX(Request_ID) from Maintenance_Requests";
+            string maxIDexists = Convert.ToString(dbMan.ExecuteScalar(query2));
+         
+            string newID = "MnReq" + Convert.ToString(
+                Convert.ToInt16(Convert.ToString(maxIDexists.Substring(5)))
+                + 1);
+
+
+            string query3 = $"SELECT Court_ID from Courts WHERE Manager_ID='{managerID}'";
+            string CourtId = Convert.ToString(dbMan.ExecuteScalar(query3));
+            string query4 = $"INSERT INTO Maintenance_Requests VALUES ('{newID}','{workerID}','{CourtId}','{date}','{maintenanceDate.ToString("yyyy-MM-dd HH:mm:ss")}')";
+            
+                
+                
+                int test= dbMan.ExecuteNonQuery(query4);
+            if (test < 0)
+            {
+
+                MessageBox.Show("Couldn't add Request");
+                return test;
+            }
+            MessageBox.Show("Request Added");
+            return test;
+
+        }
+
+        public int AddNewTournament(string managerID,string TournamentName,DateTime tourdate)
+        {
+            string query3 = $"SELECT Court_ID from Courts WHERE Manager_ID='{managerID}'";
+            string CourtId = Convert.ToString(dbMan.ExecuteScalar(query3));
+            string query1 = $"SELECT COUNT() FROM Tournament WHERE Court_ID='{CourtId}', Tournament_Date='{tourdate.ToString("yyyy-MM-dd HH:mm:ss")}' ";
+            if (Convert.ToInt16(dbMan.ExecuteScalar(query1)) != 0)
+            {
+                MessageBox.Show("There is an existing tournament at the court on this day, Please choose another day");
+                return 0;
+            }
+            else if (tourdate < DateTime.Now)
+            {
+                MessageBox.Show("this Date has passed,Plaese choose another date");
+                return 0;
+
+            }
+            string query2 = "SELECT MAX(Tournament_ID) from Tournament";
+            string maxIDexists = Convert.ToString(dbMan.ExecuteScalar(query2));
+
+            string newID = "Tour" + Convert.ToString(
+                Convert.ToInt16(Convert.ToString(maxIDexists.Substring(4)))
+                + 1);
+
+           
+            string query4 = $"INSERT INTO Tournament VALUES ('{newID}','{TournamentName}','{CourtId}','{tourdate.ToString("yyyy-MM-dd HH:mm:ss")}')";
+
+            int test = dbMan.ExecuteNonQuery(query4);
+            if (test < 0)
+            {
+
+                MessageBox.Show("Couldn't Create Tournament");
+                return test;
+            }
+            MessageBox.Show("Tournament Created");
+            return test;
+
+        }
+
+        public DataTable SelectTournamentAtCourt(string managerID) {
+
+            string query3 = $"SELECT Court_ID from Courts WHERE Manager_ID='{managerID}'";
+            string CourtId = Convert.ToString(dbMan.ExecuteScalar(query3));
+            String query = $"Select Tournament_ID as ID, Tournament_name ,Timing From Tournament WHERE Crt_ID='{CourtId}' AND Timing>'{date}'";
+            return dbMan.ExecuteReader(query);
+        }
+        public int DeleteTouranment(string Tournament)
+        {
+
+
+            String query = $"Delete From Tournament WHERE Tournament_ID='{Tournament}'";
+            int test =  dbMan.ExecuteNonQuery (query);
+            if (test > 0)
+            {
+                MessageBox.Show("Tournament deleted");
+                return test;
+            }
+            MessageBox.Show("Couldn't delete tournament");
+            return test;
+        }
+        public DataTable SelectTournamentData(string TournamentID)
+        {
+            String query = $"Select Tournament_name ,Timing From Tournament WHERE Tournament_ID='{TournamentID}'";
+            return dbMan.ExecuteReader(query);
+        }
+        public int UpdateTournament(string TournamentID,DateTime timing,String name)
+        {
+            String query = $"Update  Tournament SET Tournament_name='{name}',Timing='{timing.ToString("yyyy-MM-dd HH:mm:ss")}'  WHERE Tournamnet_ID='{TournamentID}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable SelectPlayersJoined(string TournamentID)
+        {
+            String query = $"Select Plyr_ID as playerID ,Fname as FirstName, Lname as LastName From Players_Joined, Account WHERE Acc_ID=Plyr_ID AND Trnmnt_ID='{TournamentID}' ";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelecttrainersJoined(string TournamentID)
+        {
+            String query = $"Select Trnr_ID as TrainerID ,Fname as FirstName, Lname as LastName From Trainers_Joined, Account WHERE Acc_ID=Trnr_Id AND Trnmnt_ID='{TournamentID}' ";
+            return dbMan.ExecuteReader(query);
+        }
+        public int DeletePlayerJoined(string TournamentID,string PlayerID)
+        {
+            string query = $"DELETE FROM Players_Joined WHERE Trnmnt_ID='{TournamentID}' AND Plyr_ID='{PlayerID}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeleteTrainerJoined(string TournamentID, string trainerID)
+        {
+            string query = $"DELETE FROM Trainers_Joined WHERE Trnmnt_ID='{TournamentID}' AND Trnr-ID='{trainerID}'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
     }
+
 }
 

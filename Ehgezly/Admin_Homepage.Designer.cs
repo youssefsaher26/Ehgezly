@@ -37,7 +37,7 @@
             // 
             // TrainerComplaints
             // 
-            this.TrainerComplaints.Location = new System.Drawing.Point(86, 77);
+            this.TrainerComplaints.Location = new System.Drawing.Point(78, 86);
             this.TrainerComplaints.Name = "TrainerComplaints";
             this.TrainerComplaints.Size = new System.Drawing.Size(180, 35);
             this.TrainerComplaints.TabIndex = 0;

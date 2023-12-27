@@ -150,6 +150,24 @@
     <Compile Include="Trainer_Myaccount1.Designer.cs">
       <DependentUpon>Trainer_Myaccount1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update_Tournament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Tournament.Designer.cs">
+      <DependentUpon>Update_Tournament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_Joined.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Joined.Designer.cs">
+      <DependentUpon>View_Joined.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_Tournaments_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Tournaments_Manager.Designer.cs">
+      <DependentUpon>View_Tournaments_Manager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +226,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trainer_Myaccount1.resx">
       <DependentUpon>Trainer_Myaccount1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Tournament.resx">
+      <DependentUpon>Update_Tournament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Joined.resx">
+      <DependentUpon>View_Joined.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Tournaments_Manager.resx">
+      <DependentUpon>View_Tournaments_Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

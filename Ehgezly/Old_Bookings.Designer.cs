@@ -30,6 +30,7 @@
         {
             this.bookingsgridview = new System.Windows.Forms.DataGridView();
             this.writerev = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsgridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,23 +47,35 @@
             // 
             // writerev
             // 
-            this.writerev.Location = new System.Drawing.Point(253, 460);
+            this.writerev.Location = new System.Drawing.Point(455, 463);
             this.writerev.Name = "writerev";
             this.writerev.Size = new System.Drawing.Size(273, 50);
             this.writerev.TabIndex = 1;
-            this.writerev.Text = "Make a review";
+            this.writerev.Text = "Review Court";
             this.writerev.UseVisualStyleBackColor = true;
             this.writerev.Click += new System.EventHandler(this.writerev_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(60, 463);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(273, 50);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Review Trainer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Old_Bookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 577);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.writerev);
             this.Controls.Add(this.bookingsgridview);
             this.Name = "Old_Bookings";
             this.Text = "Old Bookings";
+            this.Load += new System.EventHandler(this.Old_Bookings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bookingsgridview)).EndInit();
             this.ResumeLayout(false);
 
@@ -72,5 +85,6 @@
 
         private System.Windows.Forms.DataGridView bookingsgridview;
         private System.Windows.Forms.Button writerev;
+        private System.Windows.Forms.Button button1;
     }
 }

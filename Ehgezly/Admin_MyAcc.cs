@@ -73,5 +73,10 @@ namespace Ehgezly
             Phonenumbbox.ReadOnly = false;
             button2.Show();
         }
+
+        private void Fnamebox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

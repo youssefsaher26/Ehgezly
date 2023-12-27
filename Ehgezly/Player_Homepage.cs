@@ -173,5 +173,10 @@ namespace Ehgezly
             Complaints complaint = new Complaints(controllerObj.GetID(email), "Court");
             complaint.Show();
         }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

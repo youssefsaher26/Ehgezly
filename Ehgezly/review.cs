@@ -16,12 +16,14 @@ namespace Ehgezly
         Controller controllerObj;
         String BookingID;
         String ReviewerID;
-        public review(string ID, string RID)
+        string reviewType;
+        public review(string ID, string RID,string revtype)
         {
             InitializeComponent();
             BookingID = ID;
             ReviewerID = RID;
             controllerObj = new Controller();
+            reviewType = revtype;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -67,7 +69,10 @@ namespace Ehgezly
 
                 if (ReviewerID.Contains("P"))
                 {
+                    if(reviewType=="Trainer")
                     controllerObj.AddTrainerReview(revID, controllerObj.GetTrainerIDfromTrainingSession(BookingID));
+                    else
+                        controllerObj.AddCourtReview(revID, controllerObj.GetCourtIDfromBooking(BookingID));
                 }
                 else
                 {

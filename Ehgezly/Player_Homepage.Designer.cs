@@ -47,9 +47,9 @@
             this.trainingsessionold = new System.Windows.Forms.Button();
             this.courtbookingold = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Ccomplaint = new System.Windows.Forms.Button();
             this.Tcomplaint = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,6 +117,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(250, 24);
             this.comboBox3.TabIndex = 5;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -226,7 +227,7 @@
             this.trainingsessionold.Name = "trainingsessionold";
             this.trainingsessionold.Size = new System.Drawing.Size(340, 34);
             this.trainingsessionold.TabIndex = 12;
-            this.trainingsessionold.Text = "Old Training Sessions";
+            this.trainingsessionold.Text = "Your Training Sessions";
             this.trainingsessionold.UseVisualStyleBackColor = true;
             this.trainingsessionold.Click += new System.EventHandler(this.trainingsessionold_Click);
             // 
@@ -237,7 +238,7 @@
             this.courtbookingold.Name = "courtbookingold";
             this.courtbookingold.Size = new System.Drawing.Size(340, 34);
             this.courtbookingold.TabIndex = 13;
-            this.courtbookingold.Text = "Old Court Bookings";
+            this.courtbookingold.Text = "Your Court Bookings";
             this.courtbookingold.UseVisualStyleBackColor = true;
             this.courtbookingold.Click += new System.EventHandler(this.courtbookingold_Click);
             // 
@@ -251,18 +252,6 @@
             this.button6.Text = "Upcoming Tournament";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Ehgezly.Properties.Resources.my_account;
-            this.pictureBox1.Location = new System.Drawing.Point(926, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 75);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Ccomplaint
             // 
@@ -285,6 +274,18 @@
             this.Tcomplaint.Text = "Complain about a Trainer";
             this.Tcomplaint.UseVisualStyleBackColor = true;
             this.Tcomplaint.Click += new System.EventHandler(this.Tcomplaint_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ehgezly.Properties.Resources.my_account;
+            this.pictureBox1.Location = new System.Drawing.Point(926, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Player_Homepage
             // 
