@@ -158,7 +158,13 @@ namespace Ehgezly
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Show_Tournament R = new Show_Tournament();
+            Show_Tournament R = new Show_Tournament(email,pass);
+            R.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Cancel_Tournament R = new Cancel_Tournament(email, pass);
             R.Show();
         }
 

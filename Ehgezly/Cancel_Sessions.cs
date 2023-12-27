@@ -12,30 +12,21 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
-    public partial class Show_Tournament : Form
+    public partial class Cancel_Sessions : Form
     {
         Controller controllerObj;
         string email;
         string password;
-        public Show_Tournament(string mail,string pass)
+        public Cancel_Sessions(string pass, string mail)
         {
-            email = mail;
-            password = pass;
             InitializeComponent();
             controllerObj = new Controller();
-        }
-
-        private void Show_Tournament_Load(object sender, EventArgs e)
-        {
-            DataTable dt = controllerObj.ViewUpcomingTournaments();
+            password = pass;
+            email = mail;
+            DataTable dt = controllerObj.View_sessions_for_trainer(email,pass);
             dataGridView1.DataSource = dt;
             dataGridView1.ReadOnly = true;
             dataGridView1.Refresh();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,14 +41,15 @@ namespace Ehgezly
                 {
                     string stringValue = selectedValue.ToString();
 
-                    if (controllerObj.AddPlayertoTournmaent(stringValue,email,password) == 1)
+                    if (controllerObj.DeleteBookings(stringValue) == 1)
                     {
-                    
-                        MessageBox.Show("Tournament Joined");
+                        MessageBox.Show("Session Deleted");
+                        DataTable dt = controllerObj.View_sessions_for_trainer(email, password);
+                        dataGridView1.DataSource = dt;
                     }
                     else
                     {
-                        MessageBox.Show("Tournament already joined");
+                        MessageBox.Show("Session not deleted");
                     }
                 }
             }
@@ -68,4 +60,3 @@ namespace Ehgezly
         }
     }
 }
-
