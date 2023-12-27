@@ -44,18 +44,21 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.trainingsessionold = new System.Windows.Forms.Button();
-            this.courtbookingold = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(106, 214);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(169, 398);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
+            this.button1.Size = new System.Drawing.Size(250, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Book Court";
             this.button1.UseVisualStyleBackColor = true;
@@ -64,10 +67,10 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(87, 94);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Location = new System.Drawing.Point(169, 118);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 21);
+            this.comboBox1.Size = new System.Drawing.Size(250, 24);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -77,20 +80,19 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Football",
             "Padel"});
-            this.comboBox2.Location = new System.Drawing.Point(87, 58);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Location = new System.Drawing.Point(169, 73);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 21);
+            this.comboBox2.Size = new System.Drawing.Size(250, 24);
             this.comboBox2.TabIndex = 2;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(42, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Sport Type";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -98,10 +100,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 97);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(40, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(92, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Court Location";
             // 
@@ -111,46 +112,44 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Football",
             "Padel"});
-            this.comboBox3.Location = new System.Drawing.Point(87, 136);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.Location = new System.Drawing.Point(169, 169);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(151, 21);
+            this.comboBox3.Size = new System.Drawing.Size(250, 24);
             this.comboBox3.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 139);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(44, 173);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Court Name";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(87, 176);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(169, 219);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(250, 22);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 180);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(42, 224);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.Size = new System.Drawing.Size(91, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Booking Time";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(356, 213);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(169, 342);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 23);
+            this.button2.Size = new System.Drawing.Size(250, 28);
             this.button2.TabIndex = 9;
             this.button2.Text = "Book Training session";
             this.button2.UseVisualStyleBackColor = true;
@@ -162,27 +161,27 @@
             this.comboBox4.Items.AddRange(new object[] {
             "Football",
             "Padel"});
-            this.comboBox4.Location = new System.Drawing.Point(346, 176);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox4.Location = new System.Drawing.Point(169, 276);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(151, 21);
+            this.comboBox4.Size = new System.Drawing.Size(250, 24);
             this.comboBox4.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(254, 180);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(40, 279);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.Size = new System.Drawing.Size(117, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Available Trainers";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(538, 236);
+            this.button3.Location = new System.Drawing.Point(484, 208);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(255, 28);
+            this.button3.Size = new System.Drawing.Size(340, 34);
             this.button3.TabIndex = 12;
             this.button3.Text = "Cancelling Court Booking";
             this.button3.UseVisualStyleBackColor = true;
@@ -190,9 +189,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(538, 180);
+            this.button4.Location = new System.Drawing.Point(484, 140);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(255, 28);
+            this.button4.Size = new System.Drawing.Size(340, 34);
             this.button4.TabIndex = 13;
             this.button4.Text = "Cancel Upcoming Bookings";
             this.button4.UseVisualStyleBackColor = true;
@@ -200,9 +200,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(538, 126);
+            this.button5.Location = new System.Drawing.Point(484, 73);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(255, 28);
+            this.button5.Size = new System.Drawing.Size(340, 34);
             this.button5.TabIndex = 14;
             this.button5.Text = "Cancelling Tournament Participation";
             this.button5.UseVisualStyleBackColor = true;
@@ -210,29 +211,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(729, 84);
+            this.label6.Location = new System.Drawing.Point(946, 103);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.Size = new System.Drawing.Size(76, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "My Account";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Ehgezly.Properties.Resources.my_account;
-            this.pictureBox1.Location = new System.Drawing.Point(714, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // trainingsessionold
             // 
-            this.trainingsessionold.Location = new System.Drawing.Point(597, 390);
+            this.trainingsessionold.Location = new System.Drawing.Point(484, 398);
+            this.trainingsessionold.Margin = new System.Windows.Forms.Padding(4);
             this.trainingsessionold.Name = "trainingsessionold";
-            this.trainingsessionold.Size = new System.Drawing.Size(154, 28);
+            this.trainingsessionold.Size = new System.Drawing.Size(340, 34);
             this.trainingsessionold.TabIndex = 12;
             this.trainingsessionold.Text = "Old Training Sessions";
             this.trainingsessionold.UseVisualStyleBackColor = true;
@@ -240,18 +232,44 @@
             // 
             // courtbookingold
             // 
-            this.courtbookingold.Location = new System.Drawing.Point(597, 342);
+            this.courtbookingold.Location = new System.Drawing.Point(484, 339);
+            this.courtbookingold.Margin = new System.Windows.Forms.Padding(4);
             this.courtbookingold.Name = "courtbookingold";
-            this.courtbookingold.Size = new System.Drawing.Size(154, 28);
+            this.courtbookingold.Size = new System.Drawing.Size(340, 34);
             this.courtbookingold.TabIndex = 13;
             this.courtbookingold.Text = "Old Court Bookings";
             this.courtbookingold.UseVisualStyleBackColor = true;
             this.courtbookingold.Click += new System.EventHandler(this.courtbookingold_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(484, 282);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(340, 34);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "Upcoming Tournament";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ehgezly.Properties.Resources.my_account;
+            this.pictureBox1.Location = new System.Drawing.Point(926, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Player_Homepage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.ClientSize = new System.Drawing.Size(800, 466);
+            this.ClientSize = new System.Drawing.Size(1067, 574);
+            this.Controls.Add(this.button6);
             this.ClientSize = new System.Drawing.Size(800, 466);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -272,7 +290,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Player_Homepage";
             this.Text = "Player_Homepage";
             this.Load += new System.EventHandler(this.Player_Homepage_Load);
@@ -303,5 +321,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button trainingsessionold;
         private System.Windows.Forms.Button courtbookingold;
+        private System.Windows.Forms.Button button6;
     }
 }

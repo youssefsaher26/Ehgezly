@@ -14,13 +14,13 @@ namespace Ehgezly
 {
     public partial class Manager_Homepage : Form
     {
-        Controller controllerObj;
-        string managerId;
-        public Manager_Homepage(string email)
+        string email;
+        string pass;
+        public Manager_Homepage(string p, string mail)
         {
             InitializeComponent();
-            controllerObj = new Controller();
-            managerId=controllerObj.GetID(email);
+            pass = p;
+            email = mail;
         }
 
         private void Manager_Homepage_Load(object sender, EventArgs e)
@@ -32,6 +32,17 @@ namespace Ehgezly
         {
             Old_Bookings old_Bookings = new Old_Bookings(managerId, "maintenance");
             old_Bookings.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Manager_MyAcc R = new Manager_MyAcc(pass, email);
+            R.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

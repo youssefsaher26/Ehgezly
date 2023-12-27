@@ -132,7 +132,7 @@ namespace Ehgezly
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Trainer_Myaccount1 R = new Trainer_Myaccount1(pass, email);
+            Player_MyAcc R = new Player_MyAcc(pass, email);
             R.Show();
         }
 
@@ -154,6 +154,12 @@ namespace Ehgezly
         {
             Old_Bookings old_Bookings = new Old_Bookings(controllerObj.GetID(email), "Training");
             old_Bookings.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Show_Tournament R = new Show_Tournament();
+            R.Show();
         }
     }
 }

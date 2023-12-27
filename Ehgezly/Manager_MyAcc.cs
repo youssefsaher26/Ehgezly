@@ -8,16 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
-    public partial class Player_MyAcc : Form
+    public partial class Manager_MyAcc : Form
     {
         Controller controllerObj;
         string email;
         string password;
-        public Player_MyAcc(string p, string mail)
+        public Manager_MyAcc(string p, string mail)
         {
             InitializeComponent();
             controllerObj = new Controller();
@@ -29,7 +28,26 @@ namespace Ehgezly
             Passwordbox.ReadOnly = true;
             Phonenumbbox.ReadOnly = true;
             button2.Hide();
+        }
 
+        private void Manager_MyAcc_Load(object sender, EventArgs e)
+        {
+            DataTable dt;
+            dt = controllerObj.ViewAccountPlayer(email, password);
+            Fnamebox.Text = dt.Rows[0][0].ToString();
+            Lnamebox.Text = dt.Rows[0][1].ToString();
+            Emailbox.Text = dt.Rows[0][2].ToString();
+            Passwordbox.Text = dt.Rows[0][3].ToString();
+            Phonenumbbox.Text = dt.Rows[0][4].ToString();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Phone_num_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -47,17 +65,6 @@ namespace Ehgezly
             {
                 MessageBox.Show("Update Failed");
             }
-        }
-
-        private void Player_MyAcc_Load(object sender, EventArgs e)
-        {
-            DataTable dt;
-            dt = controllerObj.ViewAccountPlayer(email, password);
-            Fnamebox.Text = dt.Rows[0][0].ToString();
-            Lnamebox.Text = dt.Rows[0][1].ToString();
-            Emailbox.Text = dt.Rows[0][2].ToString();
-            Passwordbox.Text = dt.Rows[0][3].ToString();
-            Phonenumbbox.Text = dt.Rows[0][4].ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

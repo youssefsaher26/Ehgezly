@@ -19,7 +19,7 @@ namespace Ehgezly
         string email;
         public Trainer_Homepage(string p, string mail)
         {
-            InitializeComponent();
+             InitializeComponent();
              password=p;
              email=mail;
             controllerObj = new Controller();
