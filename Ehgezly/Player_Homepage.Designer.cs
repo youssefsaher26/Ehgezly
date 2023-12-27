@@ -127,10 +127,10 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(169, 219);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(127, 178);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(188, 20);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // Booking_Time
@@ -220,10 +220,9 @@
             // 
             // trainingsessionold
             // 
-            this.trainingsessionold.Location = new System.Drawing.Point(484, 398);
-            this.trainingsessionold.Margin = new System.Windows.Forms.Padding(4);
+            this.trainingsessionold.Location = new System.Drawing.Point(363, 278);
             this.trainingsessionold.Name = "trainingsessionold";
-            this.trainingsessionold.Size = new System.Drawing.Size(340, 34);
+            this.trainingsessionold.Size = new System.Drawing.Size(255, 28);
             this.trainingsessionold.TabIndex = 12;
             this.trainingsessionold.Text = "Old Training Sessions";
             this.trainingsessionold.UseVisualStyleBackColor = true;
@@ -231,10 +230,9 @@
             // 
             // courtbookingold
             // 
-            this.courtbookingold.Location = new System.Drawing.Point(484, 339);
-            this.courtbookingold.Margin = new System.Windows.Forms.Padding(4);
+            this.courtbookingold.Location = new System.Drawing.Point(363, 224);
             this.courtbookingold.Name = "courtbookingold";
-            this.courtbookingold.Size = new System.Drawing.Size(340, 34);
+            this.courtbookingold.Size = new System.Drawing.Size(255, 28);
             this.courtbookingold.TabIndex = 13;
             this.courtbookingold.Text = "Old Court Bookings";
             this.courtbookingold.UseVisualStyleBackColor = true;
@@ -265,7 +263,7 @@
             // 
             // Player_Homepage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 574);
             this.Controls.Add(this.Upcoming_Tournament);
