@@ -10,7 +10,7 @@ namespace DBapplication
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"Data Source=Arabian-Bytes\SQLEXPRESS;Initial Catalog=wish;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=Arabian-Bytes\SQLEXPRESS;Initial Catalog=ehgezly;Integrated Security=True";
         SqlConnection myConnection;
         static bool check = false;
         public DBManager()

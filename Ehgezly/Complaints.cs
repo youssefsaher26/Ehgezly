@@ -15,6 +15,7 @@ namespace Ehgezly
     {
         string CpWriterID;
         Controller controllerObj;
+        string type;
         public Complaints(string ID, string CPtype)
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Ehgezly
                 dt = controllerObj.SelectOldPlayertrainingSession(ID);
 
             }
-            else
+            else if (CPtype == "FromTrainer")
             {
                 dt = controllerObj.SelectOldTrainertrainingSession(ID);
             }
@@ -62,6 +63,16 @@ namespace Ehgezly
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (richTextBox1.Text.Length==0)
+            {
+                MessageBox.Show("Please write a comment about your complaint");
+            }
+           
+            controllerObj.AddComplaint(richTextBox1.Text, dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), CpWriterID, type);
         }
     }
 }

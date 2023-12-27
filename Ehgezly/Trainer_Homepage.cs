@@ -50,5 +50,11 @@ namespace Ehgezly
                 old_Bookings.Show();
             
         }
+
+        private void Ccomplaint_Click(object sender, EventArgs e)
+        {
+            Complaints complaint = new Complaints(controllerObj.GetID(email), "FromTrainer");
+            complaint.Show();
+        }
     }
 }
