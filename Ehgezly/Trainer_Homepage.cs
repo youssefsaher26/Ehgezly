@@ -26,9 +26,9 @@ namespace Ehgezly
             controllerObj = new Controller();
 
             DataTable dt = controllerObj.SelectTrainer();
-            comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "Fname";
-            comboBox1.ValueMember = "ACC_ID";
+            Trainer_Name_ComboBox.DataSource = dt;
+            Trainer_Name_ComboBox.DisplayMember = "Fname";
+            Trainer_Name_ComboBox.ValueMember = "ACC_ID";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm";
@@ -71,7 +71,7 @@ namespace Ehgezly
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.AddAvailableTrainingSessionTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm") , dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), comboBox1.SelectedValue.ToString());
+            int r = controllerObj.AddAvailableTrainingSessionTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm") , dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), Trainer_Name_ComboBox.SelectedValue.ToString());
             
             if (r == 1)
             {

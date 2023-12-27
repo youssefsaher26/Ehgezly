@@ -31,11 +31,11 @@
             this.TrainerComplaints = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Create_Manager_Account = new System.Windows.Forms.Button();
+            this.Show_Manager_Accounts = new System.Windows.Forms.Button();
+            this.Show_Trainer_Accounts = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Create_Trainer_Account = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,35 +69,35 @@
             this.label6.Text = "My Account";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // button1
+            // Create_Manager_Account
             // 
-            this.button1.Location = new System.Drawing.Point(38, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 32);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Create Manager Account";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Create_Manager_Account.Location = new System.Drawing.Point(38, 89);
+            this.Create_Manager_Account.Name = "Create_Manager_Account";
+            this.Create_Manager_Account.Size = new System.Drawing.Size(180, 32);
+            this.Create_Manager_Account.TabIndex = 16;
+            this.Create_Manager_Account.Text = "Create Manager Account";
+            this.Create_Manager_Account.UseVisualStyleBackColor = true;
+            this.Create_Manager_Account.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // Show_Manager_Accounts
             // 
-            this.button3.Location = new System.Drawing.Point(38, 168);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 35);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Show Manager Accounts";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Show_Manager_Accounts.Location = new System.Drawing.Point(38, 168);
+            this.Show_Manager_Accounts.Name = "Show_Manager_Accounts";
+            this.Show_Manager_Accounts.Size = new System.Drawing.Size(180, 35);
+            this.Show_Manager_Accounts.TabIndex = 17;
+            this.Show_Manager_Accounts.Text = "Show Manager Accounts";
+            this.Show_Manager_Accounts.UseVisualStyleBackColor = true;
+            this.Show_Manager_Accounts.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // Show_Trainer_Accounts
             // 
-            this.button4.Location = new System.Drawing.Point(256, 168);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(180, 35);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Show Trainer Accounts";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.Show_Trainer_Accounts.Location = new System.Drawing.Point(256, 168);
+            this.Show_Trainer_Accounts.Name = "Show_Trainer_Accounts";
+            this.Show_Trainer_Accounts.Size = new System.Drawing.Size(180, 35);
+            this.Show_Trainer_Accounts.TabIndex = 18;
+            this.Show_Trainer_Accounts.Text = "Show Trainer Accounts";
+            this.Show_Trainer_Accounts.UseVisualStyleBackColor = true;
+            this.Show_Trainer_Accounts.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // pictureBox1
             // 
@@ -111,25 +111,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button5
+            // Create_Trainer_Account
             // 
-            this.button5.Location = new System.Drawing.Point(256, 88);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(180, 35);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Create Trainer Account";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.Create_Trainer_Account.Location = new System.Drawing.Point(256, 88);
+            this.Create_Trainer_Account.Name = "Create_Trainer_Account";
+            this.Create_Trainer_Account.Size = new System.Drawing.Size(180, 35);
+            this.Create_Trainer_Account.TabIndex = 19;
+            this.Create_Trainer_Account.Text = "Create Trainer Account";
+            this.Create_Trainer_Account.UseVisualStyleBackColor = true;
+            this.Create_Trainer_Account.Click += new System.EventHandler(this.button5_Click);
             // 
             // Admin_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Create_Trainer_Account);
+            this.Controls.Add(this.Show_Trainer_Accounts);
+            this.Controls.Add(this.Show_Manager_Accounts);
+            this.Controls.Add(this.Create_Manager_Account);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
@@ -149,9 +149,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Create_Manager_Account;
+        private System.Windows.Forms.Button Show_Manager_Accounts;
+        private System.Windows.Forms.Button Show_Trainer_Accounts;
+        private System.Windows.Forms.Button Create_Trainer_Account;
     }
 }
