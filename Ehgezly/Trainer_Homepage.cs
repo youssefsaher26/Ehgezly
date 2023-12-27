@@ -64,6 +64,12 @@ namespace Ehgezly
             
         }
 
+        private void Ccomplaint_Click(object sender, EventArgs e)
+        {
+            Complaints complaint = new Complaints(controllerObj.GetID(email), "FromTrainer");
+            complaint.Show();
+        }
+
         private void traningsession_Click(object sender, EventArgs e)
         {
             int r = controllerObj.AddAvailableTrainingSessionTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm") , dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), Trainer_Name_ComboBox.SelectedValue.ToString());

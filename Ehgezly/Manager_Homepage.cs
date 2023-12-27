@@ -61,6 +61,39 @@ namespace Ehgezly
 
         }
 
+        private void button123456_Click(object sender, EventArgs e)
+        {
+            Show_Complaints trainerComplaints = new Show_Complaints(managerId);
+            trainerComplaints.Show();
+        }
+
+        private void button2222_Click(object sender, EventArgs e)
+        {
+            Request_Maintenance request_Maintenance= new Request_Maintenance(managerId);
+            request_Maintenance.Show();
+
+        }
+
+        private void button3333_Click(object sender, EventArgs e)
+        {
+            if (textBox1111.Text.Length==0)
+            {
+                MessageBox.Show("Please Add tournament Name");
+                return;
+            }
+            controllerObj.AddNewTournament(managerId, textBox1111.Text, dateTimePicker11111.Value);
+        }
+
+
+
+        private void button4444_Click(object sender, EventArgs e)
+        {
+            View_Tournaments_Manager view_Tournaments_Manager = new View_Tournaments_Manager(managerId);
+            view_Tournaments_Manager.Show();
+        }
+
+    
+
         private void AddCourt_Click(object sender, EventArgs e)
         {
             int r = controllerObj.AddAvailableCourtTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"), dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), Courtname_comboBox1.SelectedValue.ToString());

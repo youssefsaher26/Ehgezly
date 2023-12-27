@@ -11,25 +11,32 @@ using System.Windows.Forms;
 
 namespace Ehgezly
 {
-    public partial class T_Complaint : Form
+    public partial class Review_Complaint : Form
     {
         Controller controllerObj;
         String ComplaintID;
-        String AdminID;
-        public T_Complaint(String CID,String AID)
+        String ReviewerID;
+        public Review_Complaint(String CID,String RID)
         {
             InitializeComponent();
             controllerObj = new Controller();
             ComplaintID = CID;
-            AdminID = AID;
+            ReviewerID = RID;
+
 
 
         }
 
         private void T_Complaint_Load(object sender, EventArgs e)
         {
-
-            DataTable dt = controllerObj.SelectSpecTrainerComplaints(ComplaintID);
+            DataTable dt = null;
+            if (ReviewerID.StartsWith("M"))
+            {
+                dt = controllerObj.SelectSpecCourtComplaints(ComplaintID);
+            }
+            else if (ReviewerID.StartsWith("A"))
+            { dt = controllerObj.SelectSpecTrainerComplaints(ComplaintID); }
+           
             TrainerComplaintgridView.DataSource = dt;
             TrainerComplaintgridView.ReadOnly = true;
             TrainerComplaintgridView.Refresh();
@@ -42,33 +49,24 @@ namespace Ehgezly
              
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void MarkRev_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.Text.Length==0)
+            if (richTextBox15.Text.Length==0)
             {
                 MessageBox.Show("please write the action taken towards this ccomplaint.");
                 return;
             }
-            controllerObj.MarkTrainerComplaintReviewed(ComplaintID);
-            controllerObj.AddAdminDetailsToComplaint(richTextBox1.Text,ComplaintID);
+            controllerObj.MarkComplaintReviewed(ComplaintID);
+            controllerObj.AddReviewerDetailsToComplaint(richTextBox15.Text,ComplaintID);
             MessageBox.Show("Marked As Reviewd.");
 
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+   
 
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

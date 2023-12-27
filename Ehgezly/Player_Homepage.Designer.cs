@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.bookcourt = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.booktrainsession = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,20 +47,22 @@
             this.trainingsessionold = new System.Windows.Forms.Button();
             this.courtbookingold = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.Ccomplaint = new System.Windows.Forms.Button();
+            this.Tcomplaint = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // bookcourt
             // 
-            this.button1.Location = new System.Drawing.Point(169, 398);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Book Court";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.bookcourt.Location = new System.Drawing.Point(169, 398);
+            this.bookcourt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bookcourt.Name = "bookcourt";
+            this.bookcourt.Size = new System.Drawing.Size(250, 28);
+            this.bookcourt.TabIndex = 0;
+            this.bookcourt.Text = "Book Court";
+            this.bookcourt.UseVisualStyleBackColor = true;
+            this.bookcourt.Click += new System.EventHandler(this.button1_Click_144);
             // 
             // comboBox1
             // 
@@ -142,16 +144,16 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Booking Time";
             // 
-            // button2
+            // booktrainsession
             // 
-            this.button2.Location = new System.Drawing.Point(169, 342);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 28);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Book Training session";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.booktrainsession.Location = new System.Drawing.Point(169, 342);
+            this.booktrainsession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.booktrainsession.Name = "booktrainsession";
+            this.booktrainsession.Size = new System.Drawing.Size(250, 28);
+            this.booktrainsession.TabIndex = 9;
+            this.booktrainsession.Text = "Book Training session";
+            this.booktrainsession.UseVisualStyleBackColor = true;
+            this.booktrainsession.Click += new System.EventHandler(this.booktrainsession_Click);
             // 
             // comboBox4
             // 
@@ -184,7 +186,6 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Cancelling Court Booking";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -195,7 +196,6 @@
             this.button4.TabIndex = 13;
             this.button4.Text = "Cancelling Bookings";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -216,7 +216,6 @@
             this.label6.Size = new System.Drawing.Size(76, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "My Account";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // trainingsessionold
             // 
@@ -225,7 +224,7 @@
             this.trainingsessionold.Name = "trainingsessionold";
             this.trainingsessionold.Size = new System.Drawing.Size(340, 34);
             this.trainingsessionold.TabIndex = 12;
-            this.trainingsessionold.Text = "Old Training Sessions";
+            this.trainingsessionold.Text = "Your Training Sessions";
             this.trainingsessionold.UseVisualStyleBackColor = true;
             this.trainingsessionold.Click += new System.EventHandler(this.trainingsessionold_Click);
             // 
@@ -236,7 +235,7 @@
             this.courtbookingold.Name = "courtbookingold";
             this.courtbookingold.Size = new System.Drawing.Size(340, 34);
             this.courtbookingold.TabIndex = 13;
-            this.courtbookingold.Text = "Old Court Bookings";
+            this.courtbookingold.Text = "Your Court Bookings";
             this.courtbookingold.UseVisualStyleBackColor = true;
             this.courtbookingold.Click += new System.EventHandler(this.courtbookingold_Click);
             // 
@@ -250,6 +249,28 @@
             this.button6.Text = "Upcoming Tournament";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // Ccomplaint
+            // 
+            this.Ccomplaint.Location = new System.Drawing.Point(484, 457);
+            this.Ccomplaint.Margin = new System.Windows.Forms.Padding(4);
+            this.Ccomplaint.Name = "Ccomplaint";
+            this.Ccomplaint.Size = new System.Drawing.Size(340, 34);
+            this.Ccomplaint.TabIndex = 16;
+            this.Ccomplaint.Text = "Complaint about a court";
+            this.Ccomplaint.UseVisualStyleBackColor = true;
+            this.Ccomplaint.Click += new System.EventHandler(this.Ccomplaint_Click);
+            // 
+            // Tcomplaint
+            // 
+            this.Tcomplaint.Location = new System.Drawing.Point(484, 515);
+            this.Tcomplaint.Margin = new System.Windows.Forms.Padding(4);
+            this.Tcomplaint.Name = "Tcomplaint";
+            this.Tcomplaint.Size = new System.Drawing.Size(340, 34);
+            this.Tcomplaint.TabIndex = 17;
+            this.Tcomplaint.Text = "Complain about a Trainer";
+            this.Tcomplaint.UseVisualStyleBackColor = true;
+            this.Tcomplaint.Click += new System.EventHandler(this.Tcomplaint_Click);
             // 
             // pictureBox1
             // 
@@ -268,6 +289,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 574);
+            this.Controls.Add(this.Tcomplaint);
+            this.Controls.Add(this.Ccomplaint);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -278,7 +301,7 @@
             this.Controls.Add(this.trainingsessionold);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.booktrainsession);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
@@ -287,7 +310,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bookcourt);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Player_Homepage";
             this.Text = "Player_Homepage";
@@ -300,7 +323,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bookcourt;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
@@ -309,7 +332,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button booktrainsession;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
@@ -320,5 +343,7 @@
         private System.Windows.Forms.Button trainingsessionold;
         private System.Windows.Forms.Button courtbookingold;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Ccomplaint;
+        private System.Windows.Forms.Button Tcomplaint;
     }
 }

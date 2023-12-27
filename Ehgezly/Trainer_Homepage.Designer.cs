@@ -70,7 +70,7 @@
             this.oldtrainingsessions.Name = "oldtrainingsessions";
             this.oldtrainingsessions.Size = new System.Drawing.Size(216, 31);
             this.oldtrainingsessions.TabIndex = 2;
-            this.oldtrainingsessions.Text = "Old Training Sessions";
+            this.oldtrainingsessions.Text = "Your Training Sessions";
             this.oldtrainingsessions.UseVisualStyleBackColor = true;
             this.oldtrainingsessions.Click += new System.EventHandler(this.oldtrainingsessions_Click);
             // 
@@ -140,6 +140,17 @@
             this.Trainer_Name.TabIndex = 9;
             this.Trainer_Name.Text = "Trainer Name";
             // 
+            // Ccomplaint
+            // 
+            this.Ccomplaint.Location = new System.Drawing.Point(547, 393);
+            this.Ccomplaint.Margin = new System.Windows.Forms.Padding(4);
+            this.Ccomplaint.Name = "Ccomplaint";
+            this.Ccomplaint.Size = new System.Drawing.Size(216, 30);
+            this.Ccomplaint.TabIndex = 17;
+            this.Ccomplaint.Text = "Complaint about a court";
+            this.Ccomplaint.UseVisualStyleBackColor = true;
+            this.Ccomplaint.Click += new System.EventHandler(this.Ccomplaint_Click);
+            // 
             // Trainer_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -152,6 +163,7 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.Add_Available_Timeslots);
+            this.Controls.Add(this.Ccomplaint);
             this.Controls.Add(this.oldtrainingsessions);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.Label Start_Date_Time;
         private System.Windows.Forms.ComboBox Trainer_Name_ComboBox;
         private System.Windows.Forms.Label Trainer_Name;
+        private System.Windows.Forms.Button Ccomplaint;
     }
 }

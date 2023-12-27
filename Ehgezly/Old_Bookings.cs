@@ -52,13 +52,14 @@ namespace Ehgezly
 
         }
 
-        private void bookingsgridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void writerev_Click(object sender, EventArgs e)
         {
+            if (DateTime.Parse(bookingsgridview.SelectedRows[0].Cells[1].Value.ToString())>DateTime.Now)
+            {
+                MessageBox.Show("You can't review an upcoming booking");
+                return;
+            }
             if (bookingsgridview.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please Select a booking to review!");
@@ -67,12 +68,41 @@ namespace Ehgezly
 
             DataGridViewRow SelectedRow = bookingsgridview.SelectedRows[0];
 
-            review Review = new review(SelectedRow.Cells[0].Value.ToString(), ReviewerID);
+            review Review = new review(SelectedRow.Cells[0].Value.ToString(), ReviewerID,"Court");
             Review.Show();
 
 
           
 
+        }
+
+        private void buttonrevtrainer_Click(object sender, EventArgs e)
+        {
+
+            if (DateTime.Parse(bookingsgridview.SelectedRows[0].Cells[1].Value.ToString()) > DateTime.Now)
+            {
+                MessageBox.Show("You can't review an upcoming booking");
+                return;
+            }
+            if (bookingsgridview.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please Select a booking to review!");
+                return;
+            }
+            DataGridViewRow SelectedRow = bookingsgridview.SelectedRows[0];
+            review Review = new review(SelectedRow.Cells[0].Value.ToString(), ReviewerID,"Trainer");
+            Review.Show();
+        }
+
+        private void Old_Bookings_Load(object sender, EventArgs e)
+        {
+            if (BookingType== "Training")
+            {
+                buttonrevtrainer.Visible = true;
+            }
+            else
+
+                buttonrevtrainer.Visible = false;
         }
     }
 }
