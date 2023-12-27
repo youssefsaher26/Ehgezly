@@ -119,28 +119,13 @@ namespace Ehgezly
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.DeleteCourtBookings(email,pass);
-            if (r == 1)
-            {
-                MessageBox.Show("Court booking is deleted Successfully");
-            }
-            else if (r != 1)
-            {
-                MessageBox.Show("failed ! Booking is not deleted ");
-            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.DeleteTrainingsession(email, pass,comboBox4.SelectedValue.ToString());
-            if (r == 1)
-            {
-                MessageBox.Show("Session booking is deleted Successfully");
-            }
-            else if (r != 1)
-            {
-                MessageBox.Show("failed ! Booking is not deleted ");
-            }
+            Cancel_Booking R = new Cancel_Booking(pass, email);
+            R.Show();
         }
 
        

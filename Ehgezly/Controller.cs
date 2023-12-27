@@ -186,20 +186,17 @@ namespace DBapplication
             dbMan.ExecuteNonQuery(query3);
             return dbMan.ExecuteNonQuery(query5);
         }
-        public int DeleteCourtBookings(string email,string pass)
+        public int DeleteBookings(string booking_id)
         {
-            string query = "DELETE FROM Bookings WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email='"+email+"'and acc_password='"+pass+"') and Booking_timing >'"+date+"';";
-            return dbMan.ExecuteNonQuery(query);
+            if (booking_id.Contains("TS"))
+            {
+                string query1 = "DELETE FROM Training_Session WHERE Sess_ID='" + booking_id + "' ;";
+                dbMan.ExecuteNonQuery(query1);
+            }
+                string query2 = "DELETE FROM Bookings WHERE Booking_ID='"+booking_id+"' ;";
+            
+            return dbMan.ExecuteNonQuery(query2);
         }
-        public int DeleteTrainingsession(string email, string pass,string TID)
-        {
-            string query1 = "DELETE FROM Bookings WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email='" + email + "'and acc_password='" + pass + "') and Booking_timing >' "+date+"';";
-            string query2 = "DELETE FROM Training_session WHERE sess_ID IN(Select Booking_ID FROM Bookings " +
-                            "WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email= '" + email + "' and acc_password='"+ pass + "') and Booking_timing >' "+date+"');";
-            dbMan.ExecuteNonQuery(query2);
-            return dbMan.ExecuteNonQuery(query1);
-        }
-
         public DataTable ViewAccountPlayer(string mail, string pass)
         {
             string query = "SELECT Fname,Lname,Email,Acc_Password,Phone_Number,Acc_ID FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "';";
@@ -212,6 +209,15 @@ namespace DBapplication
             return Convert.ToInt32(dbMan.ExecuteNonQuery(query2));
 
         }
+        public DataTable View_upcoming_boookings(string email,string pass)
+        {
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+
+            string query2 = "SELECT Booking_ID,Booking_timing,Court_Name FROM Courts as c,Bookings as b WHERE b.Plyr_Id='"+m+ "'and Booking_timing>'"+date+ "'and Court_ID=Crt_Id;";
+            return dbMan.ExecuteReader(query2);
+        }
+
     }
 }
 
