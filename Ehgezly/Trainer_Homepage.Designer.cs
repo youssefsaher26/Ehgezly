@@ -48,7 +48,7 @@
             // 
             this.pictureBox1.Image = global::Ehgezly.Properties.Resources.my_account;
             this.pictureBox1.Location = new System.Drawing.Point(667, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(117, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -77,11 +77,23 @@
             this.oldtrainingsessions.UseVisualStyleBackColor = true;
             this.oldtrainingsessions.Click += new System.EventHandler(this.oldtrainingsessions_Click);
             // 
+            // Ccomplaint
+            // 
+            this.Ccomplaint.Location = new System.Drawing.Point(547, 393);
+            this.Ccomplaint.Margin = new System.Windows.Forms.Padding(4);
+            this.Ccomplaint.Name = "Ccomplaint";
+            this.Ccomplaint.Size = new System.Drawing.Size(216, 30);
+            this.Ccomplaint.TabIndex = 17;
+            this.Ccomplaint.Text = "Complaint about a court";
+            this.Ccomplaint.UseVisualStyleBackColor = true;
+            this.Ccomplaint.Click += new System.EventHandler(this.Ccomplaint_Click);
+            // 
             // Trainer_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Ccomplaint);
             this.Controls.Add(this.oldtrainingsessions);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -100,5 +112,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button oldtrainingsessions;
+        private System.Windows.Forms.Button Ccomplaint;
     }
 }

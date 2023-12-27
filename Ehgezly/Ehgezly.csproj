@@ -64,6 +64,12 @@
     <Compile Include="Cancel_Booking.Designer.cs">
       <DependentUpon>Cancel_Booking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Complaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complaints.Designer.cs">
+      <DependentUpon>Complaints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cancel_Sessions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Request_Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Request_Maintenance.Designer.cs">
+      <DependentUpon>Request_Maintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="review.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,7 @@
     <Compile Include="Show_Tournament.Designer.cs">
       <DependentUpon>Show_Tournament.cs</DependentUpon>
     </Compile>
+    <Compile Include="Show_Complaints.cs">
     <Compile Include="Show_Trainer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,8 +178,8 @@
     <Compile Include="Trainer_Complaints.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Trainer_Complaints.Designer.cs">
-      <DependentUpon>Trainer_Complaints.cs</DependentUpon>
+    <Compile Include="Show_Complaints.Designer.cs">
+      <DependentUpon>Show_Complaints.cs</DependentUpon>
     </Compile>
     <Compile Include="Trainer_Homepage.cs">
       <SubType>Form</SubType>
@@ -174,11 +187,11 @@
     <Compile Include="Trainer_Homepage.Designer.cs">
       <DependentUpon>Trainer_Homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="T_Complaint.cs">
+    <Compile Include="Review_Complaint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T_Complaint.Designer.cs">
-      <DependentUpon>T_Complaint.cs</DependentUpon>
+    <Compile Include="Review_Complaint.Designer.cs">
+      <DependentUpon>Review_Complaint.cs</DependentUpon>
     </Compile>
     <Compile Include="Trainer_Myaccount1.cs">
       <SubType>Form</SubType>
@@ -203,6 +216,9 @@
     <EmbeddedResource Include="Cancel_Booking.resx">
       <DependentUpon>Cancel_Booking.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Complaints.resx">
+      <DependentUpon>Complaints.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager_Homepage.resx">
       <DependentUpon>Manager_Homepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +237,9 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Request_Maintenance.resx">
+      <DependentUpon>Request_Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="review.resx">
       <DependentUpon>review.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,14 +249,14 @@
     <EmbeddedResource Include="Show_Tournament.resx">
       <DependentUpon>Show_Tournament.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Trainer_Complaints.resx">
-      <DependentUpon>Trainer_Complaints.cs</DependentUpon>
+    <EmbeddedResource Include="Show_Complaints.resx">
+      <DependentUpon>Show_Complaints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trainer_Homepage.resx">
       <DependentUpon>Trainer_Homepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T_Complaint.resx">
-      <DependentUpon>T_Complaint.cs</DependentUpon>
+    <EmbeddedResource Include="Review_Complaint.resx">
+      <DependentUpon>Review_Complaint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trainer_Myaccount1.resx">
       <DependentUpon>Trainer_Myaccount1.cs</DependentUpon>

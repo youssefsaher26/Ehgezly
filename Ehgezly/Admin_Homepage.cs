@@ -35,7 +35,7 @@ namespace Ehgezly
 
         private void TrainerComplaints_Click(object sender, EventArgs e)
         {
-            Trainer_Complaints trainerComplaints = new Trainer_Complaints(AdminID);
+            Show_Complaints trainerComplaints = new Show_Complaints(AdminID);
             trainerComplaints.Show();
         }
 

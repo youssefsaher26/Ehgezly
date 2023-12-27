@@ -146,17 +146,27 @@ namespace DBapplication
             string query = "SELECT Cmplnt_Id as ID,Complaint_Date as Date FROM Trainer_Complaints, Complaints WHERE Cmplnt_Id=Complaint_ID AND Review_status='N';";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable SelectCourtComplaints()
+        {
+            string query = "SELECT Cmplnt_Id as ID,Complaint_Date as Date FROM Court_Complaints , Complaints WHERE Cmplnt_Id=Complaint_ID AND Review_status='N';";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectSpecTrainerComplaints(string ID)
         {
             string query = $"SELECT Complaint_Date as ComplaintDate ,Book_ID as BookingID , Complaint_Details AS Details FROM Complaints WHERE Complaint_ID='{ID}';";
             return dbMan.ExecuteReader(query);
         }
-        public int MarkTrainerComplaintReviewed(string ID)
+        public DataTable SelectSpecCourtComplaints(string ID)
         {
-            string query = $"UPDATE Complaints SET Review_Status='A' WHERE Complaint_ID='{ID}'";
+            string query = $"SELECT Complaint_Date as ComplaintDate ,Book_ID as BookingID , Complaint_Details AS Details FROM Complaints WHERE Complaint_ID='{ID}';";
+            return dbMan.ExecuteReader(query);
+        }
+        public int MarkComplaintReviewed(string ID)
+        {
+            string query = $"UPDATE Complaints SET Review_Status='R' WHERE Complaint_ID='{ID}'";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int AddAdminDetailsToComplaint(string comment, string ID)
+        public int AddReviewerDetailsToComplaint(string comment, string ID)
         {
             string query1 = $"UPDATE Complaints SET Admin_Comment='{comment}' WHERE Complaint_ID='{ID}'";
             return dbMan.ExecuteNonQuery(query1);
@@ -180,10 +190,8 @@ namespace DBapplication
 
         public DataTable SelectOldPlayertrainingSession(string ID)
         {
-            string query = $"SELECT  Booking_ID as Booking_ID, Booking_timing as Timing, Court_Location as Location" +
-                $" , Fname TrainerFirstName,Lname as  TrainerLastName FROM Bookings as B ,Courts as C ,Trainer as T," +
-                $"Account as A, Training_Session as TT WHERE Plyr_Id='{ID}' AND C.Court_ID=B.Crt_Id AND TT.Trnr_ID=T.Trainer_ID AND T.Trainer_ID=A.Acc_ID";
-            return dbMan.ExecuteReader(query);
+            string query = $" SELECT  Booking_ID as Booking_ID, Booking_timing as Timing, Court_Location as Location, Fname TrainerFirstName,Lname as  TrainerLastName FROM Bookings as B ,Courts as C ,Trainer as T,Account as A, Training_Session as TT WHERE Plyr_Id='{ID}' AND C.Court_ID=B.Crt_Id AND TT.Trnr_ID=T.Trainer_ID AND T.Trainer_ID=A.Acc_ID AND B.Booking_ID=TT.Sess_ID\r\n            ";
+                return dbMan.ExecuteReader(query);
         
         }
         public DataTable SelectOldTrainertrainingSession(string ID)
@@ -256,7 +264,12 @@ namespace DBapplication
             string maxIDexists=Convert.ToString(dbMan.ExecuteScalar(Q));
                 string maxno = null;
             string ID=null;
-
+            string Q1 = $"SELECT Count(Review_ID) from Reviews WHERE Booking_ID={BookID}  ";
+            int t = Convert.ToInt16(dbMan.ExecuteScalar(Q1));
+            if (t != 0)
+            {
+                return null;
+            }
 
             if (maxIDexists.Contains('T') || maxIDexists.Contains('C')) { maxno = Convert.ToString(maxIDexists.Substring(4)); }
             else if (maxIDexists.Contains('M')) { maxno = Convert.ToString(maxIDexists.Substring(5)); }
@@ -475,6 +488,78 @@ namespace DBapplication
             string query = "SELECT * FROM Courts ";
             return dbMan.ExecuteReader(query);
         }
+        }
+
+
+
+
+        public string AddComplaint(string ComplaintMsg, string BookID, string ComplaintWriterID , string cptype)
+        {
+            string Q = null;
+            if(cptype== "Trainer")
+            {  Q = $"SELECT Trnr_ID from Bookings WHERE Booking_ID='{BookID}'"; }
+            else
+            { Q = $"SELECT Crt_Id from Bookings WHERE Booking_ID='{BookID}'"; }
+            string Q2 = $"SELECT Count(Complaint_ID) from Complaints WHERE Booking_ID='{BookID}' AND Complaint_Details='{ComplaintMsg}'  ";
+            int t = Convert.ToInt16(dbMan.ExecuteScalar(Q2));
+            if (t != 0)
+            {
+                MessageBox.Show("Sorry, You can't write the same Complaint more than one time!");
+                return null;
+            }
+
+
+
+            string ComplaintAboutID = Convert.ToString(dbMan.ExecuteScalar(Q));
+
+
+            string Q1 = "SELECT MAX(Complaint_ID) from Complaints";
+            string maxIDexists = Convert.ToString(dbMan.ExecuteScalar(Q1));
+            string maxno = maxIDexists.Substring(3);
+            string ID = null;
+
+
+            
+            if (ComplaintAboutID.Contains('T'))
+            {
+
+                ID = "TCP" + Convert.ToString(Convert.ToInt16(maxno) + 1);
+
+
+            }
+            else if (ComplaintAboutID.Contains('C'))
+            {
+
+                ID = "CCP" + Convert.ToString(Convert.ToInt16(maxno) + 1);
+            }
+
+            string query = $"INSERT INTO Complaints VALUES('{ID}',null,'{date}','{BookID}','N',null,'{ComplaintMsg}',null)  ";
+            int test = dbMan.ExecuteNonQuery(query);
+
+      //      SELECT TOP(1000) [Complaint_ID]aa
+      //,[complaint_Reviewer] aa
+      //,[Complaint_Date]aa
+      //,[Book_ID]aa
+      //,[Review_status] aa
+      //,[Review_Date]  aaa
+      //,[Complaint_Details] 
+      //,[Admin_Comment]
+      //      FROM[Ehgezly].[dbo].[Complaints]
+
+
+            if (test == 0)
+            {
+                MessageBox.Show("falied to Send the Complaint");
+            }
+            else
+            {
+                MessageBox.Show("Compalint Sent");
+            }
+            return ID;
+
+
+        }
+
 
     }
 }

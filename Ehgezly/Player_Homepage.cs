@@ -168,6 +168,18 @@ namespace Ehgezly
             R.Show();
         }
 
+        private void Tcomplaint_Click(object sender, EventArgs e)
+        {
+            Complaints complaint = new Complaints(controllerObj.GetID(email), "Trainer");
+            complaint.Show();
+        }
+
+        private void Ccomplaint_Click(object sender, EventArgs e)
+        {
+            Complaints complaint = new Complaints(controllerObj.GetID(email), "Court");
+            complaint.Show();
+        }
+
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 

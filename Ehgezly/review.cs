@@ -53,6 +53,10 @@ namespace Ehgezly
             }
 
             string revID =controllerObj.AddRating( rating, BookingID,ReviewerID);
+            if(revID==null)
+            { MessageBox.Show("You've rated this Before!");
+                return;
+            }
 
             if (BookingID.Contains("C"))
             {

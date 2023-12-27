@@ -63,6 +63,12 @@ namespace Ehgezly
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Show_Complaints trainerComplaints = new Show_Complaints(managerId);
+            trainerComplaints.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             int r = controllerObj.AddAvailableCourtTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"), dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), comboBox1.SelectedValue.ToString());
 
             if (r == 1)
