@@ -64,12 +64,7 @@ namespace Ehgezly
             
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void traningsession_Click(object sender, EventArgs e)
         {
             int r = controllerObj.AddAvailableTrainingSessionTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm") , dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), Trainer_Name_ComboBox.SelectedValue.ToString());
             
@@ -81,26 +76,6 @@ namespace Ehgezly
             {
                 MessageBox.Show("failed ! Timeslots is not added");
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

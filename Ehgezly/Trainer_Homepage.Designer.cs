@@ -82,7 +82,7 @@
             this.Add_Available_Timeslots.TabIndex = 3;
             this.Add_Available_Timeslots.Text = "Add Avilable Timeslots";
             this.Add_Available_Timeslots.UseVisualStyleBackColor = true;
-            this.Add_Available_Timeslots.Click += new System.EventHandler(this.button1_Click);
+            this.Add_Available_Timeslots.Click += new System.EventHandler(this.traningsession_Click);
             // 
             // dateTimePicker1
             // 
@@ -93,7 +93,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(274, 22);
             this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+           // this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dateTimePicker2
             // 
@@ -111,7 +111,7 @@
             this.End_Date_Time.Size = new System.Drawing.Size(123, 16);
             this.End_Date_Time.TabIndex = 6;
             this.End_Date_Time.Text = "End Date and Time";
-            this.End_Date_Time.Click += new System.EventHandler(this.label2_Click);
+           // this.End_Date_Time.Click += new System.EventHandler(this.label2_Click);
             // 
             // Start_Date_Time
             // 
@@ -129,7 +129,7 @@
             this.Trainer_Name_ComboBox.Name = "Trainer_Name_ComboBox";
             this.Trainer_Name_ComboBox.Size = new System.Drawing.Size(274, 24);
             this.Trainer_Name_ComboBox.TabIndex = 8;
-            this.Trainer_Name_ComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            //this.Trainer_Name_ComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Trainer_Name
             // 

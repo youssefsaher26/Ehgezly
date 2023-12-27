@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.TrainerComplaints = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.Create_Manager_Account = new System.Windows.Forms.Button();
             this.Show_Manager_Accounts = new System.Windows.Forms.Button();
@@ -48,15 +47,6 @@
             this.TrainerComplaints.Text = "Trainer Complaints";
             this.TrainerComplaints.UseVisualStyleBackColor = true;
             this.TrainerComplaints.Click += new System.EventHandler(this.TrainerComplaints_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(459, 274);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(8, 8);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -77,7 +67,7 @@
             this.Create_Manager_Account.TabIndex = 16;
             this.Create_Manager_Account.Text = "Create Manager Account";
             this.Create_Manager_Account.UseVisualStyleBackColor = true;
-            this.Create_Manager_Account.Click += new System.EventHandler(this.button1_Click);
+            this.Create_Manager_Account.Click += new System.EventHandler(this.Create_Manager_Click);
             // 
             // Show_Manager_Accounts
             // 
@@ -87,7 +77,7 @@
             this.Show_Manager_Accounts.TabIndex = 17;
             this.Show_Manager_Accounts.Text = "Show Manager Accounts";
             this.Show_Manager_Accounts.UseVisualStyleBackColor = true;
-            this.Show_Manager_Accounts.Click += new System.EventHandler(this.button3_Click);
+            this.Show_Manager_Accounts.Click += new System.EventHandler(this.Show_Managers_Click);
             // 
             // Show_Trainer_Accounts
             // 
@@ -97,7 +87,7 @@
             this.Show_Trainer_Accounts.TabIndex = 18;
             this.Show_Trainer_Accounts.Text = "Show Trainer Accounts";
             this.Show_Trainer_Accounts.UseVisualStyleBackColor = true;
-            this.Show_Trainer_Accounts.Click += new System.EventHandler(this.button4_Click_1);
+            this.Show_Trainer_Accounts.Click += new System.EventHandler(this.Show_Trainer_Click_1);
             // 
             // pictureBox1
             // 
@@ -117,9 +107,9 @@
             this.Create_Trainer_Account.Name = "Create_Trainer_Account";
             this.Create_Trainer_Account.Size = new System.Drawing.Size(180, 35);
             this.Create_Trainer_Account.TabIndex = 19;
-            this.Create_Trainer_Account.Text = "Create Trainer Account";
+            this.Create_Trainer_Account.Text = "Show Trainer Accounts";
             this.Create_Trainer_Account.UseVisualStyleBackColor = true;
-            this.Create_Trainer_Account.Click += new System.EventHandler(this.button5_Click);
+            this.Create_Trainer_Account.Click += new System.EventHandler(this.Create_Trainer_Click);
             // 
             // Admin_Homepage
             // 
@@ -132,7 +122,6 @@
             this.Controls.Add(this.Create_Manager_Account);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.TrainerComplaints);
             this.Name = "Admin_Homepage";
             this.Text = "Admin_Homepage";
@@ -146,7 +135,6 @@
         #endregion
 
         private System.Windows.Forms.Button TrainerComplaints;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Create_Manager_Account;
