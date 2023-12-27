@@ -220,7 +220,7 @@
             // 
             // trainingsessionold
             // 
-            this.trainingsessionold.Location = new System.Drawing.Point(484, 398);
+            this.trainingsessionold.Location = new System.Drawing.Point(484, 426);
             this.trainingsessionold.Margin = new System.Windows.Forms.Padding(4);
             this.trainingsessionold.Name = "trainingsessionold";
             this.trainingsessionold.Size = new System.Drawing.Size(340, 34);
