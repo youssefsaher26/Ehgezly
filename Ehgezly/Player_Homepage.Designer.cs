@@ -46,6 +46,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.trainingsessionold = new System.Windows.Forms.Button();
+            this.courtbookingold = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -226,6 +228,26 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // trainingsessionold
+            // 
+            this.trainingsessionold.Location = new System.Drawing.Point(597, 390);
+            this.trainingsessionold.Name = "trainingsessionold";
+            this.trainingsessionold.Size = new System.Drawing.Size(154, 28);
+            this.trainingsessionold.TabIndex = 12;
+            this.trainingsessionold.Text = "Old Training Sessions";
+            this.trainingsessionold.UseVisualStyleBackColor = true;
+            this.trainingsessionold.Click += new System.EventHandler(this.trainingsessionold_Click);
+            // 
+            // courtbookingold
+            // 
+            this.courtbookingold.Location = new System.Drawing.Point(597, 342);
+            this.courtbookingold.Name = "courtbookingold";
+            this.courtbookingold.Size = new System.Drawing.Size(154, 28);
+            this.courtbookingold.TabIndex = 13;
+            this.courtbookingold.Text = "Old Court Bookings";
+            this.courtbookingold.UseVisualStyleBackColor = true;
+            this.courtbookingold.Click += new System.EventHandler(this.courtbookingold_Click);
+            // 
             // Player_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +258,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(800, 466);
+            this.Controls.Add(this.courtbookingold);
+            this.Controls.Add(this.trainingsessionold);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.button2);
@@ -277,5 +302,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button trainingsessionold;
+        private System.Windows.Forms.Button courtbookingold;
     }
 }

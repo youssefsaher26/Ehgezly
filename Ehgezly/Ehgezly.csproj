@@ -66,6 +66,12 @@
     <Compile Include="Manager_Homepage.Designer.cs">
       <DependentUpon>Manager_Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Old_Bookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Old_Bookings.Designer.cs">
+      <DependentUpon>Old_Bookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
     </Compile>
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="review.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="review.Designer.cs">
+      <DependentUpon>review.cs</DependentUpon>
     </Compile>
     <Compile Include="Trainer_Complaints.cs">
       <SubType>Form</SubType>
@@ -126,6 +138,9 @@
     <EmbeddedResource Include="Manager_Homepage.resx">
       <DependentUpon>Manager_Homepage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Old_Bookings.resx">
+      <DependentUpon>Old_Bookings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Player_Homepage.resx">
       <DependentUpon>Player_Homepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="review.resx">
+      <DependentUpon>review.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trainer_Complaints.resx">
       <DependentUpon>Trainer_Complaints.cs</DependentUpon>
