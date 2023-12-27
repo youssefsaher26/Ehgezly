@@ -167,5 +167,10 @@ namespace Ehgezly
             Cancel_Tournament R = new Cancel_Tournament(email, pass);
             R.Show();
         }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

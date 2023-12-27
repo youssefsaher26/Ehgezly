@@ -13,6 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Security.Principal;
 
 namespace DBapplication
 {
@@ -31,6 +32,7 @@ namespace DBapplication
             dbMan.CloseConnection();
         }
 
+        //HomePages
         public DataTable CheckAccountExist(string mail, string pass)
         {
             string query = "SELECT * FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "';";
@@ -164,7 +166,7 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query3);
         }
 
-        public String GetID(String Email)
+        public string GetID(string Email)
         {
             string query = $"SELECT Acc_ID FROM Account WHERE Email='{Email}'";
             return Convert.ToString(dbMan.ExecuteScalar(query));
@@ -306,23 +308,17 @@ namespace DBapplication
         public int AddMaintenanceReview(string RevID, string MW)
         {
 
-            String query = $"INSERT INTO Maintenance_Reviews VALUES Rev_ID={RevID},MW_ID='{MW}'";
+            string query = $"INSERT INTO Maintenance_Reviews VALUES Rev_ID={RevID},MW_ID='{MW}'";
             return dbMan.ExecuteNonQuery(query);
 
         }
         public int AddCommentToReview(string RevID,string comment)
-
         {
-          
-           string query = $"Update  Reviews SET Comment='{comment}' WHERE Review_ID='{RevID}'"; 
-                
-                
+              string query = $"Update  Reviews SET Comment='{comment}' WHERE Review_ID='{RevID}'"; 
               return  dbMan.ExecuteNonQuery(query);
-         
-           
-
         }
-        public string GetCourtIDfromBooking(string Bookid) {
+        public string GetCourtIDfromBooking(string Bookid) 
+        {
 
             string query = $"SELECT Crt_Id FROM Bookings WHERE Booking_ID='{Bookid}' ";
             return Convert.ToString(dbMan.ExecuteScalar(query));
@@ -351,10 +347,16 @@ namespace DBapplication
 
         //}
 
-
         public DataTable ViewUpcomingTournaments()
         {
             string query = "SELECT Tournamnet_ID,Tournamnet_name,Court_Location,Timing FROM Tournament,Courts where Timing >'" + date+"' and Crt_ID= Court_ID;";
+            string query = "SELECT Tournamnet_name,Court_Location,Timing FROM Tournament,Courts where Timing >'" + date + "' and Crt_ID= Court_ID;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectManagers()
+        {
+            string query = "SELECT * FROM Account where Acc_ID LIKE '%M%';";
             return dbMan.ExecuteReader(query);
         }
 
@@ -408,6 +410,72 @@ namespace DBapplication
 
         }
 
+        public int DeleteManager(string Manager_id)
+        {
+            string query = "UPDATE Courts SET Manager_ID = NULL WHERE Manager_ID = '"+Manager_id+"';";
+            dbMan.ExecuteNonQuery(query);
+            string query1 = "UPDATE Complaints SET complaint_Reviewer = NULL WHERE complaint_Reviewer = '"+Manager_id+"';";
+            dbMan.ExecuteNonQuery(query1);
+            string query2 = "DELETE FROM Account WHERE Acc_ID = '"+Manager_id+"';";
+            return dbMan.ExecuteNonQuery(query2);
+        }
+
+        public DataTable SelectTrainer()
+        {
+            string query = "SELECT * FROM Account where Acc_ID LIKE '%TR%';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int DeleteTrainer(string Trainer_id)
+        {
+            string query1 = "UPDATE Training_Sessions_Timeslots SET Trnr_id = NULL WHERE Trnr_ID = '" + Trainer_id + "';";
+            dbMan.ExecuteNonQuery(query1);
+            string query2= "UPDATE Trainer_Complaints SET Trnr_id = NULL WHERE Trnr_ID = '" + Trainer_id + "';";
+            dbMan.ExecuteNonQuery(query2);
+            string query3 = "UPDATE Trainer_Reviews SET Trnr_id = NULL WHERE Trnr_ID = '" + Trainer_id + "';";
+            dbMan.ExecuteNonQuery(query3);
+            string query4 = "UPDATE Training_Session SET Trnr_id = NULL WHERE Trnr_ID = '" + Trainer_id + "';";
+            dbMan.ExecuteNonQuery(query4);
+            string query5= "DELETE FROM Account WHERE Acc_ID = '" + Trainer_id + "';";
+            return dbMan.ExecuteNonQuery(query5);
+        }
+
+        public int AddAvailableTrainingSessionTimeslots(string strt_date , string end_date,string TID)
+        {
+            string query = "SELECT Count(*) FROM Training_Sessions_Timeslots;";
+            int z = Convert.ToInt32(dbMan.ExecuteScalar(query)) + 1;
+            string y = z.ToString();
+
+            string query1 = "INSERT INTO Timeslots " +
+                "VALUES ('TS" + y + "','A','"+ strt_date + "','"+ end_date +"')";
+            dbMan.ExecuteNonQuery(query1);
+            string query2 = "INSERT INTO Training_Sessions_Timeslots " +
+                "VALUES ('TS" + y +"','" + TID + "','A')";
+            return dbMan.ExecuteNonQuery(query2);
+
+        }
+
+        public int AddAvailableCourtTimeslots(string strt_date, string end_date, string CID)
+        {
+            string query = "SELECT Count(*) FROM Court_Timeslots;";
+            int z = Convert.ToInt32(dbMan.ExecuteScalar(query)) + 1;
+            string y = z.ToString();
+
+            string query1 = "INSERT INTO Timeslots " +
+                "VALUES ('C" + y + "','A','" + strt_date + "','" + end_date + "')";
+            dbMan.ExecuteNonQuery(query1);
+            string query2 = "INSERT INTO Court_Timeslots " +
+                "VALUES ('C" + y + "','" + CID +"')";
+            return dbMan.ExecuteNonQuery(query2);
+
+        }
+
+        public DataTable SelectCourts()
+        {
+            string query = "SELECT * FROM Courts ";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
-    }
+}
 

@@ -77,6 +77,18 @@
       <DependentUpon>Cancel_Tournament.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="Create_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create_Manager.Designer.cs">
+      <DependentUpon>Create_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Trainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create_Trainer.Designer.cs">
+      <DependentUpon>Create_Trainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBmanagercs.cs" />
     <Compile Include="Manager_Homepage.cs">
       <SubType>Form</SubType>
@@ -120,11 +132,23 @@
     <Compile Include="review.Designer.cs">
       <DependentUpon>review.cs</DependentUpon>
     </Compile>
+    <Compile Include="Show_Managers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_Managers.Designer.cs">
+      <DependentUpon>Show_Managers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Show_Tournament.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Show_Tournament.Designer.cs">
       <DependentUpon>Show_Tournament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Show_Trainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_Trainer.Designer.cs">
+      <DependentUpon>Show_Trainer.cs</DependentUpon>
     </Compile>
     <Compile Include="Tournaments_Trainer.cs">
       <SubType>Form</SubType>
@@ -179,12 +203,6 @@
     <EmbeddedResource Include="Cancel_Booking.resx">
       <DependentUpon>Cancel_Booking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cancel_Sessions.resx">
-      <DependentUpon>Cancel_Sessions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cancel_Tournament.resx">
-      <DependentUpon>Cancel_Tournament.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Manager_Homepage.resx">
       <DependentUpon>Manager_Homepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,14 +224,11 @@
     <EmbeddedResource Include="review.resx">
       <DependentUpon>review.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Show_Managers.resx">
+      <DependentUpon>Show_Managers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Show_Tournament.resx">
       <DependentUpon>Show_Tournament.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tournaments_Trainer.resx">
-      <DependentUpon>Tournaments_Trainer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tournaments_Trainer_Upcoming.resx">
-      <DependentUpon>Tournaments_Trainer_Upcoming.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trainer_Complaints.resx">
       <DependentUpon>Trainer_Complaints.cs</DependentUpon>

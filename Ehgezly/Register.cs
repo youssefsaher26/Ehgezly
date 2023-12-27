@@ -65,7 +65,7 @@ namespace Ehgezly
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Fname.Text == "" || Lname.Text == "" || Email.Text == ""|| Password.Text == "" || PhoneNumber.Text == "")
+            if (Fname.Text == "" || Lname.Text == "" || Email.Text == "" || Password.Text == "" || PhoneNumber.Text == "")
             {
                 MessageBox.Show("Please, insert all values");
                 return;
@@ -91,78 +91,59 @@ namespace Ehgezly
                         }
                     }
                 }
-                if (comboBox1.SelectedIndex == 1)
-                {
-                    if (PhoneNumber.TextLength != 11)
-                    {
-                        label10.Show();
-                    }
-                    else
-                    {
-                        if (radioButton3.Checked)
-                        {
-                            int r = controllerObj.RegisterTrainer(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text, radioButton3.Text);
-                            if (r == 1)
-                            {
-                                MessageBox.Show("Account Registered Successfly");
-                            }
-                            else if (r != 1)
-                            {
-                                MessageBox.Show("Account Registered Failed");
-                            }
-                        }
-                        if (radioButton4.Checked)
-                        {
-                            int r = controllerObj.RegisterTrainer(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text, radioButton4.Text);
-                            if (r == 1)
-                            {
-                                MessageBox.Show("Account Registered Successfly");
-                            }
-                            else if (r != 1)
-                            {
-                                MessageBox.Show("Account Registered Failed");
-                            }
-                        }
-                    }
-                }
-                if (comboBox1.SelectedIndex == 2)
-                {
-                    if (PhoneNumber.TextLength != 11)
-                    {
-                        label10.Show();
-                    }
-                    else
-                    {
-                        int r = controllerObj.RegisterManager(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text);
-                        if (r == 1)
-                        {
-                            MessageBox.Show("Account Registered Successfly");
-                        }
-                        else if (r != 1)
-                        {
-                            MessageBox.Show("Account Registered Failed");
-                        }
-                    }
-                }
-                if (comboBox1.SelectedIndex == 3)
-                {
-                    if (PhoneNumber.TextLength != 11)
-                    {
-                        label10.Show();
-                    }
-                    else
-                    {
-                        int r = controllerObj.RegisterAdmin(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text);
-                        if (r == 1)
-                        {
-                            MessageBox.Show("Account Registered Successfly");
-                        }
-                        else if (r != 1)
-                        {
-                            MessageBox.Show("Account Registered Failed");
-                        }
-                    }
-                }
+                //if (comboBox1.SelectedIndex == 1)
+                //{
+                //    if (PhoneNumber.TextLength != 11)
+                //    {
+                //        label10.Show();
+                //    }
+                //    else
+                //    {
+                //        if (radioButton3.Checked)
+                //        {
+                //            int r = controllerObj.RegisterTrainer(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text, radioButton3.Text);
+                //            if (r == 1)
+                //            {
+                //                MessageBox.Show("Account Registered Successfly");
+                //            }
+                //            else if (r != 1)
+                //            {
+                //                MessageBox.Show("Account Registered Failed");
+                //            }
+                //        }
+                //        if (radioButton4.Checked)
+                //        {
+                //            int r = controllerObj.RegisterTrainer(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text, radioButton4.Text);
+                //            if (r == 1)
+                //            {
+                //                MessageBox.Show("Account Registered Successfly");
+                //            }
+                //            else if (r != 1)
+                //            {
+                //                MessageBox.Show("Account Registered Failed");
+                //            }
+                //        }
+                //    }
+                //}
+                //if (comboBox1.SelectedIndex == 2)
+                //{
+                //    if (PhoneNumber.TextLength != 11)
+                //    {
+                //        label10.Show();
+                //    }
+                //    else
+                //    {
+                //        int r = controllerObj.RegisterAdmin(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text);
+                //        if (r == 1)
+                //        {
+                //            MessageBox.Show("Account Registered Successfly");
+                //        }
+                //        else if (r != 1)
+                //        {
+                //            MessageBox.Show("Account Registered Failed");
+                //        }
+                //    }
+                //}
             }
             else if (F.Checked)
             {
@@ -185,78 +166,59 @@ namespace Ehgezly
                         }
                     }
                 }
-                if (comboBox1.SelectedIndex == 1)
-                {
-                    if (PhoneNumber.TextLength != 11)
-                    {
-                        label10.Show();
-                    }
-                    else
-                    {
-                        if (radioButton3.Checked)
-                        {
-                            int r = controllerObj.RegisterTrainer(Fname.Text, Lname.Text, F.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text, radioButton3.Text);
-                            if (r == 1)
-                            {
-                                MessageBox.Show("Account Registered Successfly");
-                            }
-                            else if (r != 1)
-                            {
-                                MessageBox.Show("Account Registered Failed");
-                            }
-                        }
-                        if (radioButton4.Checked)
-                        {
-                            int r = controllerObj.RegisterTrainer(Fname.Text, Lname.Text, F.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text, radioButton4.Text);
-                            if (r == 1)
-                            {
-                                MessageBox.Show("Account Registered Successfly");
-                            }
-                            else if (r != 1)
-                            {
-                                MessageBox.Show("Account Registered Failed");
-                            }
-                        }
-                    }
-                }
-                if (comboBox1.SelectedIndex == 2)
-                {
-                    if (PhoneNumber.TextLength != 11)
-                    {
-                        label10.Show();
-                    }
-                    else
-                    {
-                        int r = controllerObj.RegisterManager(Fname.Text, Lname.Text, F.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text);
-                        if (r == 1)
-                        {
-                            MessageBox.Show("Account Registered Successfly");
-                        }
-                        else if (r != 1)
-                        {
-                            MessageBox.Show("Account Registered Failed");
-                        }
-                    }
-                }
-                if (comboBox1.SelectedIndex == 3)
-                {
-                    if (PhoneNumber.TextLength != 11)
-                    {
-                        label10.Show();
-                    }
-                    else
-                    {
-                        int r = controllerObj.RegisterAdmin(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text);
-                        if (r == 1)
-                        {
-                            MessageBox.Show("Account Registered Successfly");
-                        }
-                        else if (r != 1)
-                        {
-                            MessageBox.Show("Account Registered Failed");
-                        }
-                    }
-                }
+                //if (comboBox1.SelectedIndex == 1)
+                //{
+                //    if (PhoneNumber.TextLength != 11)
+                //    {
+                //        label10.Show();
+                //    }
+                //    else
+                //    {
+                //        if (radioButton3.Checked)
+                //        {
+                //            int r = controllerObj.RegisterTrainer(Fname.Text, Lname.Text, F.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text, radioButton3.Text);
+                //            if (r == 1)
+                //            {
+                //                MessageBox.Show("Account Registered Successfly");
+                //            }
+                //            else if (r != 1)
+                //            {
+                //                MessageBox.Show("Account Registered Failed");
+                //            }
+                //        }
+                //        if (radioButton4.Checked)
+                //        {
+                //            int r = controllerObj.RegisterTrainer(Fname.Text, Lname.Text, F.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text, radioButton4.Text);
+                //            if (r == 1)
+                //            {
+                //                MessageBox.Show("Account Registered Successfly");
+                //            }
+                //            else if (r != 1)
+                //            {
+                //                MessageBox.Show("Account Registered Failed");
+                //            }
+                //        }
+                //    }
+                //}
+                //if (comboBox1.SelectedIndex == 2)
+                //{
+                //    if (PhoneNumber.TextLength != 11)
+                //    {
+                //        label10.Show();
+                //    }
+                //    else
+                //    {
+                //        int r = controllerObj.RegisterAdmin(Fname.Text, Lname.Text, M.Text[0], dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), Email.Text, Password.Text, PhoneNumber.Text);
+                //        if (r == 1)
+                //        {
+                //            MessageBox.Show("Account Registered Successfly");
+                //        }
+                //        else if (r != 1)
+                //        {
+                //            MessageBox.Show("Account Registered Failed");
+                //        }
+                //    }
+                //}
             }
         }
 

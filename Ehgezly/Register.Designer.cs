@@ -58,10 +58,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Player",
-            "Trainer",
-            "Manager ",
-            "Admin"});
+            "Player"});
             this.comboBox1.Location = new System.Drawing.Point(359, 33);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(189, 24);
@@ -149,7 +146,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Gander";
+            this.label4.Text = "Gender";
             // 
             // label5
             // 
