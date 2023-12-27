@@ -45,9 +45,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.trainingsessionold = new System.Windows.Forms.Button();
             this.courtbookingold = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -194,7 +194,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(255, 28);
             this.button4.TabIndex = 13;
-            this.button4.Text = "Cancelling Bookings";
+            this.button4.Text = "Cancel Upcoming Bookings";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -252,13 +252,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 366);
+            this.ClientSize = new System.Drawing.Size(800, 466);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
-            this.ClientSize = new System.Drawing.Size(800, 466);
             this.Controls.Add(this.courtbookingold);
             this.Controls.Add(this.trainingsessionold);
             this.Controls.Add(this.label5);
