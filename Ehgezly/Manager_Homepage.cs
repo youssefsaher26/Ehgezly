@@ -16,6 +16,7 @@ namespace Ehgezly
     {
         string email;
         string pass;
+        string managerId;
         public Manager_Homepage(string p, string mail)
         {
             InitializeComponent();
