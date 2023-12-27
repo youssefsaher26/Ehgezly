@@ -8,32 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
-    public partial class Show_Tournament : Form
+    public partial class Tournaments_Trainer : Form
     {
         Controller controllerObj;
-        string email;
         string password;
-        public Show_Tournament(string mail,string pass)
+        string email;
+        public Tournaments_Trainer(string pass,string mail)
         {
-            email = mail;
             password = pass;
+            email = mail;
             InitializeComponent();
             controllerObj = new Controller();
+            dataGridView1.DataSource = controllerObj.ViewUpcomingTournaments(email,password);
         }
 
-        private void Show_Tournament_Load(object sender, EventArgs e)
-        {
-            DataTable dt = controllerObj.ViewUpcomingTournaments();
-            dataGridView1.DataSource = dt;
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Refresh();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Tournaments_Trainer_Load(object sender, EventArgs e)
         {
 
         }
@@ -50,14 +42,15 @@ namespace Ehgezly
                 {
                     string stringValue = selectedValue.ToString();
 
-                    if (controllerObj.AddPlayertoTournmaent(stringValue,email,password) == 1)
+                    if (controllerObj.Cancel_Tournament_Particpation(stringValue,email,password) == 1)
                     {
-                    
-                        MessageBox.Show("Tournament Joined");
+                        MessageBox.Show("Tournament Particpation Cancelled");
+                        DataTable dt = controllerObj.View_sessions_for_trainer(email, password);
+                        dataGridView1.DataSource = dt;
                     }
                     else
                     {
-                        MessageBox.Show("Tournament already joined");
+                        MessageBox.Show("Session not deleted");
                     }
                 }
             }
@@ -68,4 +61,3 @@ namespace Ehgezly
         }
     }
 }
-
