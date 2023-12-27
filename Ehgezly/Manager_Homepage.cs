@@ -14,14 +14,17 @@ namespace Ehgezly
 {
     public partial class Manager_Homepage : Form
     {
+        Controller controllerObj;
         string email;
         string pass;
         string managerId;
         public Manager_Homepage(string p, string mail)
         {
             InitializeComponent();
+            controllerObj = new Controller();
             pass = p;
             email = mail;
+            managerId = controllerObj.GetID(email);
         }
 
         private void Manager_Homepage_Load(object sender, EventArgs e)
