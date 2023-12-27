@@ -24,7 +24,7 @@ namespace Ehgezly
         string email;
         string pass;
 
-        public Player_Homepage(string p,string mail)
+        public Player_Homepage(string p, string mail)
         {
             InitializeComponent();
             controllerObj = new Controller();
@@ -64,9 +64,9 @@ namespace Ehgezly
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox2.SelectedIndex == 0)
+            if (comboBox2.SelectedIndex == 0)
             {
-                comboBox1.DataSource=controllerObj.SelectCourt(0);
+                comboBox1.DataSource = controllerObj.SelectCourt(0);
             }
             if (comboBox2.SelectedIndex == 1)
             {
@@ -82,13 +82,13 @@ namespace Ehgezly
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(controllerObj2!=null)
-            comboBox3.DataSource = controllerObj2.SelectCourtname(comboBox1.SelectedValue.ToString());
+            if (controllerObj2 != null)
+                comboBox3.DataSource = controllerObj2.SelectCourtname(comboBox1.SelectedValue.ToString());
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            int r = controllerObj.BookCourt(email, pass , comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"));
+            int r = controllerObj.BookCourt(email, pass, comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"));
             if (r == 1)
             {
                 MessageBox.Show("Court is Booked Successfully");
@@ -106,7 +106,7 @@ namespace Ehgezly
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.BookTrainingsession(email,pass,comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), comboBox4.SelectedValue.ToString());
+            int r = controllerObj.BookTrainingsession(email, pass, comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), comboBox4.SelectedValue.ToString());
             if (r == 1)
             {
                 MessageBox.Show("Training session is Booked Successfully");
@@ -128,7 +128,7 @@ namespace Ehgezly
             R.Show();
         }
 
-       
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
