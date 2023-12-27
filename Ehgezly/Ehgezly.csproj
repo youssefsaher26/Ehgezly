@@ -58,6 +58,12 @@
     <Compile Include="Admin_MyAcc.Designer.cs">
       <DependentUpon>Admin_MyAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cancel_Booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cancel_Booking.Designer.cs">
+      <DependentUpon>Cancel_Booking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBmanagercs.cs" />
     <Compile Include="Manager_Homepage.cs">
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_MyAcc.resx">
       <DependentUpon>Admin_MyAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cancel_Booking.resx">
+      <DependentUpon>Cancel_Booking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager_Homepage.resx">
       <DependentUpon>Manager_Homepage.cs</DependentUpon>

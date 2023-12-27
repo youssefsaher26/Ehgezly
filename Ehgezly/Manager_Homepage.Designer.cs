@@ -31,6 +31,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.oldmnrequests = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -56,6 +57,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // oldmnrequests
+            // 
+            this.oldmnrequests.Location = new System.Drawing.Point(517, 356);
+            this.oldmnrequests.Name = "oldmnrequests";
+            this.oldmnrequests.Size = new System.Drawing.Size(233, 29);
+            this.oldmnrequests.TabIndex = 0;
+            this.oldmnrequests.Text = "Old maintenance requests";
+            this.oldmnrequests.UseVisualStyleBackColor = true;
+            this.oldmnrequests.Click += new System.EventHandler(this.oldmnrequests_Click);
+            // 
             // Manager_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -63,6 +74,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.oldmnrequests);
             this.Name = "Manager_Homepage";
             this.Text = "Manager_Homepage";
             this.Load += new System.EventHandler(this.Manager_Homepage_Load);
@@ -76,5 +88,7 @@
 
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+
+        private System.Windows.Forms.Button oldmnrequests;
     }
 }

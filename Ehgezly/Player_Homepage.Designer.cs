@@ -181,7 +181,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(340, 34);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Canceling Court Booking";
+            this.button3.Text = "Cancelling Court Booking";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -192,7 +192,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(340, 34);
             this.button4.TabIndex = 13;
-            this.button4.Text = "Canceling Training Session";
+            this.button4.Text = "Cancelling Bookings";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -203,7 +203,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(340, 34);
             this.button5.TabIndex = 14;
-            this.button5.Text = "Canceling Tournament Participation";
+            this.button5.Text = "Cancelling Tournament Participation";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // label6

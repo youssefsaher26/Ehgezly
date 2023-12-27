@@ -171,16 +171,31 @@ namespace DBapplication
         }
         public DataTable SelectOldPlayerCourtBookings(string ID)
         {
-            string query = $"SELECT  Booking_ID as Booking_ID ,Booking_timing , Court_Location FROM Bookings,Courts WHERE Plyr_Id='{ID}' AND Court_ID=Crt_Id AND Booking_type='C'";
+            string query = $"SELECT  Booking_ID as Booking_ID ,Booking_timing , Court_Location FROM Bookings," +
+                $"Courts WHERE Plyr_Id='{ID}' AND Court_ID=Crt_Id";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable SelectOldPlayertrainingSession(string ID)
         {
-            string query = $"SELECT  Booking_ID as Booking_ID, Booking_timing as Timing, Court_Location as Location , Fname TrainerFirstName,Lname as  TrainerLastName FROM Bookings as B ,Courts as C ,Trainer as T,Account as A, Training_Session as TT WHERE Plyr_Id='{ID}' AND C.Court_ID=B.Crt_Id AND B.Booking_type='T' AND TT.Trnr_ID=T.Trainer_ID AND T.Trainer_ID=A.Acc_ID";
+            string query = $"SELECT  Booking_ID as Booking_ID, Booking_timing as Timing, Court_Location as Location" +
+                $" , Fname TrainerFirstName,Lname as  TrainerLastName FROM Bookings as B ,Courts as C ,Trainer as T," +
+                $"Account as A, Training_Session as TT WHERE Plyr_Id='{ID}' AND C.Court_ID=B.Crt_Id AND TT.Trnr_ID=T.Trainer_ID AND T.Trainer_ID=A.Acc_ID";
             return dbMan.ExecuteReader(query);
         
-        } 
+        }
+        public DataTable SelectOldTrainertrainingSession(string ID)
+        {
+            string query = $"SELECT Booking_ID, Booking_timing as Timing, Court_Id as CourtID , Court_Location as Location  , Fname as PlayerFirstName,Lname as  PlayerLastName FROM Bookings as B ,Courts as C ,Trainer as T,Account as A, Training_Session as TT WHERE T.Trainer_ID='{ID}' AND C.Court_ID=B.Crt_Id AND TT.Trnr_ID=T.Trainer_ID AND B.Plyr_Id=A.Acc_ID AND B.Booking_ID=TT.Sess_ID";
+            return dbMan.ExecuteReader(query);
+
+        }
+        public DataTable SelectOldmaintenanceBookings(string ID)
+        {
+            string query = $"SELECT  Request_ID , Request_Date , Maintenance_Date  ,Court_Name FROM Maintenance_Requests as MN ,Courts as C WHERE C.Manager_ID='{ID}' AND C.Court_ID=MN.court_ID ";
+            return dbMan.ExecuteReader(query);
+
+        }
 
         public int BookTrainingsession(string email, string pass, string CID, string time,string TID)
         {
@@ -205,20 +220,17 @@ namespace DBapplication
             dbMan.ExecuteNonQuery(query3);
             return dbMan.ExecuteNonQuery(query5);
         }
-        public int DeleteCourtBookings(string email,string pass)
+        public int DeleteBookings(string booking_id)
         {
-            string query = "DELETE FROM Bookings WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email='"+email+"'and acc_password='"+pass+"') and Booking_timing >'"+date+"';";
-            return dbMan.ExecuteNonQuery(query);
+            if (booking_id.Contains("TS"))
+            {
+                string query1 = "DELETE FROM Training_Session WHERE Sess_ID='" + booking_id + "' ;";
+                dbMan.ExecuteNonQuery(query1);
+            }
+                string query2 = "DELETE FROM Bookings WHERE Booking_ID='"+booking_id+"' ;";
+            
+            return dbMan.ExecuteNonQuery(query2);
         }
-        public int DeleteTrainingsession(string email, string pass,string TID)
-        {
-            string query1 = "DELETE FROM Bookings WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email='" + email + "'and acc_password='" + pass + "') and Booking_timing >' "+date+"';";
-            string query2 = "DELETE FROM Training_session WHERE sess_ID IN(Select Booking_ID FROM Bookings " +
-                            "WHERE plyr_ID IN(SELECT ACC_ID FROM Account WHERE Email= '" + email + "' and acc_password='"+ pass + "') and Booking_timing >' "+date+"');";
-            dbMan.ExecuteNonQuery(query2);
-            return dbMan.ExecuteNonQuery(query1);
-        }
-
         public DataTable ViewAccountPlayer(string mail, string pass)
         {
             string query = "SELECT Fname,Lname,Email,Acc_Password,Phone_Number,Acc_ID FROM Account WHERE Email='" + mail + "'and acc_password= '" + pass + "';";
@@ -239,24 +251,24 @@ namespace DBapplication
             string ID=null;
 
 
-            if (maxIDexists.Contains('T') || maxIDexists.Contains('C')) { maxno = Convert.ToString(maxIDexists.Substring(1)); }
-            else if (maxIDexists.Contains('M')) { maxno = Convert.ToString(maxIDexists.Substring(2)); }
+            if (maxIDexists.Contains('T') || maxIDexists.Contains('C')) { maxno = Convert.ToString(maxIDexists.Substring(4)); }
+            else if (maxIDexists.Contains('M')) { maxno = Convert.ToString(maxIDexists.Substring(5)); }
             if (BookID.Contains('T'))
             {
 
-                ID = "T" + Convert.ToString(Convert.ToInt16(maxno) + 1);
+                ID = "TREV" + Convert.ToString(Convert.ToInt16(maxno) + 1);
 
 
             }
             else if (BookID.Contains('C'))
             {
 
-                ID = "C" + Convert.ToString(Convert.ToInt16(maxno) + 1);
+                ID = "CREV" + Convert.ToString(Convert.ToInt16(maxno) + 1);
             }
             else if (BookID.Contains('M'))
             {
 
-                ID = "MN" + Convert.ToString(Convert.ToInt16(maxno) + 1);
+                ID = "MnREV" + Convert.ToString(Convert.ToInt16(maxno) + 1);
             }
             string query = $"INSERT INTO Reviews VALUES('{ID}','{date}','{ReviewerID}',{rate},null)  ";
           int  test = dbMan.ExecuteNonQuery(query);
@@ -286,6 +298,13 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
 
         }
+        public int AddMaintenanceReview(string RevID, string MW)
+        {
+
+            String query = $"INSERT INTO Maintenance_Reviews VALUES Rev_ID={RevID},MW_ID='{MW}'";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
         public int AddCommentToReview(string RevID,string comment)
 
         {
@@ -311,6 +330,22 @@ namespace DBapplication
             return Convert.ToString(dbMan.ExecuteScalar(query));
 
         }
+        public DataTable View_upcoming_boookings(string email,string pass)
+        {
+            string query1 = "SELECT Acc_ID FROM Account WHERE Email='" + email + "'and acc_password = '" + pass + "';";
+            string m = dbMan.ExecuteScalar(query1).ToString();
+
+            string query2 = "SELECT Booking_ID,Booking_timing,Court_Name FROM Courts as c,Bookings as b WHERE b.Plyr_Id='"+m+ "'and Booking_timing>'"+date+ "'and Court_ID=Crt_Id;";
+            return dbMan.ExecuteReader(query2);
+        }
+        //public string GetMaintenanceID(string Bookid)
+        //{
+
+        //    string query = $"SELECT Trnr_ID FROM Training_session WHERE Sess_ID='{Bookid}' ";
+        //    return Convert.ToString(dbMan.ExecuteScalar(query));
+
+        //}
+
 
         public DataTable ViewUpcomingTournaments()
         {

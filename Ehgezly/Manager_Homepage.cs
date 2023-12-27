@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,12 @@ namespace Ehgezly
         private void Manager_Homepage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void oldmnrequests_Click(object sender, EventArgs e)
+        {
+            Old_Bookings old_Bookings = new Old_Bookings(managerId, "maintenance");
+            old_Bookings.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
