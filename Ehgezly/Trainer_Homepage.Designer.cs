@@ -64,7 +64,7 @@
             this.oldtrainingsessions.Name = "oldtrainingsessions";
             this.oldtrainingsessions.Size = new System.Drawing.Size(216, 31);
             this.oldtrainingsessions.TabIndex = 2;
-            this.oldtrainingsessions.Text = "Old Training Sessions";
+            this.oldtrainingsessions.Text = "Your Training Sessions";
             this.oldtrainingsessions.UseVisualStyleBackColor = true;
             this.oldtrainingsessions.Click += new System.EventHandler(this.oldtrainingsessions_Click);
             // 

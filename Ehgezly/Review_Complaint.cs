@@ -49,33 +49,24 @@ namespace Ehgezly
              
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void MarkRev_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.Text.Length==0)
+            if (richTextBox15.Text.Length==0)
             {
                 MessageBox.Show("please write the action taken towards this ccomplaint.");
                 return;
             }
             controllerObj.MarkComplaintReviewed(ComplaintID);
-            controllerObj.AddReviewerDetailsToComplaint(richTextBox1.Text,ComplaintID);
+            controllerObj.AddReviewerDetailsToComplaint(richTextBox15.Text,ComplaintID);
             MessageBox.Show("Marked As Reviewd.");
 
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+   
 
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -26,10 +26,7 @@ namespace Ehgezly
             reviewType = revtype;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void review_Load(object sender, EventArgs e)
         {
@@ -41,12 +38,11 @@ namespace Ehgezly
 
             int rating = 0;
           
-            if (radioButton1.Checked) { rating = 1; }
-            else if (radioButton2.Checked) { rating = 2; }
-            else if (radioButton2.Checked) { rating = 2; }
-            else if (radioButton3.Checked) { rating = 3; }
-            else if (radioButton4.Checked) { rating = 4; }
-            else if (radioButton5.Checked) { rating = 5; }
+            if (radioButton11.Checked) { rating = 1; }
+            else if (radioButton21.Checked) { rating = 2; }
+            else if (radioButton31.Checked) { rating = 3; }
+            else if (radioButton41.Checked) { rating = 4; }
+            else if (radioButton51.Checked) { rating = 5; }
             else
             {
                 MessageBox.Show("Please select a rating!");

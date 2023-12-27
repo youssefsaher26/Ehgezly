@@ -36,43 +36,39 @@ namespace Ehgezly
             {
                 dt = controllerObj.SelectOldTrainertrainingSession(ID);
             }
-            dataGridView1.DataSource = dt;
-            dataGridView1.MultiSelect = false;
-            dataGridView1.ReadOnly = true;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Refresh();
+            dataGridView14143.DataSource = dt;
+            dataGridView14143.MultiSelect = false;
+            dataGridView14143.ReadOnly = true;
+            dataGridView14143.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView14143.Refresh();
 
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+    
         private void Complaints_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+  
+
+        private void button35534_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            if (richTextBox1.Text.Length==0)
+            if (richTextBox1392.Text.Length == 0)
             {
                 MessageBox.Show("Please write a comment about your complaint");
             }
-           
-            controllerObj.AddComplaint(richTextBox1.Text, dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), CpWriterID, type);
+
+            controllerObj.AddComplaint(richTextBox1392.Text, dataGridView14143.SelectedRows[0].Cells[0].Value.ToString(), CpWriterID, type);
+
+        }
+
+        private void dataGridView14143_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

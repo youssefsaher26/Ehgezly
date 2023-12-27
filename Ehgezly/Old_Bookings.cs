@@ -52,10 +52,6 @@ namespace Ehgezly
 
         }
 
-        private void bookingsgridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void writerev_Click(object sender, EventArgs e)
         {
@@ -80,7 +76,7 @@ namespace Ehgezly
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonrevtrainer_Click(object sender, EventArgs e)
         {
 
             if (DateTime.Parse(bookingsgridview.SelectedRows[0].Cells[1].Value.ToString()) > DateTime.Now)
@@ -102,11 +98,11 @@ namespace Ehgezly
         {
             if (BookingType== "Training")
             {
-                button1.Visible = true;
+                buttonrevtrainer.Visible = true;
             }
             else
 
-                button1.Visible = false;
+                buttonrevtrainer.Visible = false;
         }
     }
 }

@@ -86,7 +86,7 @@ namespace Ehgezly
             comboBox3.DataSource = controllerObj2.SelectCourtname(comboBox1.SelectedValue.ToString());
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_144(object sender, EventArgs e)
         {
             int r = controllerObj.BookCourt(email, pass , comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"));
             if (r == 1)
@@ -99,12 +99,9 @@ namespace Ehgezly
             }
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void booktrainsession_Click(object sender, EventArgs e)
         {
             int r = controllerObj.BookTrainingsession(email,pass,comboBox3.SelectedValue.ToString(), dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), comboBox4.SelectedValue.ToString());
             if (r == 1)
@@ -117,12 +114,9 @@ namespace Ehgezly
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-        }
+  
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4555_Click(object sender, EventArgs e)
         {
             Cancel_Booking R = new Cancel_Booking(pass, email);
             R.Show();
@@ -136,11 +130,7 @@ namespace Ehgezly
             R.Show();
         }
 
-        private void WriteReview_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
 
 
         private void courtbookingold_Click(object sender, EventArgs e)
@@ -174,9 +164,6 @@ namespace Ehgezly
             complaint.Show();
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
