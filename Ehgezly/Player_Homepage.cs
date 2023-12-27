@@ -161,5 +161,17 @@ namespace Ehgezly
             Show_Tournament R = new Show_Tournament();
             R.Show();
         }
+
+        private void Tcomplaint_Click(object sender, EventArgs e)
+        {
+            Complaints complaint = new Complaints(controllerObj.GetID(email), "Trainer");
+            complaint.Show();
+        }
+
+        private void Ccomplaint_Click(object sender, EventArgs e)
+        {
+            Complaints complaint = new Complaints(controllerObj.GetID(email), "Court");
+            complaint.Show();
+        }
     }
 }
