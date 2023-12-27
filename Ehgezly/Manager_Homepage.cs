@@ -25,6 +25,18 @@ namespace Ehgezly
             pass = p;
             email = mail;
             managerId = controllerObj.GetID(email);
+
+            DataTable dt = controllerObj.SelectCourts();
+            comboBox1.DataSource = dt;
+            comboBox1.DisplayMember = "Court_Name";
+            comboBox1.ValueMember = "Court_ID";
+
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm";
+            dateTimePicker1.ShowUpDown = true;
+            dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm";
+            dateTimePicker2.ShowUpDown = true;
         }
 
         private void Manager_Homepage_Load(object sender, EventArgs e)
@@ -45,6 +57,25 @@ namespace Ehgezly
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int r = controllerObj.AddAvailableCourtTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"), dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), comboBox1.SelectedValue.ToString());
+
+            if (r == 1)
+            {
+                MessageBox.Show("Available Timeslots is added successfully");
+            }
+            else if (r != 1)
+            {
+                MessageBox.Show("failed ! Timeslots is not added");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
