@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -53,6 +54,32 @@ namespace Ehgezly
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            string pattern2 = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            if (!Regex.IsMatch(Emailbox.Text, pattern2))
+            {
+                MessageBox.Show("Please enter a valid email");
+                return;
+            }
+
+            string pattern3 = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_+=])[A-Za-z\d!@#$%^&*()-_+=]{8,}$";
+
+            if (!Regex.IsMatch(Passwordbox.Text, pattern3))
+            {
+                MessageBox.Show("Please Choose a valid Password that has at least 8 characters, including at least one uppercase letter, one lowercase letter, one digit, and one special character ");
+                return;
+
+            }
+            string pattern = @"^01\d{9}$";
+
+            // Use Regex.IsMatch to check if the phone number matches the pattern
+
+
+            if (!Regex.IsMatch(Phonenumbbox.Text, pattern))
+            {
+                MessageBox.Show("Please enter a valid Phone Number that has 11 digits and starts with 01 ");
+                return;
+            }
             int r = Convert.ToInt32(controllerObj.UpdateAccInfo(Fnamebox.Text, Lnamebox.Text, Emailbox.Text, Passwordbox.Text, Phonenumbbox.Text, email));
             if (r == 1)
             {

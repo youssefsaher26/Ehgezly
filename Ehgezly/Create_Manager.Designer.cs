@@ -50,27 +50,26 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(474, 232);
+            this.label10.Location = new System.Drawing.Point(487, 210);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(208, 16);
-            this.label10.TabIndex = 45;
+            this.label10.TabIndex = 62;
             this.label10.Text = "Phone number should be 11 digits";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(171, 210);
+            this.dateTimePicker1.Location = new System.Drawing.Point(184, 188);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(232, 22);
-            this.dateTimePicker1.TabIndex = 44;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.TabIndex = 61;
             // 
             // F
             // 
             this.F.AutoSize = true;
-            this.F.Location = new System.Drawing.Point(416, 313);
+            this.F.Location = new System.Drawing.Point(429, 291);
             this.F.Name = "F";
             this.F.Size = new System.Drawing.Size(74, 20);
-            this.F.TabIndex = 42;
+            this.F.TabIndex = 60;
             this.F.TabStop = true;
             this.F.Text = "Female";
             this.F.UseVisualStyleBackColor = true;
@@ -78,10 +77,10 @@
             // M
             // 
             this.M.AutoSize = true;
-            this.M.Location = new System.Drawing.Point(416, 276);
+            this.M.Location = new System.Drawing.Point(429, 254);
             this.M.Name = "M";
             this.M.Size = new System.Drawing.Size(58, 20);
-            this.M.TabIndex = 41;
+            this.M.TabIndex = 59;
             this.M.TabStop = true;
             this.M.Text = "Male";
             this.M.UseVisualStyleBackColor = true;
@@ -89,112 +88,112 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(413, 210);
+            this.label8.Location = new System.Drawing.Point(426, 188);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(97, 16);
-            this.label8.TabIndex = 40;
+            this.label8.TabIndex = 58;
             this.label8.Text = "Phone Number";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(439, 145);
+            this.label7.Location = new System.Drawing.Point(452, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 16);
-            this.label7.TabIndex = 39;
+            this.label7.TabIndex = 57;
             this.label7.Text = "Password";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(444, 88);
+            this.label6.Location = new System.Drawing.Point(457, 66);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 16);
-            this.label6.TabIndex = 38;
+            this.label6.TabIndex = 56;
             this.label6.Text = "Email";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(93, 213);
+            this.label5.Location = new System.Drawing.Point(106, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 16);
-            this.label5.TabIndex = 37;
+            this.label5.TabIndex = 55;
             this.label5.Text = "Birth Date";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(331, 276);
+            this.label4.Location = new System.Drawing.Point(344, 254);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 16);
-            this.label4.TabIndex = 36;
+            this.label4.TabIndex = 54;
             this.label4.Text = "Gander";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(202, 148);
+            this.label3.Location = new System.Drawing.Point(215, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 16);
-            this.label3.TabIndex = 35;
+            this.label3.TabIndex = 53;
             this.label3.Text = "Lname";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 85);
+            this.label2.Location = new System.Drawing.Point(215, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 16);
-            this.label2.TabIndex = 34;
+            this.label2.TabIndex = 52;
             this.label2.Text = "Fname";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(334, 376);
+            this.button1.Location = new System.Drawing.Point(347, 354);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 37);
-            this.button1.TabIndex = 33;
+            this.button1.TabIndex = 51;
             this.button1.Text = "Create";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(522, 82);
+            this.Email.Location = new System.Drawing.Point(535, 60);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(113, 22);
-            this.Email.TabIndex = 32;
+            this.Email.TabIndex = 50;
             // 
             // Password
             // 
-            this.Password.Location = new System.Drawing.Point(522, 145);
+            this.Password.Location = new System.Drawing.Point(535, 123);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(113, 22);
-            this.Password.TabIndex = 31;
+            this.Password.TabIndex = 49;
             // 
             // PhoneNumber
             // 
-            this.PhoneNumber.Location = new System.Drawing.Point(522, 207);
+            this.PhoneNumber.Location = new System.Drawing.Point(535, 185);
             this.PhoneNumber.Name = "PhoneNumber";
             this.PhoneNumber.Size = new System.Drawing.Size(113, 22);
-            this.PhoneNumber.TabIndex = 30;
+            this.PhoneNumber.TabIndex = 48;
             // 
             // Lname
             // 
-            this.Lname.Location = new System.Drawing.Point(272, 145);
+            this.Lname.Location = new System.Drawing.Point(285, 123);
             this.Lname.Name = "Lname";
             this.Lname.Size = new System.Drawing.Size(120, 22);
-            this.Lname.TabIndex = 29;
+            this.Lname.TabIndex = 47;
             // 
             // Fname
             // 
-            this.Fname.Location = new System.Drawing.Point(272, 82);
+            this.Fname.Location = new System.Drawing.Point(285, 60);
             this.Fname.Name = "Fname";
             this.Fname.Size = new System.Drawing.Size(120, 22);
-            this.Fname.TabIndex = 28;
+            this.Fname.TabIndex = 46;
             // 
-            // Create_Manager
+            // Create_manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,9 +215,8 @@
             this.Controls.Add(this.PhoneNumber);
             this.Controls.Add(this.Lname);
             this.Controls.Add(this.Fname);
-            this.Name = "Create_Manager";
-            this.Text = "Create_Manager";
-            this.Load += new System.EventHandler(this.Create_Manager_Load);
+            this.Name = "Create_manager";
+            this.Text = "Create_manager";
             this.ResumeLayout(false);
             this.PerformLayout();
 

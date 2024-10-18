@@ -58,7 +58,10 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Player"});
+            "Player",
+            "Trainer",
+            "Manager ",
+            "Admin"});
             this.comboBox1.Location = new System.Drawing.Point(359, 33);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(189, 24);
@@ -146,7 +149,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Gender";
+            this.label4.Text = "Gander";
             // 
             // label5
             // 
@@ -259,11 +262,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(471, 243);
+            this.label10.Location = new System.Drawing.Point(471, 250);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(208, 16);
+            this.label10.Size = new System.Drawing.Size(298, 16);
             this.label10.TabIndex = 25;
-            this.label10.Text = "Phone number should be 11 digits";
+            this.label10.Text = "Phone number should be 11 digits Starting with 01";
             // 
             // Register
             // 

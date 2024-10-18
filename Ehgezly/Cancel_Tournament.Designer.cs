@@ -28,47 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Canceltour = new System.Windows.Forms.Button();
+            this.Canceltourgridview = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.Canceltourgridview)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Canceltour
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(495, 196);
-            this.dataGridView1.TabIndex = 0;
+            this.Canceltour.Location = new System.Drawing.Point(299, 343);
+            this.Canceltour.Margin = new System.Windows.Forms.Padding(4);
+            this.Canceltour.Name = "Canceltour";
+            this.Canceltour.Size = new System.Drawing.Size(191, 43);
+            this.Canceltour.TabIndex = 3;
+            this.Canceltour.Text = "Cancel Your Participation";
+            this.Canceltour.UseVisualStyleBackColor = true;
+            this.Canceltour.Click += new System.EventHandler(this.Canceltour_Click);
             // 
-            // button1
+            // Canceltourgridview
             // 
-            this.button1.Location = new System.Drawing.Point(225, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Cancel Your Participation";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Canceltourgridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Canceltourgridview.Location = new System.Drawing.Point(70, 65);
+            this.Canceltourgridview.Margin = new System.Windows.Forms.Padding(4);
+            this.Canceltourgridview.Name = "Canceltourgridview";
+            this.Canceltourgridview.RowHeadersWidth = 51;
+            this.Canceltourgridview.Size = new System.Drawing.Size(660, 241);
+            this.Canceltourgridview.TabIndex = 2;
             // 
             // Cancel_Tournament
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Canceltour);
+            this.Controls.Add(this.Canceltourgridview);
             this.Name = "Cancel_Tournament";
             this.Text = "Cancel_Tournament";
-            this.Load += new System.EventHandler(this.Cancel_Tournament_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Canceltourgridview)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Canceltour;
+        private System.Windows.Forms.DataGridView Canceltourgridview;
     }
 }

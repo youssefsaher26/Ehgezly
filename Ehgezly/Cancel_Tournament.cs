@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
@@ -20,20 +21,23 @@ namespace Ehgezly
         {
             InitializeComponent();
             controllerObj = new Controller();
-            DataTable dt = controllerObj.ViewUpcomingTournaments(mail,pass);
-            dataGridView1.DataSource = dt;
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Refresh();
+            DataTable dt = controllerObj.ViewUpcomingTournaments2(mail, pass);
+            Canceltourgridview.DataSource = dt;
+            Canceltourgridview.ReadOnly = true;
+            Canceltourgridview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Canceltourgridview.MultiSelect = false;
+            Canceltourgridview.ReadOnly = true;
+            Canceltourgridview.Refresh();
             email = mail;
             password = pass;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Canceltour_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (Canceltourgridview.SelectedRows.Count > 0)
             {
                 // Get the selected row
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                DataGridViewRow selectedRow = Canceltourgridview.SelectedRows[0];
 
                 object selectedValue = selectedRow.Cells[0].Value;
                 if (selectedValue != null)
@@ -44,10 +48,10 @@ namespace Ehgezly
                     {
 
                         MessageBox.Show("Tournament Particpation Cancelled");
-                        DataTable dt = controllerObj.ViewUpcomingTournaments(email, password);
-                        dataGridView1.DataSource = dt;
-                        dataGridView1.ReadOnly = true;
-                        dataGridView1.Refresh();
+                        DataTable dt = controllerObj.ViewUpcomingTournaments2(email, password);
+                        Canceltourgridview.DataSource = dt;
+                        Canceltourgridview.ReadOnly = true;
+                        Canceltourgridview.Refresh();
                     }
                     else
                     {
@@ -60,10 +64,7 @@ namespace Ehgezly
                 MessageBox.Show("please select a row");
             }
         }
-
-        private void Cancel_Tournament_Load(object sender, EventArgs e)
-        {
-
-        } 
     }
+
+
 }

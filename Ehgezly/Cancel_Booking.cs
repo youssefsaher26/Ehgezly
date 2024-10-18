@@ -23,6 +23,9 @@ namespace Ehgezly
             controllerObj = new Controller();
             InitializeComponent();
             DataTable dt = controllerObj.View_upcoming_boookings(email, password);
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.MultiSelect = false;
+            dataGridView2.ReadOnly = true;
             dataGridView2.DataSource = dt;
         }
 
@@ -48,6 +51,7 @@ namespace Ehgezly
                         MessageBox.Show("Booking Deleted");
                         DataTable dt = controllerObj.View_upcoming_boookings(email, password);
                         dataGridView2.DataSource = dt;
+                        dataGridView2.Refresh();
                     }
                     else
                     {

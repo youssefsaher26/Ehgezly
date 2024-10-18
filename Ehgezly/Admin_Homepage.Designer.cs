@@ -29,24 +29,38 @@
         private void InitializeComponent()
         {
             this.TrainerComplaints = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.Create_Manager_Account = new System.Windows.Forms.Button();
-            this.Show_Manager_Accounts = new System.Windows.Forms.Button();
-            this.Show_Trainer_Accounts = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Create_Trainer_Account = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.TopratedCourts = new System.Windows.Forms.Button();
+            this.Topratedtrainers = new System.Windows.Forms.Button();
+            this.mostvisitedCourts = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TrainerComplaints
             // 
-            this.TrainerComplaints.Location = new System.Drawing.Point(608, 168);
+            this.TrainerComplaints.Location = new System.Drawing.Point(608, 172);
             this.TrainerComplaints.Name = "TrainerComplaints";
             this.TrainerComplaints.Size = new System.Drawing.Size(180, 35);
             this.TrainerComplaints.TabIndex = 0;
             this.TrainerComplaints.Text = "Trainer Complaints";
             this.TrainerComplaints.UseVisualStyleBackColor = true;
             this.TrainerComplaints.Click += new System.EventHandler(this.TrainerComplaints_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(357, 225);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(8, 8);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -58,36 +72,6 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "My Account";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // Create_Manager_Account
-            // 
-            this.Create_Manager_Account.Location = new System.Drawing.Point(38, 89);
-            this.Create_Manager_Account.Name = "Create_Manager_Account";
-            this.Create_Manager_Account.Size = new System.Drawing.Size(180, 32);
-            this.Create_Manager_Account.TabIndex = 16;
-            this.Create_Manager_Account.Text = "Create Manager Account";
-            this.Create_Manager_Account.UseVisualStyleBackColor = true;
-            this.Create_Manager_Account.Click += new System.EventHandler(this.Create_Manager_Click);
-            // 
-            // Show_Manager_Accounts
-            // 
-            this.Show_Manager_Accounts.Location = new System.Drawing.Point(38, 168);
-            this.Show_Manager_Accounts.Name = "Show_Manager_Accounts";
-            this.Show_Manager_Accounts.Size = new System.Drawing.Size(180, 35);
-            this.Show_Manager_Accounts.TabIndex = 17;
-            this.Show_Manager_Accounts.Text = "Show Manager Accounts";
-            this.Show_Manager_Accounts.UseVisualStyleBackColor = true;
-            this.Show_Manager_Accounts.Click += new System.EventHandler(this.Show_Managers_Click);
-            // 
-            // Show_Trainer_Accounts
-            // 
-            this.Show_Trainer_Accounts.Location = new System.Drawing.Point(256, 168);
-            this.Show_Trainer_Accounts.Name = "Show_Trainer_Accounts";
-            this.Show_Trainer_Accounts.Size = new System.Drawing.Size(180, 35);
-            this.Show_Trainer_Accounts.TabIndex = 18;
-            this.Show_Trainer_Accounts.Text = "Show Trainer Accounts";
-            this.Show_Trainer_Accounts.UseVisualStyleBackColor = true;
-            this.Show_Trainer_Accounts.Click += new System.EventHandler(this.Show_Trainer_Click_1);
             // 
             // pictureBox1
             // 
@@ -101,27 +85,101 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Create_Trainer_Account
+            // button5
             // 
-            this.Create_Trainer_Account.Location = new System.Drawing.Point(256, 88);
-            this.Create_Trainer_Account.Name = "Create_Trainer_Account";
-            this.Create_Trainer_Account.Size = new System.Drawing.Size(180, 35);
-            this.Create_Trainer_Account.TabIndex = 19;
-            this.Create_Trainer_Account.Text = "Create Trainer Account";
-            this.Create_Trainer_Account.UseVisualStyleBackColor = true;
-            this.Create_Trainer_Account.Click += new System.EventHandler(this.Create_Trainer_Click);
+            this.button5.Location = new System.Drawing.Point(295, 110);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(180, 35);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "Create Trainer Account";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(295, 190);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(180, 35);
+            this.button4.TabIndex = 31;
+            this.button4.Text = "Show Trainer Accounts";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(77, 190);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(180, 35);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "Show Manager Accounts";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(77, 111);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 32);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Create Manager Account";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(613, 284);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(8, 8);
+            this.button6.TabIndex = 28;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // TopratedCourts
+            // 
+            this.TopratedCourts.Location = new System.Drawing.Point(77, 275);
+            this.TopratedCourts.Name = "TopratedCourts";
+            this.TopratedCourts.Size = new System.Drawing.Size(180, 35);
+            this.TopratedCourts.TabIndex = 36;
+            this.TopratedCourts.Text = "Top Rated Courts";
+            this.TopratedCourts.UseVisualStyleBackColor = true;
+            this.TopratedCourts.Click += new System.EventHandler(this.TopratedCourts_Click);
+            // 
+            // Topratedtrainers
+            // 
+            this.Topratedtrainers.Location = new System.Drawing.Point(77, 337);
+            this.Topratedtrainers.Name = "Topratedtrainers";
+            this.Topratedtrainers.Size = new System.Drawing.Size(180, 35);
+            this.Topratedtrainers.TabIndex = 35;
+            this.Topratedtrainers.Text = "Top Rated Trainers";
+            this.Topratedtrainers.UseVisualStyleBackColor = true;
+            this.Topratedtrainers.Click += new System.EventHandler(this.Topratedtrainers_Click);
+            // 
+            // mostvisitedCourts
+            // 
+            this.mostvisitedCourts.Location = new System.Drawing.Point(77, 403);
+            this.mostvisitedCourts.Name = "mostvisitedCourts";
+            this.mostvisitedCourts.Size = new System.Drawing.Size(180, 35);
+            this.mostvisitedCourts.TabIndex = 34;
+            this.mostvisitedCourts.Text = "Most visited Courts";
+            this.mostvisitedCourts.UseVisualStyleBackColor = true;
+            this.mostvisitedCourts.Click += new System.EventHandler(this.mostvisitedCourts_Click);
             // 
             // Admin_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Create_Trainer_Account);
-            this.Controls.Add(this.Show_Trainer_Accounts);
-            this.Controls.Add(this.Show_Manager_Accounts);
-            this.Controls.Add(this.Create_Manager_Account);
+            this.ClientSize = new System.Drawing.Size(800, 528);
+            this.Controls.Add(this.TopratedCourts);
+            this.Controls.Add(this.Topratedtrainers);
+            this.Controls.Add(this.mostvisitedCourts);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.TrainerComplaints);
             this.Name = "Admin_Homepage";
             this.Text = "Admin_Homepage";
@@ -135,11 +193,16 @@
         #endregion
 
         private System.Windows.Forms.Button TrainerComplaints;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Create_Manager_Account;
-        private System.Windows.Forms.Button Show_Manager_Accounts;
-        private System.Windows.Forms.Button Show_Trainer_Accounts;
-        private System.Windows.Forms.Button Create_Trainer_Account;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button TopratedCourts;
+        private System.Windows.Forms.Button Topratedtrainers;
+        private System.Windows.Forms.Button mostvisitedCourts;
     }
 }

@@ -114,6 +114,7 @@
             this.Fnamebox.Name = "Fnamebox";
             this.Fnamebox.Size = new System.Drawing.Size(208, 41);
             this.Fnamebox.TabIndex = 23;
+            this.Fnamebox.TextChanged += new System.EventHandler(this.Fnamebox_TextChanged);
             // 
             // Phonenum
             // 

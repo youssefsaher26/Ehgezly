@@ -17,18 +17,21 @@ namespace Ehgezly
         Controller controllerObj;
         string email;
         string password;
-        public Show_Tournament(string mail,string pass)
+        public Show_Tournament(string mail, string pass)
         {
-            email = mail;
-            password = pass;
             InitializeComponent();
             controllerObj = new Controller();
+            email = mail;
+            password = pass;
         }
 
         private void Show_Tournament_Load(object sender, EventArgs e)
         {
             DataTable dt = controllerObj.ViewUpcomingTournaments();
             dataGridView1.DataSource = dt;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
+            dataGridView1.ReadOnly = true;
             dataGridView1.ReadOnly = true;
             dataGridView1.Refresh();
         }
@@ -50,9 +53,9 @@ namespace Ehgezly
                 {
                     string stringValue = selectedValue.ToString();
 
-                    if (controllerObj.AddPlayertoTournmaent(stringValue,email,password) == 1)
+                    if (controllerObj.AddPlayertoTournmaent(stringValue, email, password) == 1)
                     {
-                    
+
                         MessageBox.Show("Tournament Joined");
                     }
                     else
@@ -61,11 +64,6 @@ namespace Ehgezly
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("please select a row");
-            }
         }
     }
 }
-

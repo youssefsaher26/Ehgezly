@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Ehgezly
 {
@@ -17,6 +16,7 @@ namespace Ehgezly
         Controller controllerObj;
         public Create_Trainer()
         {
+           
             InitializeComponent();
             controllerObj = new Controller();
             label10.Hide();
@@ -24,6 +24,7 @@ namespace Ehgezly
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             if (Fname.Text == "" || Lname.Text == "" || Email.Text == "" || Password.Text == "" || PhoneNumber.Text == "")
             {
                 MessageBox.Show("Please, insert all values");
@@ -99,25 +100,5 @@ namespace Ehgezly
                 }
             }
         }
-
-        private void M_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void F_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

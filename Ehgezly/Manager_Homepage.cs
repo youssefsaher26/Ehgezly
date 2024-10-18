@@ -26,11 +26,6 @@ namespace Ehgezly
             email = mail;
             managerId = controllerObj.GetID(email);
 
-            DataTable dt = controllerObj.SelectCourts();
-            comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "Court_Name";
-            comboBox1.ValueMember = "Court_ID";
-
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm";
@@ -61,15 +56,47 @@ namespace Ehgezly
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button123456_Click(object sender, EventArgs e)
         {
             Show_Complaints trainerComplaints = new Show_Complaints(managerId);
             trainerComplaints.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2222_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.AddAvailableCourtTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"), dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"), comboBox1.SelectedValue.ToString());
+            Request_Maintenance request_Maintenance= new Request_Maintenance(managerId);
+            request_Maintenance.Show();
+
+        }
+
+        private void button3333_Click(object sender, EventArgs e)
+        {
+            if (textBox1111.Text.Length==0)
+            {
+                MessageBox.Show("Please Add tournament Name");
+                return;
+            }
+            controllerObj.AddNewTournament(managerId, textBox1111.Text, dateTimePicker11111.Value);
+        }
+
+
+
+        private void button4444_Click(object sender, EventArgs e)
+        {
+            View_Tournaments_Manager view_Tournaments_Manager = new View_Tournaments_Manager(managerId);
+            view_Tournaments_Manager.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+
+        {
+            if(dateTimePicker1.Value<=dateTimePicker2.Value) {
+                MessageBox.Show("Please adjust start and end times properly");
+                return;
+            }
+
+
+            int r = controllerObj.AddAvailableCourtTimeslots(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"), dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm"),managerId);
 
             if (r == 1)
             {
@@ -81,9 +108,16 @@ namespace Ehgezly
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void GenTourReport_Click(object sender, EventArgs e)
         {
+            TournamentsReportForm a = new TournamentsReportForm();
+            a.Show();
+        }
 
+        private void GenerateCourtReportButton_Click(object sender, EventArgs e)
+        {
+            CourtReport a = new CourtReport();
+            a.Show();
         }
     }
 }

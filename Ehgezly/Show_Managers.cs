@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
@@ -19,14 +18,13 @@ namespace Ehgezly
         {
             InitializeComponent();
             controllerObj = new Controller();
-            DataTable dt = controllerObj.SelectManagers();
+            DataTable dt = controllerObj.SelectManagers2();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
+            dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = dt;
         }
 
-        private void Show_Managers_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -58,9 +56,10 @@ namespace Ehgezly
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void updatemanager_Click(object sender, EventArgs e)
         {
-
+            Manager_MyAcc manager_MyAcc =new Manager_MyAcc(Convert.ToString(dataGridView1.SelectedRows[0].Cells[5].Value), Convert.ToString(dataGridView1.SelectedRows[0].Cells[6].Value));
+            manager_MyAcc.Show();
         }
     }
 }

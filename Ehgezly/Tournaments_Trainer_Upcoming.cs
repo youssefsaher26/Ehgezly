@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
     public partial class Tournaments_Trainer_Upcoming : Form
     {
+
         string password;
         string email;
         Controller controllerObj;
@@ -23,12 +23,25 @@ namespace Ehgezly
             password = pass;
             email = mail;
             controllerObj = new Controller();
-            dataGridView1.DataSource = controllerObj.ViewUpcomingTournaments(email, password);
-        }
 
+            tournamenttrainingaupcominggridview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tournamenttrainingaupcominggridview.MultiSelect = false;
+            tournamenttrainingaupcominggridview.ReadOnly = true;
+            tournamenttrainingaupcominggridview.DataSource = controllerObj.ViewUpcomingTournaments();
+        }
         private void Tournaments_Trainer_Upcoming_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tournamenttrainingaupcominggridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void jointournamenttrainer_Click(object sender, EventArgs e)
+        {
+            controllerObj.AddTrainertoTournmaent(Convert.ToString(tournamenttrainingaupcominggridview.SelectedRows[0].Cells[0].Value), email, password);
         }
     }
 }

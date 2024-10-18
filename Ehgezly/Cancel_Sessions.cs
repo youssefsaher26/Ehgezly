@@ -23,18 +23,18 @@ namespace Ehgezly
             controllerObj = new Controller();
             password = pass;
             email = mail;
-            DataTable dt = controllerObj.View_sessions_for_trainer(email,pass);
-            dataGridView1.DataSource = dt;
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Refresh();
+            DataTable dt = controllerObj.View_sessions_for_trainer(email, pass);
+            cancelsessiongridview.DataSource = dt;
+            cancelsessiongridview.ReadOnly = true;
+            cancelsessiongridview.Refresh();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cancelsession_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (cancelsessiongridview.SelectedRows.Count > 0)
             {
                 // Get the selected row
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                DataGridViewRow selectedRow = cancelsessiongridview.SelectedRows[0];
 
                 object selectedValue = selectedRow.Cells[0].Value;
                 if (selectedValue != null)
@@ -45,7 +45,7 @@ namespace Ehgezly
                     {
                         MessageBox.Show("Session Deleted");
                         DataTable dt = controllerObj.View_sessions_for_trainer(email, password);
-                        dataGridView1.DataSource = dt;
+                        cancelsessiongridview.DataSource = dt;
                     }
                     else
                     {

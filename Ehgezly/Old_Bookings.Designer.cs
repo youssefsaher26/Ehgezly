@@ -30,6 +30,7 @@
         {
             this.bookingsgridview = new System.Windows.Forms.DataGridView();
             this.writerev = new System.Windows.Forms.Button();
+            this.buttonrevtrainer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsgridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,27 +43,38 @@
             this.bookingsgridview.RowTemplate.Height = 24;
             this.bookingsgridview.Size = new System.Drawing.Size(800, 398);
             this.bookingsgridview.TabIndex = 0;
-            this.bookingsgridview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookingsgridview_CellContentClick);
             // 
             // writerev
             // 
-            this.writerev.Location = new System.Drawing.Point(253, 460);
+            this.writerev.Location = new System.Drawing.Point(455, 463);
             this.writerev.Name = "writerev";
             this.writerev.Size = new System.Drawing.Size(273, 50);
             this.writerev.TabIndex = 1;
-            this.writerev.Text = "Make a review";
+            this.writerev.Text = "Review Court";
             this.writerev.UseVisualStyleBackColor = true;
             this.writerev.Click += new System.EventHandler(this.writerev_Click);
+            // 
+            // buttonrevtrainer
+            // 
+            this.buttonrevtrainer.Location = new System.Drawing.Point(60, 463);
+            this.buttonrevtrainer.Name = "buttonrevtrainer";
+            this.buttonrevtrainer.Size = new System.Drawing.Size(273, 50);
+            this.buttonrevtrainer.TabIndex = 2;
+            this.buttonrevtrainer.Text = "Review Trainer";
+            this.buttonrevtrainer.UseVisualStyleBackColor = true;
+            this.buttonrevtrainer.Click += new System.EventHandler(this.buttonrevtrainer_Click);
             // 
             // Old_Bookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 577);
+            this.Controls.Add(this.buttonrevtrainer);
             this.Controls.Add(this.writerev);
             this.Controls.Add(this.bookingsgridview);
             this.Name = "Old_Bookings";
             this.Text = "Old Bookings";
+            this.Load += new System.EventHandler(this.Old_Bookings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bookingsgridview)).EndInit();
             this.ResumeLayout(false);
 
@@ -72,5 +84,6 @@
 
         private System.Windows.Forms.DataGridView bookingsgridview;
         private System.Windows.Forms.Button writerev;
+        private System.Windows.Forms.Button buttonrevtrainer;
     }
 }

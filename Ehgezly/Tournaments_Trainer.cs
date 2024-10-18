@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Ehgezly
 {
@@ -16,37 +17,35 @@ namespace Ehgezly
         Controller controllerObj;
         string password;
         string email;
-        public Tournaments_Trainer(string pass,string mail)
+        public Tournaments_Trainer(string pass, string mail)
         {
             password = pass;
             email = mail;
             InitializeComponent();
             controllerObj = new Controller();
-            dataGridView1.DataSource = controllerObj.ViewUpcomingTournaments(email,password);
+            tournamentstrainergridview.DataSource = controllerObj.ViewUpcomingTournaments2(email, password);
+            tournamentstrainergridview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tournamentstrainergridview.MultiSelect = false;
+            tournamentstrainergridview.ReadOnly = true;
         }
 
-        private void Tournaments_Trainer_Load(object sender, EventArgs e)
+        private void canceltournament_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (tournamentstrainergridview.SelectedRows.Count > 0)
             {
                 // Get the selected row
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                DataGridViewRow selectedRow = tournamentstrainergridview.SelectedRows[0];
 
                 object selectedValue = selectedRow.Cells[0].Value;
                 if (selectedValue != null)
                 {
                     string stringValue = selectedValue.ToString();
 
-                    if (controllerObj.Cancel_Tournament_Particpation(stringValue,email,password) == 1)
+                    if (controllerObj.Cancel_Tournament_Particpation(stringValue, email, password) == 1)
                     {
                         MessageBox.Show("Tournament Particpation Cancelled");
                         DataTable dt = controllerObj.View_sessions_for_trainer(email, password);
-                        dataGridView1.DataSource = dt;
+                        tournamentstrainergridview.DataSource = dt;
                     }
                     else
                     {
